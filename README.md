@@ -1,1 +1,1 @@
-# ArmA-3---ATragMX
+# ArmA 3 - ATragMX
