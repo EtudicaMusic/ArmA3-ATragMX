@@ -38,3 +38,13 @@ captures/
 
 # Keystore files
 *.jks
+/.gradle/
+/.idea/
+Würde Template/ löschen
+Würde app/ löschen
+Würde build.gradle löschen
+Würde gradle.properties löschen
+Würde gradle/ löschen
+Würde gradlew löschen
+Würde gradlew.bat löschen
+Würde settings.gradle löschen
