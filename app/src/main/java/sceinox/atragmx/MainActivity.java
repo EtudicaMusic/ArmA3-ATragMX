@@ -35,4 +35,12 @@ public class MainActivity extends AppCompatActivity {
     public void onUpdateClick(View view) {
 
     }
+
+    public void onTSClick(View view) {
+
+    }
+
+    public void onTRClick(View view) {
+
+    }
 }
