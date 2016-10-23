@@ -58,7 +58,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:background="@color/dim_foreground_disabled_material_dark"
-            android:onClick="onGunClick"/>
+            android:onClick="onGunClick" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:background="@color/dim_foreground_disabled_material_dark"
-            android:onClick="onAtmsphrClick"/>
+            android:onClick="onAtmsphrClick" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:background="@color/dim_foreground_disabled_material_dark"
-            android:onClick="onTargetClick"/>
+            android:onClick="onTargetClick" />
     </LinearLayout>
 
     <LinearLayout
@@ -126,7 +126,8 @@
                         android:textColor="#000000"
                         android:textStyle="bold"
                         android:layout_weight="1"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -137,7 +138,8 @@
                         android:textColor="#000000"
                         android:textStyle="bold"
                         android:layout_weight="1"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -156,7 +158,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -167,7 +170,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -186,7 +190,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -197,7 +202,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -217,7 +223,8 @@
                         android:gravity="center"
                         android:textColor="#000000"
                         android:textStyle="bold"
-                        android:background="@color/dim_foreground_disabled_material_dark" />
+                        android:background="@color/dim_foreground_disabled_material_dark"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -228,7 +235,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -247,7 +255,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -258,7 +267,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -293,7 +303,8 @@
                         android:textColor="#000000"
                         android:textStyle="bold"
                         android:layout_weight="1"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -303,7 +314,8 @@
                         android:textColor="#000000"
                         android:textStyle="bold"
                         android:layout_weight="1"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -322,7 +334,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -333,7 +346,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -352,7 +366,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -363,7 +378,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -382,7 +398,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -393,7 +410,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -412,7 +430,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -423,7 +442,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -459,7 +479,8 @@
                         android:textColor="#000000"
                         android:textStyle="bold"
                         android:layout_weight="1"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -470,7 +491,8 @@
                         android:textColor="#000000"
                         android:textStyle="bold"
                         android:layout_weight="1"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -489,7 +511,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="fill_parent"
@@ -500,7 +523,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -519,7 +543,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -530,7 +555,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -551,7 +577,8 @@
                         android:textColor="#000000"
                         android:textStyle="bold"
                         android:background="@color/dim_foreground_disabled_material_dark"
-                        android:onClick="onTSClick"/>
+                        android:onClick="onTSClick"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -562,7 +589,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -583,7 +611,8 @@
                         android:textColor="#000000"
                         android:textStyle="bold"
                         android:background="@color/dim_foreground_disabled_material_dark"
-                        android:onClick="onTRClick"/>
+                        android:onClick="onTRClick"
+                        android:paddingTop="5dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -594,7 +623,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:paddingTop="5dp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -626,7 +656,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -637,7 +668,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -648,7 +680,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -660,7 +693,8 @@
                 android:textColor="#000000"
                 android:gravity="center"
                 android:background="@color/dim_foreground_disabled_material_dark"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -679,7 +713,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -690,7 +725,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -701,7 +737,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -712,7 +749,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -731,7 +769,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -742,7 +781,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -753,7 +793,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -765,7 +806,8 @@
                 android:textColor="#000000"
                 android:gravity="center"
                 android:layout_marginBottom="5dp"
-                android:onClick="onResetClick"/>
+                android:onClick="onResetClick"
+                android:paddingTop="5dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -784,7 +826,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -795,7 +838,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -806,7 +850,8 @@
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:paddingTop="5dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -818,7 +863,8 @@
                 android:textColor="#000000"
                 android:gravity="center"
                 android:layout_marginBottom="5dp"
-                android:onClick="onUpdateClick"/>
+                android:onClick="onUpdateClick"
+                android:paddingTop="5dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -826,9 +872,10 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/OthersBox"
         android:layout_below="@+id/WindBox"
         android:layout_alignParentStart="true"
-        android:id="@+id/OthersBox">
+        android:paddingTop="15dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -837,7 +884,21 @@
             android:text="GunList"
             android:id="@+id/Text_GunList"
             android:textColor="#000000"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Calc"
+            android:id="@+id/Text_Calc"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:paddingRight="25dp"
+            android:onClick="onCalcClick"/>
     </LinearLayout>
 
 </RelativeLayout>

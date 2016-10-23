@@ -43,4 +43,8 @@ public class MainActivity extends AppCompatActivity {
     public void onTRClick(View view) {
 
     }
+
+    public void onCalcClick(View view) {
+
+    }
 }
