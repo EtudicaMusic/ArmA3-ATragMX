@@ -899,5 +899,6 @@
             android:textSize="14sp"
             android:paddingRight="25dp"
             android:onClick="onCalcClick"/>
+
     </LinearLayout>
 </RelativeLayout>
