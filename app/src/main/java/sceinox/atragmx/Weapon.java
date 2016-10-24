@@ -1,8 +1,6 @@
 package sceinox.atragmx;
 
-
-
-public class Weapon {
+class Weapon {
     public final float BORE_HEIGHT= (float) 3.81;
     private float bw;
     private float c1;
@@ -15,7 +13,6 @@ public class Weapon {
         this.mv = mv;
         this.zr = zr;
     }
-
 
     public float getBw() {
         return bw;

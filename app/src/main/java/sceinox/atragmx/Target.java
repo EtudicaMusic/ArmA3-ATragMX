@@ -1,7 +1,6 @@
 package sceinox.atragmx;
 
-
-public class Target {
+class Target {
     private int lat;
     private int dirOfShot;
     private float wind1;

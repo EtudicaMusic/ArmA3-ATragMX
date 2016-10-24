@@ -1,7 +1,6 @@
 package sceinox.atragmx;
 
-
-public class Atmsphr {
+class Atmsphr {
     private int tmp;
     private int bp;
     private int rh;
