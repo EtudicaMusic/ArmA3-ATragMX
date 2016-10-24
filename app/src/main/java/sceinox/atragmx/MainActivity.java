@@ -3,6 +3,8 @@ package sceinox.atragmx;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    //region onClickEvents
     public void onGunClick(View view) {
 
     }
@@ -46,5 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCalcClick(View view) {
 
+    }
+    //endregion
+
+    private void printFireSolution(FireSolution newFS, FireSolution oldFS){
+                TextView absElev= (TextView) this.findViewById(R.id.Text_Abs_Elev);
     }
 }
