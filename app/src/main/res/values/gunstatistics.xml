@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cal12.7x108">
+        <item>48</item>
+        <item>0.638</item>
+        <item>820</item>
+    </string-array>
+
+    <string-array name="cal12.7x99">
+        <item>42</item>
+        <item>0.575</item>
+        <item>900</item>
+    </string-array>
+
+    <string-array name="cal408CheyTac">
+        <item>27</item>
+        <item>0.575</item>
+        <item>900</item>
+    </string-array>
+
+    <string-array name="cal7.62x51">
+        <item>8</item>
+        <item>1.071</item>
+        <item>930</item>
+    </string-array>
+
+    <string-array name="cal6.5x39">
+        <item>8</item>
+        <item>0.753</item>
+        <item>800</item>
+    </string-array>
+
+    <string-array name="cal5.56x45">
+        <item>4</item>
+        <item>1.265</item>
+        <item>870</item>
+    </string-array>
+</resources>
