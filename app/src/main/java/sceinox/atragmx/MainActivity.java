@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onRCClick(View view) {
-
+        setContentView(R.layout.activity_rangecard);
     }
 
     public void onResetClick(View view) {
