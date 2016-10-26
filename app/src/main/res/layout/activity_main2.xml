@@ -183,7 +183,7 @@
 
         <Button
             android:text="RC"
-            android:id="@+id/RC"
+            android:id="@+id/Button_RC"
             android:gravity="center_vertical|center_horizontal|center"
             android:textColor="#000000"
             android:textSize="20sp"
@@ -192,26 +192,10 @@
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_marginEnd="10dp"
-            android:layout_alignTop="@+id/Button_RC"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
             android:onClick="onRCClick"
             android:fontFamily="sans-serif" />
-
-        <Button
-            android:text="Target"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
-            android:id="@+id/Button_Target"
-            android:background="#aeb6b9"
-            android:fontFamily="sans-serif"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textAllCaps="false"
-            android:layout_marginTop="20dp"
-            android:layout_below="@+id/RC"
-            android:layout_alignEnd="@+id/RC" />
 
         <Button
             android:text="Gun"
@@ -224,13 +208,13 @@
             android:background="#aeb6b9"
             android:layout_height="30dp"
             android:textSize="18sp"
-            android:layout_width="120dp"
             android:layout_alignTop="@+id/Button_Atmsphr"
-            android:layout_alignStart="@+id/Text_CaliberVal" />
+            android:layout_alignStart="@+id/Text_CaliberVal"
+            android:layout_width="125dp"
+            android:layout_toStartOf="@+id/Button_Atmsphr" />
 
         <Button
             android:text="Atmsphr"
-            android:layout_width="120dp"
             android:layout_height="30dp"
             android:id="@+id/Button_Atmsphr"
             android:background="#aeb6b9"
@@ -241,7 +225,8 @@
             android:textSize="18sp"
             android:fontFamily="sans-serif"
             android:focusableInTouchMode="true"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:layout_width="130dp" />
 
         <Button
             android:text="M"
@@ -250,7 +235,7 @@
             android:layout_width="25dp"
             android:layout_height="30dp"
             android:layout_above="@+id/Button_Target"
-            android:layout_toStartOf="@+id/RC"
+            android:layout_toStartOf="@+id/Button_RC"
             android:layout_marginEnd="5dp"
             android:fontFamily="sans-serif"
             android:textColor="#ffffff"
@@ -352,19 +337,6 @@
             android:background="#dddddd" />
 
         <Button
-            android:text="A"
-            android:id="@+id/Button_A"
-            android:background="#000000"
-            android:fontFamily="sans-serif"
-            android:textColor="#ffffff"
-            android:textStyle="normal|bold"
-            android:textSize="16sp"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
-            android:layout_below="@+id/Text_MVVal"
-            android:layout_alignStart="@+id/Button_Atmsphr" />
-
-        <Button
             android:text="B"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -376,20 +348,6 @@
             android:textSize="16sp"
             android:textStyle="normal|bold"
             android:fontFamily="sans-serif" />
-
-        <TextView
-            android:text=".408 Chey Tac"
-            android:layout_height="wrap_content"
-            android:id="@+id/Text_CaliberVal"
-            android:gravity="left|center"
-            android:layout_width="150dp"
-            android:textColor="#313131"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginStart="10dp"
-            android:layout_alignTop="@+id/Button_D"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="5dp" />
 
         <TextView
             android:text="RH"
@@ -451,21 +409,6 @@
             android:textColor="#000000"
             android:layout_toEndOf="@+id/Button_C"
             android:layout_alignBottom="@+id/Button_C" />
-
-        <TextView
-            android:text="WS"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/Text_AltVal"
-            android:layout_alignStart="@+id/Button_Target"
-            android:id="@+id/Text_WS"
-            android:paddingStart="5dp"
-            android:layout_marginStart="5dp"
-            android:background="#dddddd"
-            android:fontFamily="sans-serif"
-            android:textColor="#000000"
-            android:textStyle="normal|bold"
-            android:textSize="16sp"
-            android:layout_width="35dp" />
 
         <TextView
             android:text="WD"
@@ -558,8 +501,7 @@
             android:textSize="16sp"
             android:textStyle="normal|bold"
             android:layout_toEndOf="@+id/Button_TR"
-            android:paddingEnd="5dp"
-            android:layout_marginBottom="-2" />
+            android:paddingEnd="5dp" />
 
         <Button
             android:text="TS"
@@ -608,6 +550,65 @@
             android:layout_alignEnd="@+id/Text_IAVal"
             android:layout_toEndOf="@+id/Button_TS"
             android:layout_alignTop="@+id/Button_TS" />
+
+        <Button
+            android:text="A"
+            android:id="@+id/Button_A"
+            android:background="#000000"
+            android:fontFamily="sans-serif"
+            android:textColor="#ffffff"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:layout_alignBottom="@+id/Text_ZRVal"
+            android:layout_alignStart="@+id/Button_Atmsphr" />
+
+        <TextView
+            android:text=".408 Chey Tac"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_CaliberVal"
+            android:gravity="left|center"
+            android:layout_width="150dp"
+            android:textColor="#313131"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:text="WS"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_WS"
+            android:paddingStart="5dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="35dp"
+            android:layout_alignBaseline="@+id/Text_AltVal"
+            android:layout_alignBottom="@+id/Text_AltVal"
+            android:layout_alignStart="@+id/Button_Target"
+            android:layout_marginStart="5dp" />
+
+        <Button
+            android:text="Target"
+            android:layout_height="30dp"
+            android:id="@+id/Button_Target"
+            android:background="#aeb6b9"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_marginTop="21dp"
+            android:layout_width="130dp"
+            android:layout_below="@+id/Button_RC"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="11dp" />
 
     </RelativeLayout>
 </LinearLayout>
