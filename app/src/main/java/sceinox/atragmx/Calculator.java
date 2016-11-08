@@ -1,6 +1,8 @@
 package sceinox.atragmx;
 
-import android.view.View;
+import android.app.Activity;
+import android.content.Context;
+
 import android.widget.TextView;
 
 import static sceinox.atragmx.R.id.*;
@@ -8,6 +10,8 @@ import static sceinox.atragmx.R.id.*;
 class Calculator {
 
     //region private static fields
+    private static Context context;
+
     private static double gunBoreHeight;
     private static double gunBulletWeight;
     private static double gunBallisticCoefficient;
@@ -105,38 +109,31 @@ class Calculator {
         Calculator.targetTargetRange = targetTargetRange;
     }
 
-    Calculator(View view){
-        Calculator.gunBoreHeight = getInputOfText(view, Text_BHNumber);
-        Calculator.gunBulletWeight = getInputOfText(view, Text_BWNumber);
-        Calculator.gunBallisticCoefficient = getInputOfText(view, Text_C1Number);
-        Calculator.gunMuzzleVelocity = getInputOfText(view, Text_MVNumber);
-        Calculator.gunZeroRange = getInputOfText(view, Text_ZRNumber);
+    Calculator(Context context){
+        Calculator.context = context;
 
-        Calculator.atmsphrTemperature = getInputOfText(view, Text_Atmsphr);
-        Calculator.atmsphrBarometricPressure = getInputOfText(view, Text_BPNumber);
-        Calculator.atmsphrRelativeHumidity = getInputOfText(view, Text_RHNumber);
+        Calculator.gunBoreHeight = getInputOfText(context, Text_BHNumber);
+        Calculator.gunBulletWeight = getInputOfText(context, Text_BWNumber);
+        Calculator.gunBallisticCoefficient = getInputOfText(context, Text_C1Number);
+        Calculator.gunMuzzleVelocity = getInputOfText(context, Text_MVNumber);
+        Calculator.gunZeroRange = getInputOfText(context, Text_ZRNumber);
 
-        Calculator.targetWindStrength = getInputOfText(view, Text_WSNumber);
-        Calculator.targetWindDirection = getInputOfText(view, Text_WDNumber);
-        Calculator.targetInclinationAngle = getInputOfText(view, Text_IANumber);
-        Calculator.targetTargetSpeed = getInputOfText(view, Text_TSNumber);
-        Calculator.targetTargetRange = getInputOfText(view, Text_TRNumber);
+        Calculator.atmsphrTemperature = getInputOfText(context, Text_TmpNumber);
+        Calculator.atmsphrBarometricPressure = getInputOfText(context, Text_BPNumber);
+        Calculator.atmsphrRelativeHumidity = getInputOfText(context, Text_RHNumber);
 
-        testInput();
-
+        Calculator.targetWindStrength = getInputOfText(context, Text_WSNumber);
+        Calculator.targetWindDirection = getInputOfText(context, Text_WDNumber);
+        Calculator.targetInclinationAngle = getInputOfText(context, Text_IANumber);
+        Calculator.targetTargetSpeed = getInputOfText(context, Text_TSNumber);
+        Calculator.targetTargetRange = getInputOfText(context, Text_TRNumber);
     }
     //endregion
 
     //region private methods
-    private static double getInputOfText(View view, int id){
-        TextView output =(TextView) view.findViewById(id);
-        System.out.println(output.getText());
-        return 3.0;
+    private static double getInputOfText(Context context, int id){
+        return Double.parseDouble(((TextView) ((Activity) context).findViewById(id)).getText().toString());
     }
 
-    private static void testInput(){
-        System.out.println(gunBoreHeight);
-        System.out.println(targetWindDirection);
-    }
     //endregion
 }
