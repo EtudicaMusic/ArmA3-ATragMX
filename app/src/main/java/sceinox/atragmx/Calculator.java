@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import static sceinox.atragmx.R.id.*;
 
-class Calculator {
+public class Calculator {
 
     //region private static fields
     private static Context context;
@@ -89,7 +89,7 @@ class Calculator {
     this c'tor is only used for unit tests.
     ToDo: Implement JUnit4 test suite
      */
-    Calculator(double gunBoreHeight, double gunBulletWeight, double gunBallisticCoefficient, double gunMuzzleVelocity, double gunZeroRange,
+    public Calculator(double gunBoreHeight, double gunBulletWeight, double gunBallisticCoefficient, double gunMuzzleVelocity, double gunZeroRange,
                       double atmsphrTemperature, double atmsphrBarometricPressure, double atmsphrRelativeHumidity,
                       double targetWindStrength, double targetWindDirection, double targetInclinationAngle, double targetTargetSpeed, double targetTargetRange) {
         Calculator.gunBoreHeight = gunBoreHeight;
@@ -109,31 +109,37 @@ class Calculator {
         Calculator.targetTargetRange = targetTargetRange;
     }
 
-    Calculator(Context context){
+    public Calculator(Context context){
         Calculator.context = context;
 
-        Calculator.gunBoreHeight = getInputOfText(context, Text_BHNumber);
-        Calculator.gunBulletWeight = getInputOfText(context, Text_BWNumber);
-        Calculator.gunBallisticCoefficient = getInputOfText(context, Text_C1Number);
-        Calculator.gunMuzzleVelocity = getInputOfText(context, Text_MVNumber);
-        Calculator.gunZeroRange = getInputOfText(context, Text_ZRNumber);
+        Calculator.gunBoreHeight = getInputOfText(Text_BHNumber);
+        Calculator.gunBulletWeight = getInputOfText(Text_BWNumber);
+        Calculator.gunBallisticCoefficient = getInputOfText(Text_C1Number);
+        Calculator.gunMuzzleVelocity = getInputOfText(Text_MVNumber);
+        Calculator.gunZeroRange = getInputOfText(Text_ZRNumber);
 
-        Calculator.atmsphrTemperature = getInputOfText(context, Text_TmpNumber);
-        Calculator.atmsphrBarometricPressure = getInputOfText(context, Text_BPNumber);
-        Calculator.atmsphrRelativeHumidity = getInputOfText(context, Text_RHNumber);
+        Calculator.atmsphrTemperature = getInputOfText(Text_TmpNumber);
+        Calculator.atmsphrBarometricPressure = getInputOfText(Text_BPNumber);
+        Calculator.atmsphrRelativeHumidity = getInputOfText(Text_RHNumber);
 
-        Calculator.targetWindStrength = getInputOfText(context, Text_WSNumber);
-        Calculator.targetWindDirection = getInputOfText(context, Text_WDNumber);
-        Calculator.targetInclinationAngle = getInputOfText(context, Text_IANumber);
-        Calculator.targetTargetSpeed = getInputOfText(context, Text_TSNumber);
-        Calculator.targetTargetRange = getInputOfText(context, Text_TRNumber);
+        Calculator.targetWindStrength = getInputOfText(Text_WSNumber);
+        Calculator.targetWindDirection = getInputOfText(Text_WDNumber);
+        Calculator.targetInclinationAngle = getInputOfText(Text_IANumber);
+        Calculator.targetTargetSpeed = getInputOfText(Text_TSNumber);
+        Calculator.targetTargetRange = getInputOfText(Text_TRNumber);
     }
     //endregion
 
     //region private methods
-    private static double getInputOfText(Context context, int id){
+    private static double getInputOfText(int id){
         return Double.parseDouble(((TextView) ((Activity) context).findViewById(id)).getText().toString());
     }
+
+    public static double calculateSolution(){
+
+        return 0;
+    }
+
 
     //endregion
 }
