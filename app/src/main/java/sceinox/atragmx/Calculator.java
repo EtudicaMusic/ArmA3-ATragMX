@@ -10,6 +10,7 @@ import static sceinox.atragmx.R.id.*;
 public class Calculator {
 
     //region private static fields
+    //// FIXME: 08.11.16 remove static context
     private static Context context;
 
     private static double gunBoreHeight;
@@ -87,7 +88,6 @@ public class Calculator {
 
     /*
     this c'tor is only used for unit tests.
-    ToDo: Implement JUnit4 test suite
      */
     public Calculator(double gunBoreHeight, double gunBulletWeight, double gunBallisticCoefficient, double gunMuzzleVelocity, double gunZeroRange,
                       double atmsphrTemperature, double atmsphrBarometricPressure, double atmsphrRelativeHumidity,
@@ -135,6 +135,7 @@ public class Calculator {
         return Double.parseDouble(((TextView) ((Activity) context).findViewById(id)).getText().toString());
     }
 
+    //ToDo: Implement
     public static double calculateSolution(){
 
         return 0;
