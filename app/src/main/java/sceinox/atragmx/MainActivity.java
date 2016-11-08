@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
     }
 
     //region onClickEvents
@@ -50,8 +50,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
     //endregion
-
-    private void printFireSolution(FireSolution newFS, FireSolution oldFS){
-                TextView absElev= (TextView) this.findViewById(R.id.Text_Abs_Elev);
-    }
 }
