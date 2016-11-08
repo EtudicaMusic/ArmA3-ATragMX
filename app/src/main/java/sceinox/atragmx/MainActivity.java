@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onCalcClick(View view) {
-
+        Calculator calculator = new Calculator(view);
     }
     //endregion
 }
