@@ -251,11 +251,11 @@ class Calculator {
         throw new IllegalArgumentException();
     }
 
-    private double vectorMagnetude(double[] vector){
+    public double vectorMagnetude(double[] vector){
         return Math.sqrt(Math.pow(vector[0],2) + Math.pow(vector[1], 2) + Math.pow(vector[2], 2));
     }
 
-    private double[] vectordiff(double[] x, double[] y){
+    public double[] vectordiff(double[] x, double[] y){
         if (x.length != y.length) throw new ArithmeticException();
 
         double[] res = new double[x.length];
@@ -266,7 +266,7 @@ class Calculator {
         return res;
     }
 
-    private double[] vectorNormalized(double[] x){
+    public double[] vectorNormalized(double[] x){
         double[] res = new double[x.length];
 
         for (int i = 0; i < res.length; i++) {
@@ -276,7 +276,7 @@ class Calculator {
         return res;
     }
 
-    private double[] vectorMultiply(double[] x, double a){
+    public double[] vectorMultiply(double[] x, double a){
         double[] res = new double[x.length];
 
         for (int i = 0; i < res.length; i++) {
@@ -286,7 +286,7 @@ class Calculator {
         return res;
     }
 
-    private double[] vectorAdd(double[] x, double[] y){
+    public double[] vectorAdd(double[] x, double[] y){
         if (x.length != y.length) throw new ArithmeticException();
 
         double[] res = new double[x.length];
