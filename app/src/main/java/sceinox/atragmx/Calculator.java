@@ -5,6 +5,9 @@ import android.content.Context;
 
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static sceinox.atragmx.R.id.*;
 
 class Calculator {
@@ -139,8 +142,160 @@ class Calculator {
 
     //ToDo: Implement
     public double calculateSolution(){
+        double scopeBaseAngle = 0;
+        double simStep = 0;
+        double dragModel = 0;
+        double athmospereModel = 0;
+
+        // res variables
+        double elevation = 0;
+        double windage = 0;
+        double lead = 0;
+        double TOF = 0;
+        double[] trueVelocity = new double[2];
+        double trueSpeed = 0;
+        double kineticEnergy;
+
+
+        // math. helper variables
+        double[] bulletPos = new double[]{
+                0,
+                0,
+                - (gunBoreHeight / 100)
+        };
+        double[] bulletVelocity = new double[]{
+                0,
+                Math.cos(scopeBaseAngle) * gunMuzzleVelocity,
+                Math.sin(scopeBaseAngle) * gunMuzzleVelocity
+        };
+        double[] bulletAccel;
+        double bulletSpeed = 0;
+        double[] gravity = new double[]{
+                0,
+                Math.sin(scopeBaseAngle + targetInclinationAngle) * -9.80665,
+                Math.cos(scopeBaseAngle + targetInclinationAngle) * -9.80665d
+        };
+        double deltaT = 1 / simStep;
+        double[] wind = new double[]{
+                Math.cos(270 - targetWindDirection * 30) * targetWindStrength,
+                Math.sin(270 - targetWindDirection * 30) * targetWindStrength,
+                0
+        };
+        double bc = calculateAthmosperhicCorrection(atmsphrTemperature, atmsphrBarometricPressure, atmsphrRelativeHumidity, athmospereModel);
+
+        // RangeCard helper
+        double n = 0;
+        double range = 0;
+        double rangeFactor = 1.0936133;
+        double rangeIncrement = 0;
+        double endRange = 0;
+        List<Double> rangeCardData = new ArrayList<>();
+
+
+        while (TOF < 15 && bulletPos[1] < targetTargetRange){
+            bulletSpeed = vectorMagnetude(bulletVelocity);
+
+            trueVelocity = vectordiff(bulletVelocity, wind);
+            trueSpeed = vectorMagnetude(trueVelocity);
+
+            double drag = -1 * calculateRetardation(dragModel, bc, trueSpeed);
+            bulletAccel = vectorMultiply(vectorNormalized(trueVelocity), drag);
+
+            bulletAccel = vectorAdd(bulletAccel, gravity);
+
+            bulletVelocity = vectorAdd(bulletVelocity, vectorMultiply(bulletAccel, deltaT));
+            bulletPos = vectorAdd(bulletPos, vectorMultiply(bulletVelocity, deltaT));
+
+            TOF = TOF + deltaT;
+
+            /* RangeCardData */
+            //ToDo: save results to RangeCard
+            range = targetTargetRange + n * rangeIncrement;
+            if (bulletPos[1] * rangeFactor >= range && range < endRange){
+                elevation = Math.atan(bulletPos[2] / bulletPos[1]);
+                windage = Math.atan(bulletPos[0] / bulletPos[1]);
+            }
+            if (range != 0){
+                lead = (targetTargetSpeed * TOF) / (Math.tan(3.38 / 60) * range);
+            }
+            kineticEnergy = 0.5 * (gunBulletWeight / 1000 * Math.pow(bulletSpeed, 2));
+            kineticEnergy = kineticEnergy * 0.737562149;
+            // Ragecard[n] = range, elevation * 60, windage * 60, lead, TOF, bulletSpeed, kineticEnergy
+            // n++;
+            /* RangeCardData end */
+        }
+
+        if (bulletPos[1] > 0){
+            elevation = - Math.atan(bulletPos[2] / bulletPos[1]);
+            windage = - Math.atan(bulletPos[0] / bulletPos[1]);
+        }
+
+        if (targetTargetSpeed != 0){
+            lead = (targetTargetSpeed * TOF) / (Math.tan(3.38 / 60) * targetTargetRange);
+        }
+
+        kineticEnergy = 0.5 * (gunBulletWeight / 1000 * Math.pow(bulletSpeed, 2));
+        kineticEnergy = kineticEnergy * 0.737562149;
 
         return 0;
+    }
+
+    private double calculateRetardation(double dragModel, double bc, double trueSpeed) {
+        //ToDo: Implement
+        throw new IllegalArgumentException();
+    }
+
+
+    private double calculateAthmosperhicCorrection(double atmsphrTemperature, double atmsphrBarometricPressure, double atmsphrRelativeHumidity, double athmospereModel) {
+        //ToDo: Implement
+        throw new IllegalArgumentException();
+    }
+
+    private double vectorMagnetude(double[] vector){
+        return Math.sqrt(Math.pow(vector[0],2) + Math.pow(vector[1], 2) + Math.pow(vector[2], 2));
+    }
+
+    private double[] vectordiff(double[] x, double[] y){
+        if (x.length != y.length) throw new ArithmeticException();
+
+        double[] res = new double[x.length];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = x[i] - y[i];
+        }
+
+        return res;
+    }
+
+    private double[] vectorNormalized(double[] x){
+        double[] res = new double[x.length];
+
+        for (int i = 0; i < res.length; i++) {
+            res[i] = x[i] / (Math.sqrt(Math.pow(x[0], 2) + Math.pow(x[1], 2) + Math.pow(x[2], 2)));
+        }
+
+        return res;
+    }
+
+    private double[] vectorMultiply(double[] x, double a){
+        double[] res = new double[x.length];
+
+        for (int i = 0; i < res.length; i++) {
+            res[i] = x[i] * a;
+        }
+
+        return res;
+    }
+
+    private double[] vectorAdd(double[] x, double[] y){
+        if (x.length != y.length) throw new ArithmeticException();
+
+        double[] res = new double[x.length];
+
+        for (int i = 0; i < res.length; i++) {
+            res[i] = x[i] + y[i];
+        }
+
+        return res;
     }
     //endregion
 }
