@@ -69,7 +69,7 @@
             android:gravity="center"
             android:textColor="#000000"
             android:textStyle="bold"
-            android:layout_weight="1"
+            android:layout_weight="0.48"
             android:background="@color/dim_foreground_disabled_material_dark"
             android:onClick="onAtmsphrClick" />
 

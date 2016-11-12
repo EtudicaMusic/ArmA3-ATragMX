@@ -1,6 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:baselineAligned="false"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <TextView
+            android:text=".408 Chey Tac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/Text_CaliberVal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:textColor="#313131"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:textSize="16sp" />
+
+        <Button
+            android:text="RC"
+            android:id="@+id/Button_RC"
+            android:background="#aeb6b9"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="18sp"
+            android:layout_width="35dp"
+            android:layout_height="30dp" />
+
+        <Button
+            android:text="M"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/Button_RC"
+            android:id="@+id/Button_M"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="#000000"
+            android:textColor="#ffffff"
+            android:textStyle="normal|bold"
+            android:textSize="18sp"
+            android:layout_width="25dp"
+            android:fontFamily="sans-serif" />
+
+        <Button
+            android:text="E"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/Button_M"
+            android:id="@+id/Button_E"
+            android:background="#ffffff"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="18sp" />
+
+        <Button
+            android:text="D"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/Button_E"
+            android:id="@+id/Button_D"
+            android:background="#ffffff"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:textSize="18sp"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="257dp">
+
+        <Button
+            android:text="Atmsphr"
+            android:id="@+id/Button_Atmsphr"
+            android:background="#aeb6b9"
+            android:layout_marginTop="5dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_width="110dp"
+            android:layout_height="25dp" />
+
+        <Button
+            android:text="Gun"
+            android:id="@+id/Button_Gun"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:background="#aeb6b9"
+            android:layout_marginTop="5dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:layout_width="110dp"
+            android:layout_height="25dp" />
+
+        <Button
+            android:text="Target"
+            android:id="@+id/Button_Target"
+            android:background="#aeb6b9"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:layout_width="110dp"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:text="BH"
+            android:layout_below="@+id/Button_Gun"
+            android:layout_alignStart="@+id/Button_Gun"
+            android:id="@+id/Text_BH"
+            android:background="#dddddd"
+            android:layout_width="35dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:paddingStart="5dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:textColor="#000000"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="3.81"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/Text_BH"
+            android:id="@+id/Text_BHVal"
+            android:background="#dddddd"
+            android:layout_alignEnd="@+id/Button_Gun"
+            android:layout_toEndOf="@+id/Text_BH"
+            android:layout_marginEnd="5dp"
+            android:gravity="right|center_horizontal"
+            android:fontFamily="sans-serif"
+            android:paddingEnd="5dp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="BW"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Text_BH"
+            android:layout_alignStart="@+id/Text_BH"
+            android:id="@+id/Text_BW"
+            android:paddingStart="5dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:text="27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_BWVal"
+            android:layout_below="@+id/Text_BHVal"
+            android:layout_alignEnd="@+id/Button_Gun"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@+id/Text_BW"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:gravity="right|center_vertical"
+            android:paddingEnd="5dp" />
+
+        <TextView
+            android:text="C1"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Text_BW"
+            android:layout_alignStart="@+id/Text_BW"
+            android:id="@+id/Text_C1"
+            android:paddingStart="5dp"
+            android:layout_marginTop="5dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:gravity="left|center_vertical"
+            android:textColor="#000000"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="0.389"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_C1Val"
+            android:layout_below="@+id/Text_BWVal"
+            android:layout_alignEnd="@+id/Button_Gun"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:paddingEnd="5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="right|center_vertical"
+            android:textColor="#000000"
+            android:background="#dddddd"
+            android:layout_toEndOf="@+id/Text_C1" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="237dp"
+        android:layout_weight="0.65">
+
+    </RelativeLayout>
 
 </LinearLayout>
