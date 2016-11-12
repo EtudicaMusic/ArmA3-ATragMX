@@ -886,7 +886,8 @@
             android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="14sp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="onGunlistClick"/>
 
         <TextView
             android:layout_width="wrap_content"

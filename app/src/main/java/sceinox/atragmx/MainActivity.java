@@ -49,5 +49,10 @@ public class MainActivity extends AppCompatActivity {
         Calculator calculator = new Calculator(this);
         calculator.calculateSolution();
     }
+
+    public void onGunlistClick(View view){
+
+
+    }
     //endregion
 }
