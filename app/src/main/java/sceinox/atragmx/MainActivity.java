@@ -6,9 +6,11 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
+    Bundle savedInstanceState;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.savedInstanceState=savedInstanceState;
         setContentView(R.layout.activity_main);
     }
 
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onGunlistClick(View view){
-
+        new GunlistActivity(this);
 
     }
     //endregion
