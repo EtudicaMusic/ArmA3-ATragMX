@@ -117,21 +117,21 @@ class Calculator {
     Calculator(Context context){
         this.context = context;
 
-        this.gunBoreHeight = getInputOfText(Text_BHNumber);
-        this.gunBulletWeight = getInputOfText(Text_BWNumber);
-        this.gunBallisticCoefficient = getInputOfText(Text_C1Number);
-        this.gunZeroRange = getInputOfText(Text_ZRNumber);
-        this.gunMuzzleVelocity = getInputOfText(Text_MVNumber);
+        this.gunBoreHeight = getInputOfText(Text_BHVal);
+        this.gunBulletWeight = getInputOfText(Text_BWVal);
+        this.gunBallisticCoefficient = getInputOfText(Text_C1Val);
+        this.gunZeroRange = getInputOfText(Text_ZRVal);
+        this.gunMuzzleVelocity = getInputOfText(Text_MVVal);
 
-        this.atmsphrTemperature = getInputOfText(Text_TmpNumber);
-        this.atmsphrBarometricPressure = getInputOfText(Text_BPNumber);
-        this.atmsphrRelativeHumidity = getInputOfText(Text_RHNumber);
+        this.atmsphrTemperature = getInputOfText(Text_TmpVal);
+        this.atmsphrBarometricPressure = getInputOfText(Text_BPVal);
+        this.atmsphrRelativeHumidity = getInputOfText(Text_RHVal);
 
-        this.targetWindStrength = getInputOfText(Text_WSNumber);
-        this.targetWindDirection = getInputOfText(Text_WDNumber);
-        this.targetInclinationAngle = getInputOfText(Text_IANumber);
-        this.targetTargetSpeed = getInputOfText(Text_TSNumber);
-        this.targetTargetRange = getInputOfText(Text_TRNumber);
+        this.targetWindStrength = getInputOfText(Text_WSVal);
+        this.targetWindDirection = getInputOfText(Text_WDVal);
+        this.targetInclinationAngle = getInputOfText(Text_IAVal);
+        this.targetTargetSpeed = getInputOfText(Text_TSVal);
+        this.targetTargetRange = getInputOfText(Text_TRVal);
     }
     //endregion
 
