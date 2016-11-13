@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     //region onClickEvents
 
     public void onGunClick(View view) {
-
+        startActivity(new Intent(this, GunActivity.class));
     }
 
     public void onAtmsphrClick(View view) {

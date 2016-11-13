@@ -247,7 +247,8 @@
             android:textAllCaps="false"
             android:textSize="16sp"
             android:textStyle="normal|bold"
-            android:fontFamily="sans-serif" />
+            android:fontFamily="sans-serif"
+            android:onClick="onDoneClick" />
 
         <Button
             android:text="Cancel"
@@ -262,7 +263,8 @@
             android:textAllCaps="false"
             android:textSize="16sp"
             android:textStyle="normal|bold"
-            android:fontFamily="sans-serif" />
+            android:fontFamily="sans-serif"
+            android:onClick="onCancelClick" />
 
         <Button
             android:text="Prev"
@@ -277,7 +279,8 @@
             android:textAllCaps="false"
             android:textSize="16sp"
             android:textStyle="normal|bold"
-            android:fontFamily="sans-serif" />
+            android:fontFamily="sans-serif"
+            android:onClick="onPrevClick" />
 
         <Button
             android:text="Next"
@@ -292,6 +295,7 @@
             android:textAllCaps="false"
             android:textSize="16sp"
             android:textStyle="normal|bold"
-            android:fontFamily="sans-serif" />
+            android:fontFamily="sans-serif"
+            android:onClick="onNextClick" />
     </RelativeLayout>
 </LinearLayout>
