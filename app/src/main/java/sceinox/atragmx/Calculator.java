@@ -124,8 +124,8 @@ class Calculator {
         this.gunMuzzleVelocity = getInputOfText(Text_MVVal);
 
         this.atmsphrTemperature = getInputOfText(Text_TmpVal);
-        this.atmsphrBarometricPressure = getInputOfText(Text_BPVal);
-        this.atmsphrRelativeHumidity = getInputOfText(Text_RHVal);
+        //this.atmsphrBarometricPressure = getInputOfText(Text_B);
+        //this.atmsphrRelativeHumidity = getInputOfText(Text_RHVal);
 
         this.targetWindStrength = getInputOfText(Text_WSVal);
         this.targetWindDirection = getInputOfText(Text_WDVal);

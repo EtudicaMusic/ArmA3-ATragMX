@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CalculatorTest {
-    Calculator calculator = new Calculator(0d,0d,0d,0d,0d,0d,0d,0d,0d,0d,0d,0d,0d);
+    private Calculator calculator = new Calculator(0d,0d,0d,0d,0d,0d,0d,0d,0d,0d,0d,0d,0d);
 
     @Test
     public void calculateSolution0() throws Exception {
