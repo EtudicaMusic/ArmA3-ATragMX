@@ -10,7 +10,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:text=".408 Chey Tac"
@@ -584,8 +585,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:id="@+id/LayoutBot"
-        android:layout_weight="0.60">
+        android:id="@+id/LayoutBot">
 
         <TextView
             android:text="Elev"
@@ -804,8 +804,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="76dp"
-        android:layout_weight="2.82">
+        android:layout_height="match_parent">
 
         <Button
             android:text="GunList"
@@ -821,7 +820,8 @@
             android:fontFamily="sans-serif"
             android:layout_height="25dp"
             android:textSize="16sp"
-            android:onClick="onGunlistClick" />
+            android:onClick="onGunlistClick"
+            android:layout_marginTop="15dp" />
 
         <Button
             android:text="Calc"
@@ -837,7 +837,8 @@
             android:textAllCaps="false"
             android:textSize="16sp"
             android:background="#ffffff"
-            android:onClick="onCalcClick" />
+            android:onClick="onCalcClick"
+            android:layout_marginTop="15dp" />
 
         <TextView
             android:text="ATragMX   v0.1"
@@ -846,9 +847,9 @@
             android:id="@+id/Text_VersionVal"
             android:textColor="#808080"
             android:textStyle="normal|bold"
-            android:layout_below="@+id/Button_Calc"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp" />
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
