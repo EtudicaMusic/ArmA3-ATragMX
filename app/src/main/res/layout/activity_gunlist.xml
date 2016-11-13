@@ -12,14 +12,16 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_height="25dp" />
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/List_Gunlist"
-            android:layout_weight="5.15" />
+            android:layout_weight="5.15"
+            android:scrollbarSize="20dp"
+            android:scrollbarStyle="insideInset" />
 
         <Space
             android:layout_width="match_parent"
