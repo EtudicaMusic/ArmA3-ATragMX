@@ -34,7 +34,7 @@ public class GunlistActivity extends AppCompatActivity{
     }
 
     public void onDoneClick(View view) {
-        System.out.println("test");
+        finish();
     }
     //endregion
 

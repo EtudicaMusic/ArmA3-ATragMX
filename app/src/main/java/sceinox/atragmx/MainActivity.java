@@ -16,9 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     //region onClickEvents
-
     public void onGunClick(View view) {
         startActivity(new Intent(this, GunActivity.class));
     }
