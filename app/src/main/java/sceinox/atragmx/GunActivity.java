@@ -31,3 +31,5 @@ public class GunActivity extends AppCompatActivity{
     }
 
 }
+
+//Commas should be replaced with dots (text fields)
