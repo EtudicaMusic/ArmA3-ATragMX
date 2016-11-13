@@ -53,7 +53,6 @@ public class FireProfiles {
 
 
 
-
     static class Profile{
         private double boreHeight;
         private double bulletWeight;
@@ -77,7 +76,7 @@ public class FireProfiles {
         private double targetSpeed;
         private double targetRange;
 
-        //region C'tors
+        //region c'tors
         public Profile() {
             // TODO: update gunStatistic.xml
             this.setGun(null);

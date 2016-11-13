@@ -631,7 +631,7 @@
         <TextView
             android:text="0.0"
             android:layout_height="20dp"
-            android:id="@+id/textView31"
+            android:id="@+id/Text_Elev_CurVal"
             android:layout_below="@+id/Text_Cur"
             android:layout_alignStart="@+id/Text_Cur"
             android:layout_marginTop="5dp"
@@ -672,7 +672,7 @@
             android:layout_height="20dp"
             android:id="@+id/Text_Wind_CurVal"
             android:layout_below="@+id/Text_Elev_AbsVal"
-            android:layout_alignStart="@+id/textView31"
+            android:layout_alignStart="@+id/Text_Elev_CurVal"
             android:layout_marginTop="10dp"
             android:background="#dddddd"
             android:fontFamily="sans-serif"
