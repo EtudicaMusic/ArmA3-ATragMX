@@ -122,7 +122,6 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:inputType="textPersonName"
             android:text="3.81"
             android:ems="10"
             android:id="@+id/Edit_Bore"
@@ -135,12 +134,12 @@
             android:paddingEnd="5dp"
             android:layout_marginEnd="15dp"
             android:layout_marginStart="10dp"
-            android:paddingLeft="15dp" />
+            android:paddingLeft="15dp"
+            android:inputType="numberDecimal" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:inputType="textPersonName"
             android:text="1.04"
             android:ems="10"
             android:id="@+id/Edit_BulletDiam"
@@ -151,12 +150,12 @@
             android:paddingLeft="15dp"
             android:layout_alignTop="@+id/Text_BulletDiam"
             android:layout_alignStart="@+id/Edit_RifleTwist"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:inputType="numberDecimal" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:inputType="textPersonName"
             android:text="27"
             android:ems="10"
             android:id="@+id/Edit_BulletWeight"
@@ -167,12 +166,12 @@
             android:paddingLeft="15dp"
             android:layout_alignTop="@+id/Text_BulletWeight"
             android:layout_alignStart="@+id/Edit_BulletDiam"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:inputType="numberDecimal" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:inputType="textPersonName"
             android:text="0.389"
             android:ems="10"
             android:id="@+id/Edit_C1Coefficient"
@@ -183,12 +182,12 @@
             android:paddingLeft="15dp"
             android:layout_alignTop="@+id/Text_C1Coefficient"
             android:layout_alignStart="@+id/Edit_BulletDiam"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:inputType="numberDecimal" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:inputType="textPersonName"
             android:text="33.02"
             android:ems="10"
             android:id="@+id/Edit_RifleTwist"
@@ -199,12 +198,12 @@
             android:paddingLeft="15dp"
             android:layout_alignTop="@+id/Text_RifleTwist"
             android:layout_alignStart="@+id/Edit_Bore"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:inputType="numberDecimal" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:inputType="textPersonName"
             android:text="910"
             android:ems="10"
             android:id="@+id/Edit_MuzzleVelocity"
@@ -215,12 +214,12 @@
             android:paddingLeft="15dp"
             android:layout_alignTop="@+id/Text_MuzzleVelocity"
             android:layout_alignStart="@+id/Edit_RifleTwist"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:inputType="numberDecimal" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:inputType="textPersonName"
             android:text="100"
             android:ems="10"
             android:id="@+id/Edit_ZeroRange"
@@ -231,7 +230,8 @@
             android:paddingLeft="15dp"
             android:layout_alignTop="@+id/Text_ZeroRange"
             android:layout_alignStart="@+id/Edit_MuzzleVelocity"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:inputType="numberDecimal" />
 
         <Button
             android:text="Done"
