@@ -1,5 +1,6 @@
 package sceinox.atragmx;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.savedInstanceState=savedInstanceState;
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_main);
     }
 
     //region onClickEvents
@@ -49,12 +50,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCalcClick(View view) {
         Calculator calculator = new Calculator(this);
-        calculator.calculateSolution();
+        //calculator.calculateSolution();
     }
 
     public void onGunlistClick(View view){
-        new GunlistActivity(this);
-
+        startActivity(new Intent(this, GunlistActivity.class));
     }
     //endregion
 }
