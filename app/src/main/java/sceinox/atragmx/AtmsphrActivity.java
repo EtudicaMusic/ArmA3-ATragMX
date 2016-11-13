@@ -23,6 +23,7 @@ public class AtmsphrActivity extends AppCompatActivity{
     }
 
     public void onPrevClick(View view){
+        finish();
         startActivity(new Intent(this, GunActivity.class));
     }
 
