@@ -178,7 +178,7 @@
 
         <EditText
             android:layout_width="150dp"
-            android:inputType="textPersonName|numberDecimal"
+            android:inputType="numberSigned|numberDecimal"
             android:text="12"
             android:ems="10"
             android:layout_alignTop="@+id/Text_Temperature"
