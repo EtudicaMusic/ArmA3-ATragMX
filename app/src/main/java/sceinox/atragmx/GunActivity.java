@@ -13,7 +13,6 @@ public class GunActivity extends AppCompatActivity{
         setContentView(R.layout.activity_gun0);
     }
 
-
     public void onDoneClick(View view){
         //ToDo: Save Values
         finish();
@@ -34,5 +33,4 @@ public class GunActivity extends AppCompatActivity{
     }
 
 }
-
 //Commas should be replaced with dots (text fields)
