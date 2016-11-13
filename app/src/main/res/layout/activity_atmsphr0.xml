@@ -21,8 +21,7 @@
             android:layout_marginStart="8dp"
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/Button_Done"
-            android:layout_marginBottom="20dp"
-            android:onClick="onCancelClick" />
+            android:layout_marginBottom="20dp" />
 
         <Button
             android:text="Prev"
@@ -38,8 +37,7 @@
             android:layout_marginStart="8dp"
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/Button_Cancel"
-            android:layout_marginBottom="20dp"
-            android:onClick="onPrevClick" />
+            android:layout_marginBottom="20dp" />
 
         <Button
             android:text="Done"
@@ -55,8 +53,7 @@
             android:layout_marginStart="8dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="20dp"
-            android:onClick="onDoneClick" />
+            android:layout_marginBottom="20dp" />
 
         <Button
             android:text="Next"
@@ -72,7 +69,123 @@
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/Button_Prev"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="20dp"
-            android:onClick="onNextClick" />
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:text="Default"
+            android:id="@+id/Button_Default"
+            android:layout_below="@+id/Text_CalcMethod"
+            android:layout_alignStart="@+id/Button_Done"
+            android:layout_marginStart="30dp"
+            android:layout_width="80dp"
+            android:background="#313131"
+            android:fontFamily="sans-serif"
+            android:textAllCaps="false"
+            android:textColor="#dddddd"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:text="Calc Method"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:id="@+id/Text_CalcMethod"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/Button_Default"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:textStyle="normal|bold"
+            android:textColor="#000000"
+            android:background="#dddddd" />
+
+        <Button
+            android:text="AT"
+            android:id="@+id/Button_AT"
+            android:textStyle="normal|bold"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif"
+            android:background="#000000"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/Text_CalcMethod"
+            android:layout_toEndOf="@+id/Button_Default"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp" />
+
+        <Button
+            android:text="TBH"
+            android:id="@+id/Button_TBH"
+            android:textStyle="normal|bold"
+            android:textColor="#000000"
+            android:fontFamily="sans-serif"
+            android:background="#ffffff"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/Text_CalcMethod"
+            android:layout_toEndOf="@+id/Button_AT"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp" />
+
+        <TextView
+            android:text="Altitude (m)"
+            android:layout_below="@+id/Button_Default"
+            android:layout_alignStart="@+id/Button_Default"
+            android:layout_marginTop="50dp"
+            android:id="@+id/Text_Altitude"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:gravity="center_vertical" />
+
+        <TextView
+            android:text="Temperature (°C)"
+            android:layout_below="@+id/Text_Altitude"
+            android:layout_alignStart="@+id/Text_Altitude"
+            android:id="@+id/Text_Temperature"
+            android:layout_marginTop="20dp"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:gravity="center_vertical" />
+
+        <EditText
+            android:layout_width="150dp"
+            android:inputType="textPersonName|numberDecimal"
+            android:text="2664"
+            android:ems="10"
+            android:layout_alignTop="@+id/Text_Altitude"
+            android:layout_toEndOf="@+id/Button_Cancel"
+            android:id="@+id/Edit_Altitude"
+            android:layout_above="@+id/Text_Temperature"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:paddingStart="10dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_width="150dp"
+            android:inputType="textPersonName|numberDecimal"
+            android:text="12"
+            android:ems="10"
+            android:layout_alignTop="@+id/Text_Temperature"
+            android:layout_alignStart="@+id/Edit_Altitude"
+            android:id="@+id/Edit_Temperature"
+            android:layout_alignBottom="@+id/Text_Temperature"
+            android:layout_height="30dp"
+            android:paddingStart="10dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textSize="16sp" />
     </RelativeLayout>
 </LinearLayout>
