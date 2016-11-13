@@ -292,7 +292,7 @@
             android:text="12"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:id="@+id/Text_TempVal"
+            android:id="@+id/Text_TmpVal"
             android:layout_alignTop="@+id/Text_Tmp"
             android:layout_alignEnd="@+id/Text_AltVal"
             android:textColor="#313131"
@@ -339,7 +339,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/Text_RH"
-            android:layout_alignEnd="@+id/Text_TempVal"
+            android:layout_alignEnd="@+id/Text_TmpVal"
             android:id="@+id/Text_RHVal"
             android:fontFamily="sans-serif"
             android:textSize="16sp"
@@ -606,8 +606,8 @@
             android:textStyle="normal|bold"
             android:textSize="16sp"
             android:layout_width="35dp"
-            android:layout_alignBaseline="@+id/Text_TempVal"
-            android:layout_alignBottom="@+id/Text_TempVal"
+            android:layout_alignBaseline="@+id/Text_TmpVal"
+            android:layout_alignBottom="@+id/Text_TmpVal"
             android:layout_alignStart="@+id/Text_WS" />
 
     </RelativeLayout>

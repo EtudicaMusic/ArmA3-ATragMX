@@ -39,7 +39,8 @@
             android:textStyle="normal|bold"
             android:textSize="18sp"
             android:layout_width="35dp"
-            android:layout_height="30dp" />
+            android:layout_height="30dp"
+            android:onClick="onRCClick" />
 
         <Button
             android:text="M"
@@ -89,7 +90,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="257dp">
+        android:layout_height="wrap_content"
+        android:layout_weight="1.03">
 
         <Button
             android:text="Atmsphr"
@@ -104,7 +106,8 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:layout_width="110dp"
-            android:layout_height="25dp" />
+            android:layout_height="25dp"
+            android:onClick="onAtmsphrClick" />
 
         <Button
             android:text="Gun"
@@ -120,7 +123,8 @@
             android:textSize="16sp"
             android:fontFamily="sans-serif"
             android:layout_width="110dp"
-            android:layout_height="25dp" />
+            android:layout_height="25dp"
+            android:onClick="onGunClick" />
 
         <Button
             android:text="Target"
@@ -136,7 +140,8 @@
             android:textSize="16sp"
             android:fontFamily="sans-serif"
             android:layout_width="110dp"
-            android:layout_height="25dp" />
+            android:layout_height="25dp"
+            android:onClick="onTargetClick" />
 
         <TextView
             android:text="BH"
@@ -228,6 +233,335 @@
             android:textColor="#000000"
             android:background="#dddddd"
             android:layout_toEndOf="@+id/Text_C1" />
+
+        <Button
+            android:text="MV"
+            android:layout_width="35dp"
+            android:layout_height="17dp"
+            android:id="@+id/Button_MV"
+            android:background="#aeb6b9"
+            android:layout_below="@+id/Text_C1"
+            android:layout_alignStart="@+id/Text_C1"
+            android:layout_marginTop="5dp"
+            android:paddingStart="5dp"
+            android:gravity="left|center_vertical|center_horizontal"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:text="910"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_MVVal"
+            android:layout_alignEnd="@+id/Button_Gun"
+            android:layout_marginEnd="5dp"
+            android:paddingEnd="5dp"
+            android:layout_toEndOf="@+id/Button_MV"
+            android:background="#dddddd"
+            android:layout_alignBottom="@+id/Button_MV"
+            android:layout_alignTop="@+id/Button_MV"
+            android:gravity="right|center_vertical"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="ZR"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Button_MV"
+            android:layout_alignStart="@+id/Button_MV"
+            android:id="@+id/Text_ZR"
+            android:layout_marginTop="5dp"
+            android:paddingStart="5dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:gravity="left"
+            android:textStyle="normal|bold"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/Text_ZR"
+            android:layout_alignEnd="@+id/Button_Gun"
+            android:id="@+id/Text_ZRVal"
+            android:layout_toEndOf="@+id/Text_ZR"
+            android:layout_marginEnd="5dp"
+            android:paddingEnd="5dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:gravity="right"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="Alt"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Alt"
+            android:layout_alignStart="@+id/Button_Atmsphr"
+            android:background="#dddddd"
+            android:layout_marginStart="5dp"
+            android:paddingStart="5dp"
+            android:layout_above="@+id/Text_BWVal"
+            android:layout_alignTop="@+id/Text_BHVal"
+            android:gravity="left"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="2664"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_AltVal"
+            android:layout_below="@+id/Button_Atmsphr"
+            android:layout_alignEnd="@+id/Button_Atmsphr"
+            android:layout_toEndOf="@+id/Text_Alt"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:paddingEnd="5dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:gravity="right|center_vertical"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="Tmp"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Tmp"
+            android:layout_below="@+id/Text_Alt"
+            android:layout_alignStart="@+id/Text_Alt"
+            android:layout_marginTop="5dp"
+            android:paddingStart="5dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:gravity="left"
+            android:textColor="#000000"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_TmpVal"
+            android:layout_below="@+id/Text_AltVal"
+            android:layout_alignEnd="@+id/Button_Atmsphr"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:paddingEnd="5dp"
+            android:layout_toEndOf="@+id/Text_Tmp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:gravity="right|center_vertical"
+            android:textColor="#000000" />
+
+        <Button
+            android:text="A"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:id="@+id/Button_A"
+            android:background="#000000"
+            android:fontFamily="sans-serif"
+            android:textColor="#ffffff"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_alignBottom="@+id/Text_ZRVal"
+            android:layout_alignStart="@+id/Button_Atmsphr"
+            android:layout_marginStart="5dp" />
+
+        <Button
+            android:text="B"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:id="@+id/Button_B"
+            android:layout_alignTop="@+id/Button_A"
+            android:layout_toEndOf="@+id/Button_A"
+            android:background="#ffffff"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp" />
+
+        <Button
+            android:text="C"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:id="@+id/Button_C"
+            android:layout_alignTop="@+id/Button_B"
+            android:layout_toEndOf="@+id/Button_B"
+            android:background="#ffffff"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="normal|bold" />
+
+        <Button
+            android:text="D"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:id="@+id/Button_D_Profile"
+            android:layout_alignTop="@+id/Button_C"
+            android:layout_toEndOf="@+id/Button_C"
+            android:textStyle="normal|bold"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:background="#ffffff" />
+
+        <TextView
+            android:text="WS"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_WS"
+            android:layout_below="@+id/Button_Target"
+            android:layout_alignStart="@+id/Button_Target"
+            android:background="#dddddd"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:paddingStart="5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="left"
+            android:textColor="#000000"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="4.4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_WSVal"
+            android:layout_below="@+id/Button_Target"
+            android:layout_alignEnd="@+id/Button_Target"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@+id/Text_WS"
+            android:paddingEnd="5dp"
+            android:background="#dddddd"
+            android:gravity="right"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="WD"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_WD"
+            android:layout_below="@+id/Text_WS"
+            android:layout_alignStart="@+id/Text_WS"
+            android:layout_marginTop="5dp"
+            android:paddingStart="5dp"
+            android:background="#dddddd"
+            android:textStyle="normal|bold"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_WDVal"
+            android:layout_below="@+id/Text_WSVal"
+            android:layout_alignEnd="@+id/Button_Target"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:paddingEnd="5dp"
+            android:layout_toEndOf="@+id/Text_WD"
+            android:background="#dddddd"
+            android:gravity="right"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="IA"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_IA"
+            android:layout_below="@+id/Text_WD"
+            android:layout_alignStart="@+id/Text_WD"
+            android:layout_marginTop="5dp"
+            android:paddingStart="5dp"
+            android:background="#dddddd"
+            android:gravity="left"
+            android:textColor="#000000"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="-11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_IAVal"
+            android:layout_below="@+id/Text_WDVal"
+            android:layout_alignEnd="@+id/Button_Target"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:paddingEnd="5dp"
+            android:layout_toEndOf="@+id/Text_IA"
+            android:background="#dddddd"
+            android:gravity="right"
+            android:textColor="#000000" />
+
+        <Button
+            android:text="TS"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_TS"
+            android:background="#aeb6b9"
+            android:layout_below="@+id/Text_IA"
+            android:layout_alignStart="@+id/Text_IA"
+            android:layout_marginTop="5dp"
+            android:paddingStart="5dp"
+            android:fontFamily="sans-serif"
+            android:gravity="left|center_vertical|center_horizontal"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:layout_toStartOf="@+id/Text_IAVal"
+            android:layout_alignBottom="@+id/Text_MVVal" />
+
+        <Button
+            android:text="TR"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_TR"
+            android:layout_below="@+id/Button_TS"
+            android:layout_alignStart="@+id/Button_TS"
+            android:layout_marginTop="5dp"
+            android:paddingStart="5dp"
+            android:background="#aeb6b9"
+            android:gravity="left|center_vertical|center_horizontal"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:layout_alignBottom="@+id/Button_D_Profile" />
+
+        <TextView
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_TSVal"
+            android:layout_below="@+id/Text_IAVal"
+            android:layout_alignEnd="@+id/Button_Target"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:paddingEnd="5dp"
+            android:layout_toEndOf="@+id/Button_TS"
+            android:background="#dddddd"
+            android:gravity="right"
+            android:textColor="#000000"
+            android:layout_above="@+id/Button_TR" />
+
+        <TextView
+            android:text="1600"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_TRVal"
+            android:layout_alignEnd="@+id/Text_TSVal"
+            android:paddingEnd="5dp"
+            android:layout_toEndOf="@+id/Button_TR"
+            android:background="#dddddd"
+            android:gravity="right|center_vertical"
+            android:textColor="#000000"
+            android:layout_alignBottom="@+id/Button_TR"
+            android:layout_alignTop="@+id/Button_TR" />
 
     </RelativeLayout>
 
