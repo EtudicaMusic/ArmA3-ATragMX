@@ -28,6 +28,7 @@ public class AtmsphrActivity extends AppCompatActivity{
     }
 
     public void onNextClick(View view){
-        System.out.println("next");
+        finish();
+        startActivity(new Intent(this, TargetActivity.class));
     }
 }

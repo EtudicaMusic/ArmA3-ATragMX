@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onTargetClick(View view) {
-
+        startActivity(new Intent(this, TargetActivity.class));
     }
 
     public void onRCClick(View view) {

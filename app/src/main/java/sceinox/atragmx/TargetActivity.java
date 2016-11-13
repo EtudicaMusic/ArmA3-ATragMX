@@ -1,18 +1,19 @@
 package sceinox.atragmx;
 
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class GunActivity extends AppCompatActivity{
+public class TargetActivity extends AppCompatActivity{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gun0);
+        setContentView(R.layout.activity_target0);
     }
-
 
     public void onDoneClick(View view){
         //ToDo: Save Values
@@ -25,14 +26,11 @@ public class GunActivity extends AppCompatActivity{
 
     public void onPrevClick(View view){
         finish();
-        startActivity(new Intent(this, TargetActivity.class));
+        startActivity(new Intent(this, AtmsphrActivity.class));
     }
 
     public void onNextClick(View view){
         finish();
-        startActivity(new Intent(this, AtmsphrActivity.class));
+        startActivity(new Intent(this, GunActivity.class));
     }
-
 }
-
-//Commas should be replaced with dots (text fields)
