@@ -91,7 +91,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1.03">
+        android:layout_weight="0.04">
 
         <Button
             android:text="Atmsphr"
@@ -237,7 +237,6 @@
         <Button
             android:text="MV"
             android:layout_width="35dp"
-            android:layout_height="17dp"
             android:id="@+id/Button_MV"
             android:background="#aeb6b9"
             android:layout_below="@+id/Text_C1"
@@ -248,7 +247,8 @@
             android:fontFamily="sans-serif"
             android:textColor="#000000"
             android:textStyle="normal|bold"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:layout_height="19dp" />
 
         <TextView
             android:text="910"
@@ -503,7 +503,6 @@
         <Button
             android:text="TS"
             android:layout_width="35dp"
-            android:layout_height="wrap_content"
             android:id="@+id/Button_TS"
             android:background="#aeb6b9"
             android:layout_below="@+id/Text_IA"
@@ -515,12 +514,13 @@
             android:textColor="#000000"
             android:textStyle="normal|bold"
             android:layout_toStartOf="@+id/Text_IAVal"
-            android:layout_alignBottom="@+id/Text_MVVal" />
+            android:layout_alignBottom="@+id/Text_MVVal"
+            android:layout_height="19dp" />
 
         <Button
             android:text="TR"
             android:layout_width="35dp"
-            android:layout_height="wrap_content"
+            android:layout_height="18dp"
             android:id="@+id/Button_TR"
             android:layout_below="@+id/Button_TS"
             android:layout_alignStart="@+id/Button_TS"
@@ -563,12 +563,286 @@
             android:layout_alignBottom="@+id/Button_TR"
             android:layout_alignTop="@+id/Button_TR" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:id="@+id/Spacer"
+            android:layout_below="@+id/Button_A"
+            android:layout_centerHorizontal="true"
+            android:background="#aeb6b9"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="3dp" />
+
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="237dp"
-        android:layout_weight="0.65">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:id="@+id/LayoutBot">
+
+        <TextView
+            android:text="Elev"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Elev"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="50dp"
+            android:gravity="center_vertical|center_horizontal" />
+
+        <TextView
+            android:text="14.02"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Elev_AbsVal"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/Text_Elev"
+            android:layout_marginTop="30dp"
+            android:background="#dddddd"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#000000"
+            android:fontFamily="sans-serif"
+            android:layout_width="70dp"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:text="14.02"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Elev_RelVal"
+            android:layout_below="@+id/Text_Rel"
+            android:layout_toEndOf="@+id/Text_Elev_AbsVal"
+            android:background="#dddddd"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="10dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="Abs"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Abs"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/Text_Rel"
+            android:layout_marginTop="6dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:text="Rel"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Rel"
+            android:layout_alignBaseline="@+id/Text_Abs"
+            android:layout_alignBottom="@+id/Text_Abs"
+            android:layout_alignStart="@+id/Text_Elev_RelVal"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#000000"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="Cur"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Cur"
+            android:layout_alignBaseline="@+id/Text_Rel"
+            android:layout_alignBottom="@+id/Text_Rel"
+            android:layout_toEndOf="@+id/Text_Rel"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:text="0.0"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView31"
+            android:layout_below="@+id/Text_Cur"
+            android:layout_alignStart="@+id/Text_Cur"
+            android:layout_marginTop="7dp"
+            android:background="#dddddd"
+            android:layout_width="70dp"
+            android:textColor="#000000"
+            android:gravity="center_vertical|center_horizontal" />
+
+        <TextView
+            android:text="Wind"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Wind"
+            android:layout_below="@+id/Text_Elev_RelVal"
+            android:layout_alignStart="@+id/Text_Elev"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif" />
+
+        <TextView
+            android:text="0.96L"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Wind_RelVal"
+            android:layout_below="@+id/Text_Elev_AbsVal"
+            android:layout_alignStart="@+id/Text_Elev_RelVal"
+            android:layout_marginTop="10dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="0.96L"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Wind_AbsVal"
+            android:layout_alignBaseline="@+id/Text_Wind"
+            android:layout_alignBottom="@+id/Text_Wind"
+            android:layout_alignStart="@+id/Text_Elev_AbsVal"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="0.0"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Wind_CurVal"
+            android:layout_below="@+id/Text_Elev_AbsVal"
+            android:layout_alignStart="@+id/textView31"
+            android:layout_marginTop="10dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#000000" />
+
+        <TextView
+            android:text="0.0"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_Lead_AbsVal"
+            android:layout_below="@+id/Text_Wind_RelVal"
+            android:layout_alignStart="@+id/Text_Wind_AbsVal"
+            android:layout_marginTop="10dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical|center_horizontal"
+            android:textColor="#000000" />
+
+        <Button
+            android:text="Lead"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Lead"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"
+            android:background="#aeb6b9"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_below="@+id/Text_Wind"
+            android:layout_alignStart="@+id/Text_Wind"
+            android:layout_alignBottom="@+id/Text_Lead_AbsVal"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false" />
+
+        <Button
+            android:text="Reset"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Reset"
+            android:layout_below="@+id/Text_Wind_RelVal"
+            android:layout_alignStart="@+id/Text_Wind_RelVal"
+            android:layout_alignBottom="@+id/Text_Lead_AbsVal"
+            android:layout_marginTop="10dp"
+            android:background="#ffffff"
+            android:textColor="#000000"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold" />
+
+        <Button
+            android:text="Update"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Update"
+            android:layout_below="@+id/Text_Wind_CurVal"
+            android:layout_alignStart="@+id/Text_Wind_CurVal"
+            android:layout_marginTop="10dp"
+            android:layout_alignBottom="@+id/Button_Reset"
+            android:textColor="#000000"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:background="#ffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:id="@+id/Spacer2"
+            android:background="#aeb6b9"
+            android:layout_height="3dp"
+            android:layout_below="@+id/Text_Lead_AbsVal"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:layout_weight="0.85">
+
+        <Button
+            android:text="GunList"
+            android:layout_width="70dp"
+            android:id="@+id/Button_GunList"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:background="#aeb6b9"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:fontFamily="sans-serif"
+            android:layout_height="25dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:text="Calc"
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:id="@+id/Button_Calc"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:background="#ffffff" />
+
+        <TextView
+            android:text="ATragMX   v0.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Text_VersionVal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#808080"
+            android:textStyle="normal|bold" />
 
     </RelativeLayout>
 
