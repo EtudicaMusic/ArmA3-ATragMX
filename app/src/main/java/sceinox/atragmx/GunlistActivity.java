@@ -14,6 +14,7 @@ public class GunlistActivity extends AppCompatActivity{
 
     //region onClickEvents
     public void onOpenClick(View view) {
+        //TODO: save values
         System.out.println("test");
     }
 
