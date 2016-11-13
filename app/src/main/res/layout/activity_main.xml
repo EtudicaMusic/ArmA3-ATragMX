@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="42dp">
+        android:layout_height="50dp">
 
         <TextView
             android:text=".408 Chey Tac"
@@ -90,8 +90,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.04">
+        android:layout_height="232dp">
 
         <Button
             android:text="Atmsphr"
@@ -151,7 +150,7 @@
             android:background="#dddddd"
             android:layout_width="35dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="5dp"
             android:fontFamily="sans-serif"
             android:textStyle="normal|bold"
@@ -185,7 +184,7 @@
             android:fontFamily="sans-serif"
             android:textColor="#000000"
             android:textStyle="normal|bold"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_height="25dp"
             android:gravity="left|center_vertical|center_horizontal" />
 
@@ -195,7 +194,7 @@
             android:id="@+id/Text_BWVal"
             android:layout_below="@+id/Text_BHVal"
             android:layout_alignEnd="@+id/Button_Gun"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
             android:layout_toEndOf="@+id/Text_BW"
             android:background="#dddddd"
@@ -212,7 +211,7 @@
             android:layout_alignStart="@+id/Text_BW"
             android:id="@+id/Text_C1"
             android:paddingStart="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:background="#dddddd"
             android:fontFamily="sans-serif"
             android:gravity="left|center_vertical|center_horizontal"
@@ -226,7 +225,7 @@
             android:id="@+id/Text_C1Val"
             android:layout_below="@+id/Text_BWVal"
             android:layout_alignEnd="@+id/Button_Gun"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
             android:paddingEnd="5dp"
             android:fontFamily="sans-serif"
@@ -243,7 +242,7 @@
             android:background="#aeb6b9"
             android:layout_below="@+id/Text_C1"
             android:layout_alignStart="@+id/Text_C1"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="5dp"
             android:gravity="left|center_vertical|center_horizontal"
             android:fontFamily="sans-serif"
@@ -274,7 +273,7 @@
             android:layout_below="@+id/Button_MV"
             android:layout_alignStart="@+id/Button_MV"
             android:id="@+id/Text_ZR"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="5dp"
             android:background="#dddddd"
             android:fontFamily="sans-serif"
@@ -321,7 +320,7 @@
             android:layout_below="@+id/Button_Atmsphr"
             android:layout_alignEnd="@+id/Button_Atmsphr"
             android:layout_toEndOf="@+id/Text_Alt"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
             android:paddingEnd="5dp"
             android:background="#dddddd"
@@ -336,7 +335,7 @@
             android:id="@+id/Text_Tmp"
             android:layout_below="@+id/Text_Alt"
             android:layout_alignStart="@+id/Text_Alt"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="5dp"
             android:background="#dddddd"
             android:fontFamily="sans-serif"
@@ -351,7 +350,7 @@
             android:id="@+id/Text_TmpVal"
             android:layout_below="@+id/Text_AltVal"
             android:layout_alignEnd="@+id/Button_Atmsphr"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
             android:paddingEnd="5dp"
             android:layout_toEndOf="@+id/Text_Tmp"
@@ -421,7 +420,7 @@
             android:layout_below="@+id/Button_Target"
             android:layout_alignStart="@+id/Button_Target"
             android:background="#dddddd"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="5dp"
             android:paddingStart="5dp"
             android:fontFamily="sans-serif"
@@ -436,7 +435,7 @@
             android:id="@+id/Text_WSVal"
             android:layout_below="@+id/Button_Target"
             android:layout_alignEnd="@+id/Button_Target"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
             android:layout_toEndOf="@+id/Text_WS"
             android:paddingEnd="5dp"
@@ -451,7 +450,7 @@
             android:id="@+id/Text_WD"
             android:layout_below="@+id/Text_WS"
             android:layout_alignStart="@+id/Text_WS"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="5dp"
             android:background="#dddddd"
             android:textStyle="normal|bold"
@@ -466,7 +465,7 @@
             android:layout_below="@+id/Text_WSVal"
             android:layout_alignEnd="@+id/Button_Target"
             android:layout_marginEnd="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingEnd="5dp"
             android:layout_toEndOf="@+id/Text_WD"
             android:background="#dddddd"
@@ -480,7 +479,7 @@
             android:id="@+id/Text_IA"
             android:layout_below="@+id/Text_WD"
             android:layout_alignStart="@+id/Text_WD"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="5dp"
             android:background="#dddddd"
             android:gravity="left|center_vertical|center_horizontal"
@@ -494,7 +493,7 @@
             android:id="@+id/Text_IAVal"
             android:layout_below="@+id/Text_WDVal"
             android:layout_alignEnd="@+id/Button_Target"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
             android:paddingEnd="5dp"
             android:layout_toEndOf="@+id/Text_IA"
@@ -510,7 +509,7 @@
             android:background="#aeb6b9"
             android:layout_below="@+id/Text_IA"
             android:layout_alignStart="@+id/Text_IA"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="5dp"
             android:fontFamily="sans-serif"
             android:gravity="left|center_vertical|center_horizontal"
@@ -527,7 +526,7 @@
             android:id="@+id/Button_TR"
             android:layout_below="@+id/Button_TS"
             android:layout_alignStart="@+id/Button_TS"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:paddingStart="5dp"
             android:background="#aeb6b9"
             android:gravity="left|center_vertical|center_horizontal"
@@ -544,7 +543,7 @@
             android:id="@+id/Text_TSVal"
             android:layout_below="@+id/Text_IAVal"
             android:layout_alignEnd="@+id/Button_Target"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="5dp"
             android:paddingEnd="5dp"
             android:layout_toEndOf="@+id/Button_TS"
@@ -585,7 +584,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:id="@+id/LayoutBot">
+        android:id="@+id/LayoutBot"
+        android:layout_weight="0.60">
 
         <TextView
             android:text="Elev"
@@ -742,7 +742,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/Spacer2"
             android:background="#aeb6b9"
             android:layout_height="3dp"
@@ -804,8 +804,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="132dp"
-        android:layout_weight="0.85">
+        android:layout_height="76dp"
+        android:layout_weight="2.82">
 
         <Button
             android:text="GunList"
@@ -815,7 +815,6 @@
             android:layout_alignParentStart="true"
             android:background="#aeb6b9"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
             android:textAllCaps="false"
             android:textColor="#000000"
             android:textStyle="normal|bold"
@@ -831,7 +830,6 @@
             android:id="@+id/Button_Calc"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
             android:fontFamily="sans-serif"
             android:textColor="#000000"
@@ -846,10 +844,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Text_VersionVal"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:textColor="#808080"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:layout_below="@+id/Button_Calc"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp" />
 
     </RelativeLayout>
 
