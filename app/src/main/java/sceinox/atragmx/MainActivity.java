@@ -13,10 +13,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.savedInstanceState=savedInstanceState;
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_main);
     }
 
+
     //region onClickEvents
+
     public void onGunClick(View view) {
 
     }
@@ -58,4 +60,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, GunlistActivity.class));
     }
     //endregion
+
 }

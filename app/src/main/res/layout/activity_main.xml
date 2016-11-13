@@ -518,7 +518,8 @@
             android:textStyle="normal|bold"
             android:layout_toStartOf="@+id/Text_IAVal"
             android:layout_alignBottom="@+id/Text_MVVal"
-            android:layout_height="25dp" />
+            android:layout_height="25dp"
+            android:onClick="onTSClick" />
 
         <Button
             android:text="TR"
@@ -534,7 +535,8 @@
             android:textColor="#000000"
             android:textStyle="normal|bold"
             android:layout_alignBottom="@+id/Button_D_Profile"
-            android:layout_height="25dp" />
+            android:layout_height="25dp"
+            android:onClick="onTRClick" />
 
         <TextView
             android:text="0"
@@ -719,7 +721,8 @@
             android:textColor="#000000"
             android:textAllCaps="false"
             android:fontFamily="sans-serif"
-            android:textStyle="normal|bold" />
+            android:textStyle="normal|bold"
+            android:onClick="onResetClick" />
 
         <Button
             android:text="Update"
@@ -734,7 +737,8 @@
             android:textAllCaps="false"
             android:fontFamily="sans-serif"
             android:textStyle="normal|bold"
-            android:background="#ffffff" />
+            android:background="#ffffff"
+            android:onClick="onUpdateClick" />
 
         <TextView
             android:layout_width="match_parent"
@@ -817,7 +821,8 @@
             android:textStyle="normal|bold"
             android:fontFamily="sans-serif"
             android:layout_height="25dp"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:onClick="onGunlistClick" />
 
         <Button
             android:text="Calc"
@@ -833,7 +838,8 @@
             android:textStyle="normal|bold"
             android:textAllCaps="false"
             android:textSize="16sp"
-            android:background="#ffffff" />
+            android:background="#ffffff"
+            android:onClick="onCalcClick" />
 
         <TextView
             android:text="ATragMX   v0.1"
