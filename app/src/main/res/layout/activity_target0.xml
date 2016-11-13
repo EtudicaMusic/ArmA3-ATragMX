@@ -167,33 +167,209 @@
 
         <EditText
             android:layout_height="20dp"
-            android:inputType="textPersonName"
             android:text="0"
             android:ems="10"
             android:id="@+id/editText8"
-            android:layout_toEndOf="@+id/Text_Latitude"
-            android:layout_marginStart="20dp"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="15sp"
             android:layout_above="@+id/Text_DirOfFire"
             android:background="#dddddd"
-            android:paddingStart="10dp"
-            android:layout_width="100dp" />
+            android:paddingStart="5dp"
+            android:layout_width="100dp"
+            android:inputType="numberDecimal"
+            android:layout_alignEnd="@+id/Edit_WindSpeed2"
+            android:layout_alignStart="@+id/Edit_WindSpeed1"
+            android:gravity="left|center_vertical" />
 
         <EditText
             android:layout_height="20dp"
-            android:inputType="textPersonName"
             android:text="134"
             android:ems="10"
             android:id="@+id/Edit_DirOfFire"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="15sp"
             android:background="#dddddd"
-            android:paddingStart="10dp"
+            android:paddingStart="5dp"
             android:layout_width="100dp"
             android:layout_alignBaseline="@+id/Text_DirOfFire"
             android:layout_alignBottom="@+id/Text_DirOfFire"
-            android:layout_alignStart="@+id/editText8" />
+            android:layout_alignStart="@+id/editText8"
+            android:inputType="numberDecimal"
+            android:layout_alignEnd="@+id/Edit_WindSpeed2"
+            android:gravity="left|center_vertical" />
+
+        <TextView
+            android:text="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/Text_WindSpeed"
+            android:layout_toEndOf="@+id/Text_WindSpeed"
+            android:id="@+id/Text_1"
+            android:textColor="#313131"
+            android:layout_marginStart="14dp"
+            android:textSize="12sp" />
+
+        <TextView
+            android:text="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/Edit_WindSpeed1"
+            android:layout_toEndOf="@+id/Edit_WindSpeed1"
+            android:id="@+id/Text_2"
+            android:textColor="#313131"
+            android:textSize="12sp"
+            android:layout_alignStart="@+id/Text_d" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:ems="10"
+            android:id="@+id/Edit_WindSpeed2"
+            android:layout_alignTop="@+id/Text_2"
+            android:layout_alignStart="@+id/Button_Next"
+            android:layout_width="50dp"
+            android:background="#dddddd"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:layout_alignBottom="@+id/Edit_WindSpeed1"
+            android:textSize="15sp"
+            android:paddingStart="5dp"
+            android:layout_marginStart="12dp"
+            android:inputType="numberDecimal"
+            android:gravity="left|center_vertical" />
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:text="11"
+            android:ems="10"
+            android:layout_alignTop="@+id/Text_WindDirection"
+            android:id="@+id/Edit_WindDirection"
+            android:layout_above="@+id/Text_InclinationAngle"
+            android:background="#dddddd"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:layout_alignEnd="@+id/Edit_WindSpeed2"
+            android:layout_alignStart="@+id/Edit_WindSpeed1"
+            android:paddingStart="5dp"
+            android:fontFamily="sans-serif"
+            android:textSize="15sp"
+            android:gravity="left|center_vertical" />
+
+        <TextView
+            android:text="c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/Text_InclinationAngle"
+            android:layout_toEndOf="@+id/Text_InclinationAngle"
+            android:id="@+id/Text_c"
+            android:layout_marginStart="14dp"
+            android:textColor="#313131" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:text="4.4"
+            android:ems="10"
+            android:id="@+id/Edit_WindSpeed1"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif"
+            android:background="#dddddd"
+            android:layout_width="50dp"
+            android:paddingStart="5dp"
+            android:inputType="numberDecimal"
+            android:layout_alignTop="@+id/Text_1"
+            android:layout_toStartOf="@+id/Edit_WindSpeed2"
+            android:gravity="left|center_vertical" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:text="0.98"
+            android:ems="10"
+            android:id="@+id/Edit_InclinationAnglec"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif"
+            android:background="#dddddd"
+            android:layout_width="50dp"
+            android:paddingStart="5dp"
+            android:inputType="numberDecimal"
+            android:layout_alignStart="@+id/Edit_WindDirection"
+            android:layout_above="@+id/Text_TargetSpeed"
+            android:layout_alignTop="@+id/Text_c"
+            android:gravity="left|center_vertical" />
+
+        <TextView
+            android:text="d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/Edit_InclinationAnglec"
+            android:layout_toEndOf="@+id/Edit_InclinationAnglec"
+            android:id="@+id/Text_d"
+            android:textColor="#313131"
+            android:layout_marginStart="5dp" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:text="-11"
+            android:ems="10"
+            android:id="@+id/Edit_InclinationAngled"
+            android:background="#dddddd"
+            android:layout_width="50dp"
+            android:paddingStart="5dp"
+            android:inputType="number|numberSigned|numberDecimal"
+            android:layout_alignBottom="@+id/Edit_InclinationAnglec"
+            android:layout_alignStart="@+id/Edit_WindSpeed2"
+            android:layout_marginStart="2dp"
+            android:layout_alignEnd="@+id/Edit_WindDirection"
+            android:gravity="left|center_vertical"
+            android:layout_alignTop="@+id/Edit_InclinationAnglec"
+            android:textAppearance="@style/TextAppearance.AppCompat" />
+
+        <Button
+            android:text=">"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_TargetSpeed"
+            android:background="#aeb6b9"
+            android:layout_above="@+id/Text_TargetRange"
+            android:layout_toEndOf="@+id/Text_TargetSpeed"
+            android:layout_width="20dp"
+            android:layout_alignTop="@+id/Text_TargetSpeed"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:textAllCaps="false" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:ems="10"
+            android:id="@+id/Edit_TargetSpeed"
+            android:background="#dddddd"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:paddingStart="5dp"
+            android:layout_alignBottom="@+id/Button_TargetSpeed"
+            android:layout_alignEnd="@+id/Edit_InclinationAngled"
+            android:layout_alignStart="@+id/Edit_InclinationAnglec"
+            android:layout_alignTop="@+id/Button_TargetSpeed"
+            android:inputType="number|numberSigned|numberDecimal" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1600"
+            android:ems="10"
+            android:layout_alignTop="@+id/Text_TargetRange"
+            android:layout_alignStart="@+id/Edit_TargetSpeed"
+            android:id="@+id/Edit_TargetRange"
+            android:layout_alignBottom="@+id/Text_TargetRange"
+            android:layout_alignEnd="@+id/Edit_TargetSpeed"
+            android:paddingStart="5dp"
+            android:inputType="number|numberDecimal"
+            android:background="#dddddd"
+            android:textAppearance="@style/TextAppearance.AppCompat" />
 
     </RelativeLayout>
 </LinearLayout>
