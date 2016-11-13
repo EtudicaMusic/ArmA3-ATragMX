@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAtmsphrClick(View view) {
-
+        startActivity(new Intent(this, AtmsphrActivity.class));
     }
 
     public void onTargetClick(View view) {

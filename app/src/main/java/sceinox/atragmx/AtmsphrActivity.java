@@ -5,14 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class GunActivity extends AppCompatActivity{
+public class AtmsphrActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gun0);
+        setContentView(R.layout.activity_atmsphr0);
     }
-
 
     public void onDoneClick(View view){
         //ToDo: Save Values
@@ -24,14 +23,10 @@ public class GunActivity extends AppCompatActivity{
     }
 
     public void onPrevClick(View view){
-        System.out.println("prev");
+        startActivity(new Intent(this, GunActivity.class));
     }
 
     public void onNextClick(View view){
-        finish();
-        startActivity(new Intent(this, AtmsphrActivity.class));
+        System.out.println("next");
     }
-
 }
-
-//Commas should be replaced with dots (text fields)
