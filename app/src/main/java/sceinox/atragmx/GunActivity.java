@@ -13,7 +13,7 @@ public class GunActivity extends AppCompatActivity{
     }
 
     public void onDoneClick(View view){
-        System.out.println("done");
+        finish();
     }
 
     public void onCancelClick(View view){
