@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Dir of Fire (Deg from N)"
+            android:layout_height="20dp"
+            android:layout_below="@+id/Text_Latitude"
+            android:layout_alignParentStart="true"
+            android:id="@+id/Text_DirOfFire"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="180dp" />
+
+        <TextView
+            android:text="Wind Speed (m/s)"
+            android:layout_height="20dp"
+            android:layout_below="@+id/Text_DirOfFire"
+            android:layout_alignParentStart="true"
+            android:id="@+id/Text_WindSpeed"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="180dp" />
+
+        <TextView
+            android:text="Wind Direction (clock)"
+            android:layout_height="20dp"
+            android:layout_below="@+id/Text_WindSpeed"
+            android:layout_alignParentStart="true"
+            android:id="@+id/Text_WindDirection"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="180dp" />
+
+        <TextView
+            android:text="Inclination Angle"
+            android:layout_height="20dp"
+            android:layout_below="@+id/Text_WindDirection"
+            android:layout_alignEnd="@+id/Text_WindDirection"
+            android:id="@+id/Text_InclinationAngle"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="180dp" />
+
+        <TextView
+            android:text="Target Speed (m/s)"
+            android:layout_height="20dp"
+            android:layout_below="@+id/Text_InclinationAngle"
+            android:layout_alignParentStart="true"
+            android:id="@+id/Text_TargetSpeed"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="180dp" />
+
+        <TextView
+            android:text="Target Range (meters)"
+            android:layout_height="20dp"
+            android:layout_below="@+id/Text_TargetSpeed"
+            android:layout_alignEnd="@+id/Text_TargetSpeed"
+            android:id="@+id/Text_TargetRange"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="180dp" />
+
+        <TextView
+            android:text="Latitude"
+            android:layout_height="20dp"
+            android:id="@+id/Text_Latitude"
+            android:layout_marginTop="25dp"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/Text_DirOfFire"
+            android:layout_width="180dp" />
+
+        <Button
+            android:text="Next"
+            android:id="@+id/Button_Next"
+            android:layout_width="80dp"
+            android:background="#313131"
+            android:layout_height="30dp"
+            android:textColor="#dddddd"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:fontFamily="sans-serif"
+            android:onClick="onDoneClick"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/Button_Prev"
+            android:layout_marginStart="7dp"
+            android:layout_marginBottom="25dp" />
+
+        <Button
+            android:text="Prev"
+            android:id="@+id/Button_Prev"
+            android:layout_width="80dp"
+            android:background="#313131"
+            android:layout_height="30dp"
+            android:textColor="#dddddd"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:fontFamily="sans-serif"
+            android:onClick="onDoneClick"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/Button_Cancel"
+            android:layout_marginStart="7dp"
+            android:layout_marginBottom="25dp" />
+
+        <Button
+            android:text="Cancel"
+            android:id="@+id/Button_Cancel"
+            android:layout_width="80dp"
+            android:background="#313131"
+            android:layout_height="30dp"
+            android:textColor="#dddddd"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:fontFamily="sans-serif"
+            android:onClick="onDoneClick"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/Button_Done"
+            android:layout_marginStart="7dp"
+            android:layout_marginBottom="25dp" />
+
+        <Button
+            android:text="Done"
+            android:id="@+id/Button_Done"
+            android:layout_width="80dp"
+            android:background="#313131"
+            android:layout_height="30dp"
+            android:textColor="#dddddd"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:fontFamily="sans-serif"
+            android:onClick="onDoneClick"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginBottom="25dp" />
+
+        <EditText
+            android:layout_height="20dp"
+            android:inputType="textPersonName"
+            android:text="0"
+            android:ems="10"
+            android:id="@+id/editText8"
+            android:layout_toEndOf="@+id/Text_Latitude"
+            android:layout_marginStart="20dp"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_above="@+id/Text_DirOfFire"
+            android:background="#dddddd"
+            android:paddingStart="10dp"
+            android:layout_width="100dp" />
+
+        <EditText
+            android:layout_height="20dp"
+            android:inputType="textPersonName"
+            android:text="134"
+            android:ems="10"
+            android:id="@+id/Edit_DirOfFire"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:background="#dddddd"
+            android:paddingStart="10dp"
+            android:layout_width="100dp"
+            android:layout_alignBaseline="@+id/Text_DirOfFire"
+            android:layout_alignBottom="@+id/Text_DirOfFire"
+            android:layout_alignStart="@+id/editText8" />
+
+    </RelativeLayout>
+</LinearLayout>
