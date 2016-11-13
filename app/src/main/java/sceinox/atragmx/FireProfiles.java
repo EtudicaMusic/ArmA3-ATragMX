@@ -2,6 +2,7 @@ package sceinox.atragmx;
 
 
 public class FireProfiles {
+    //represents fireprofiles A,B,C,D from activity_Main
     private static Profile a = new Profile();
     private static Profile b = new Profile();
     private static Profile c = new Profile();
@@ -49,11 +50,28 @@ public class FireProfiles {
     public static void setSelectedProfile(Profile selectedProfile) {
         FireProfiles.selectedProfile = selectedProfile;
     }
+
+    public static void setSelectedProfileToA() {
+        FireProfiles.selectedProfile = FireProfiles.a;
+    }
+
+    public static void setSelectedProfileToB() {
+        FireProfiles.selectedProfile = FireProfiles.b;
+    }
+
+    public static void setSelectedProfileToC() {
+        FireProfiles.selectedProfile = FireProfiles.c;
+    }
+
+    public static void setSelectedProfileToD() {
+        FireProfiles.selectedProfile = FireProfiles.d;
+    }
     //endregion
 
 
 
     static class Profile{
+        //gun data
         private double boreHeight;
         private double bulletWeight;
         private double bulletDiameter;
@@ -62,11 +80,13 @@ public class FireProfiles {
         private double muzzleVelocity;
         private double zeroRange;
 
+        //atmosphere data
         private double temperature;
         private double altitude;
         private double barometricPressure;
         private double humidity;
 
+        //target data
         private double latitude;
         private double dirOfFire;
         private double windSpeed;
@@ -78,6 +98,7 @@ public class FireProfiles {
 
         //region c'tors
         public Profile() {
+            //sets standard values
             // TODO: update gunStatistic.xml
             this.setGun(null);
 
@@ -237,15 +258,19 @@ public class FireProfiles {
             this.windDirection = windDirection;
         }
 
+        //changes both inclinationAngels equivalent
         public void setInclinationAngleFromDegree(double inclinationAngleDegree) {
             this.inclinationAngleDegree = inclinationAngleDegree;
             //TODO check rightness
+            //is this method working with negative inclinations?
             this.inclinationAngleCosine = Math.cos(Math.toRadians(inclinationAngleDegree));
         }
 
+        //changes both inclinationAngels equivalent
         public void setInclinationAngleFromCosine(double inclinationAngleCosine) {
             this.inclinationAngleCosine = inclinationAngleCosine;
             //TODO check rightness
+            //is this method working with negative inclinations?
             this.inclinationAngleDegree = Math.toDegrees(Math.acos(inclinationAngleCosine));
         }
 
@@ -257,6 +282,7 @@ public class FireProfiles {
             this.targetRange = targetRange;
         }
 
+        //sets all gun related values to the from a String-Array, intended for gunstatistics.xml
         public void setGun(String[] gun){
             this.boreHeight=Double.parseDouble(gun[0]);
             this.bulletWeight=Double.parseDouble(gun[1]);
@@ -267,6 +293,7 @@ public class FireProfiles {
             this.zeroRange=Double.parseDouble(gun[6]);
         }
         //endregion
+
     }
 
 }
