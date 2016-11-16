@@ -88,9 +88,62 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println("d");
     }
+
+    public void onMClick(View view) {
+        messurementColorSwitch('m');
+    }
+
+    public void onEClick(View view) {
+        messurementColorSwitch('e');
+    }
+
+    public void onUpperDClick(View view) {
+        messurementColorSwitch('d');
+    }
     //endregion
 
     //region private methods
+    private void messurementColorSwitch(char profile){
+        Button d = (Button) findViewById(R.id.Button_D);
+        Button e = (Button) findViewById(R.id.Button_E);
+        Button m = (Button) findViewById(R.id.Button_M);
+
+        switch (profile){
+            case 'd':
+                d.setBackgroundColor(Color.BLACK);
+                d.setTextColor(Color.WHITE);
+
+                e.setBackgroundColor(Color.WHITE);
+                e.setTextColor(Color.BLACK);
+
+                m.setBackgroundColor(Color.WHITE);
+                m.setTextColor(Color.BLACK);
+                break;
+
+            case 'e':
+                e.setBackgroundColor(Color.BLACK);
+                e.setTextColor(Color.WHITE);
+
+                d.setBackgroundColor(Color.WHITE);
+                d.setTextColor(Color.BLACK);
+
+                m.setBackgroundColor(Color.WHITE);
+                m.setTextColor(Color.BLACK);
+                break;
+
+            case 'm':
+                m.setBackgroundColor(Color.BLACK);
+                m.setTextColor(Color.WHITE);
+
+                d.setBackgroundColor(Color.WHITE);
+                d.setTextColor(Color.BLACK);
+
+                e.setBackgroundColor(Color.WHITE);
+                e.setTextColor(Color.BLACK);
+                break;
+        }
+    }
+
     private void colorProfileSwitch(char profile){
         Button a = (Button) this.findViewById(R.id.Button_A);
         Button b = (Button) this.findViewById(R.id.Button_B);
@@ -175,6 +228,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+
     //endregion
 
 }

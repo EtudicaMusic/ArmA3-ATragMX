@@ -117,7 +117,8 @@
             android:layout_below="@+id/Text_CalcMethod"
             android:layout_toEndOf="@+id/Button_Default"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginStart="20dp"
+            android:onClick="onATClick" />
 
         <Button
             android:text="TBH"
@@ -131,7 +132,8 @@
             android:layout_below="@+id/Text_CalcMethod"
             android:layout_toEndOf="@+id/Button_AT"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginStart="20dp"
+            android:onClick="onTBHClick" />
 
         <TextView
             android:text="Altitude (m)"

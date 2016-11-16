@@ -56,7 +56,8 @@
             android:textStyle="normal|bold"
             android:textSize="18sp"
             android:layout_width="25dp"
-            android:fontFamily="sans-serif" />
+            android:fontFamily="sans-serif"
+            android:onClick="onMClick" />
 
         <Button
             android:text="E"
@@ -71,7 +72,8 @@
             android:fontFamily="sans-serif"
             android:textColor="#000000"
             android:textStyle="normal|bold"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:onClick="onEClick" />
 
         <Button
             android:text="D"
@@ -86,7 +88,8 @@
             android:fontFamily="sans-serif"
             android:textStyle="normal|bold"
             android:textSize="18sp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:onClick="onUpperDClick" />
     </RelativeLayout>
 
     <RelativeLayout
