@@ -62,15 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAClick(View view){
         colorProfileSwitch('a');
-        fireFrofileSwitch('a');
-
+        fireProfileSwitch('a');
 
         System.out.println("a");
     }
 
     public void onBClick(View view){
         colorProfileSwitch('b');
-        fireFrofileSwitch('b');
+        fireProfileSwitch('b');
 
         System.out.println("b");
     }
@@ -90,20 +89,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onMClick(View view) {
-        messurementColorSwitch('m');
+        measurementColorSwitch('m');
     }
 
     public void onEClick(View view) {
-        messurementColorSwitch('e');
+        measurementColorSwitch('e');
     }
 
     public void onUpperDClick(View view) {
-        messurementColorSwitch('d');
+        measurementColorSwitch('d');
     }
     //endregion
 
     //region private methods
-    private void messurementColorSwitch(char profile){
+    private void measurementColorSwitch(char profile){
         Button d = (Button) findViewById(R.id.Button_D);
         Button e = (Button) findViewById(R.id.Button_E);
         Button m = (Button) findViewById(R.id.Button_M);
@@ -209,22 +208,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void fireFrofileSwitch(char profile){
+    private void fireProfileSwitch(char profile){
         switch (profile){
             case 'a':
-                //FireProfiles.setSelectedProfileToA();
+                FireProfiles.setSelectedProfileToA();
                 break;
 
             case 'b':
-                //FireProfiles.setSelectedProfileToB();
+                FireProfiles.setSelectedProfileToB();
                 break;
 
             case 'c':
-                //FireProfiles.setSelectedProfileToC();
+                FireProfiles.setSelectedProfileToC();
                 break;
 
             case 'd':
-                //FireProfiles.setSelectedProfileToD();
+                FireProfiles.setSelectedProfileToD();
                 break;
         }
     }

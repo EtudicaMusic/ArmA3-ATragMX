@@ -100,7 +100,7 @@ public class FireProfiles {
         public Profile() {
             //sets standard values
             // TODO: update gunStatistic.xml
-            this.setGun(null);
+            //this.setGun(null);
 
             this.temperature = 23;
             this.altitude = 1200;
