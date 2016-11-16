@@ -294,6 +294,16 @@ public class FireProfiles {
         }
         //endregion
 
+        public String toString(){
+            String out;
+            out="boreHeight = "+boreHeight+"; bulletWeight = "+bulletWeight+"; bulletDiameter = "+bulletDiameter+"; c1Coefficient = "+c1Coefficient+
+                    "; rifleTwist = "+rifleTwist+"; muzzleVelocity = "+muzzleVelocity+"; zeroRange = "+zeroRange+"; temperature = "+temperature+
+                    "; altitude = "+altitude+"; barometricPressure = "+barometricPressure+"; humidity = "+humidity+"; latitude = "+latitude+
+                    "; dirOfFire = "+dirOfFire+"; windSpeed = "+windSpeed+"; windDirection = "+windDirection+"; inclinationAngleDegree = "+
+                    inclinationAngleDegree+"; inclinationAngleCosine = "+inclinationAngleCosine+"; targetSpeed = "+targetSpeed+"; targetRange = "+targetRange;
+            return out;
+        }
+
     }
 
 }

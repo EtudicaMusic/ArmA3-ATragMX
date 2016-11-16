@@ -17,7 +17,7 @@ public class GunActivity extends AppCompatActivity{
 
     //region onClickEvents
     public void onDoneClick(View view){
-        //saveChangesToProfile();
+        saveChangesToProfile();
         finish();
     }
 
@@ -39,7 +39,6 @@ public class GunActivity extends AppCompatActivity{
     //region private methods
     private void saveChangesToProfile(){
         FireProfiles.Profile profile = FireProfiles.getSelectedProfile();
-
         profile.setBoreHeight(getInputOfText(R.id.Edit_Bore));
         profile.setBulletWeight(getInputOfText(R.id.Edit_BulletWeight));
         profile.setBulletDiameter(getInputOfText(R.id.Edit_BulletDiam));
