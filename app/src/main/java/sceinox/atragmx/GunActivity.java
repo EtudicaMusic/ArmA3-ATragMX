@@ -31,6 +31,5 @@ public class GunActivity extends AppCompatActivity{
         finish();
         startActivity(new Intent(this, AtmsphrActivity.class));
     }
-
 }
 //Commas should be replaced with dots (text fields)

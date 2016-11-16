@@ -1,9 +1,11 @@
 package sceinox.atragmx;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -56,6 +58,122 @@ public class MainActivity extends AppCompatActivity {
 
     public void onGunlistClick(View view){
         startActivity(new Intent(this, GunlistActivity.class));
+    }
+
+    public void onAClick(View view){
+        colorProfileSwitch('a');
+        fireFrofileSwitch('a');
+
+
+        System.out.println("a");
+    }
+
+    public void onBClick(View view){
+        colorProfileSwitch('b');
+        fireFrofileSwitch('b');
+
+        System.out.println("b");
+    }
+
+    public void onCClick(View view){
+        colorProfileSwitch('c');
+        colorProfileSwitch('c');
+
+        System.out.println("c");
+    }
+
+    public void onDClick(View view){
+        colorProfileSwitch('d');
+        colorProfileSwitch('d');
+
+        System.out.println("d");
+    }
+    //endregion
+
+    //region private methods
+    private void colorProfileSwitch(char profile){
+        Button a = (Button) this.findViewById(R.id.Button_A);
+        Button b = (Button) this.findViewById(R.id.Button_B);
+        Button c = (Button) this.findViewById(R.id.Button_C);
+        Button d = (Button) this.findViewById(R.id.Button_D_Profile);
+
+        switch (profile){
+            case 'a':
+                a.setBackgroundColor(Color.BLACK);
+                a.setTextColor(Color.WHITE);
+
+                b.setBackgroundColor(Color.WHITE);
+                b.setTextColor(Color.BLACK);
+
+                c.setBackgroundColor(Color.WHITE);
+                c.setTextColor(Color.BLACK);
+
+                d.setBackgroundColor(Color.WHITE);
+                d.setTextColor(Color.BLACK);
+                break;
+
+            case 'b':
+                a.setBackgroundColor(Color.WHITE);
+                a.setTextColor(Color.BLACK);
+
+                b.setBackgroundColor(Color.BLACK);
+                b.setTextColor(Color.WHITE);
+
+                c.setBackgroundColor(Color.WHITE);
+                c.setTextColor(Color.BLACK);
+
+                d.setBackgroundColor(Color.WHITE);
+                d.setTextColor(Color.BLACK);
+                break;
+
+            case 'c':
+                a.setBackgroundColor(Color.WHITE);
+                a.setTextColor(Color.BLACK);
+
+                b.setBackgroundColor(Color.WHITE);
+                b.setTextColor(Color.BLACK);
+
+                c.setBackgroundColor(Color.BLACK);
+                c.setTextColor(Color.WHITE);
+
+                d.setBackgroundColor(Color.WHITE);
+                d.setTextColor(Color.BLACK);
+                break;
+
+            case 'd':
+                a.setBackgroundColor(Color.WHITE);
+                a.setTextColor(Color.BLACK);
+
+                b.setBackgroundColor(Color.WHITE);
+                b.setTextColor(Color.BLACK);
+
+                c.setBackgroundColor(Color.WHITE);
+                c.setTextColor(Color.BLACK);
+
+                d.setBackgroundColor(Color.BLACK);
+                d.setTextColor(Color.WHITE);
+                break;
+        }
+    }
+
+    private void fireFrofileSwitch(char profile){
+        switch (profile){
+            case 'a':
+                //FireProfiles.setSelectedProfileToA();
+                break;
+
+            case 'b':
+                //FireProfiles.setSelectedProfileToB();
+                break;
+
+            case 'c':
+                //FireProfiles.setSelectedProfileToC();
+                break;
+
+            case 'd':
+                //FireProfiles.setSelectedProfileToD();
+                break;
+        }
     }
     //endregion
 
