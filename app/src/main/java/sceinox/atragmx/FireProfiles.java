@@ -90,6 +90,7 @@ public class FireProfiles {
         private double latitude;
         private double dirOfFire;
         private double windSpeed;
+        private double windSpeed2;
         private double windDirection;
         private double inclinationAngleDegree;
         private double inclinationAngleCosine;
@@ -110,6 +111,7 @@ public class FireProfiles {
             this.latitude = 39;
             this.dirOfFire = 0;
             this.windSpeed = 0;
+            this.windSpeed2 =0;
             this.windDirection = 0;
             this.setInclinationAngleFromDegree(-10);
             this.targetSpeed = 0;
@@ -173,6 +175,10 @@ public class FireProfiles {
 
         public double getWindSpeed() {
             return windSpeed;
+        }
+
+        public double getWindSpeed2() {
+            return windSpeed2;
         }
 
         public double getWindDirection() {
@@ -254,6 +260,10 @@ public class FireProfiles {
             this.windSpeed = windSpeed;
         }
 
+        public void setWindSpeed2(double windSpeed2) {
+            this.windSpeed2 = windSpeed2;
+        }
+
         public void setWindDirection(double windDirection) {
             this.windDirection = windDirection;
         }
@@ -299,7 +309,7 @@ public class FireProfiles {
             out="boreHeight = "+boreHeight+"; bulletWeight = "+bulletWeight+"; bulletDiameter = "+bulletDiameter+"; c1Coefficient = "+c1Coefficient+
                     "; rifleTwist = "+rifleTwist+"; muzzleVelocity = "+muzzleVelocity+"; zeroRange = "+zeroRange+"; temperature = "+temperature+
                     "; altitude = "+altitude+"; barometricPressure = "+barometricPressure+"; humidity = "+humidity+"; latitude = "+latitude+
-                    "; dirOfFire = "+dirOfFire+"; windSpeed = "+windSpeed+"; windDirection = "+windDirection+"; inclinationAngleDegree = "+
+                    "; dirOfFire = "+dirOfFire+"; windSpeed = "+windSpeed+"; windSpeed2 = "+windSpeed2+"; windDirection = "+windDirection+"; inclinationAngleDegree = "+
                     inclinationAngleDegree+"; inclinationAngleCosine = "+inclinationAngleCosine+"; targetSpeed = "+targetSpeed+"; targetRange = "+targetRange;
             return out;
         }

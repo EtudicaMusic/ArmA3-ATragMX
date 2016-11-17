@@ -102,6 +102,20 @@ public class MainActivity extends AppCompatActivity {
     public void onUpperDClick(View view) {
         measurementColorSwitch('d');
     }
+
+    public void onLeadClick(View view){
+        if (getTextFromTextView(R.id.Text_WS).equals("WS")){
+            setTextToTextView(R.id.Text_WS,"WS2");
+            setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed2()));
+            setTextToTextView(R.id.Button_Lead, "Wind 2");
+            //Todo what has to be showed in Text_Lead_AbsVal?
+        }else {
+            setTextToTextView(R.id.Text_WS,"WS");
+            setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed()));
+            setTextToTextView(R.id.Button_Lead, "Lead");
+            //Todo what has to be showed in Text_Lead_AbsVal?
+        }
+    }
     //endregion
 
     //region private methods
@@ -231,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void initTextViews() {
+    private void initTextViews() {
         //Gun
         setTextToTextView(R.id.Text_BHVal, String.valueOf(FireProfiles.getSelectedProfile().getBoreHeight()));
         setTextToTextView(R.id.Text_BWVal, String.valueOf(FireProfiles.getSelectedProfile().getBulletWeight()));
@@ -258,6 +272,10 @@ public class MainActivity extends AppCompatActivity {
     private void setTextToTextView(int id, String text) {
         TextView textView = (TextView) this.findViewById(id);
         textView.setText(text);
+    }
+
+    private String getTextFromTextView(int id){
+        return ((TextView) this.findViewById(id)).getText().toString();
     }
     //endregion
 

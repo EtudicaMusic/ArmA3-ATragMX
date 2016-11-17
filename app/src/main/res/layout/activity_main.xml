@@ -713,7 +713,8 @@
             android:layout_alignStart="@+id/Text_Wind"
             android:textAllCaps="false"
             android:layout_alignTop="@+id/Text_Lead_AbsVal"
-            android:layout_above="@+id/Spacer2" />
+            android:layout_above="@+id/Spacer2"
+            android:onClick="onLeadClick"/>
 
         <Button
             android:text="Reset"
