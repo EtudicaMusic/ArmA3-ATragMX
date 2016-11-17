@@ -6,16 +6,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
 
     Bundle savedInstanceState;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.savedInstanceState=savedInstanceState;
+        this.savedInstanceState = savedInstanceState;
         setContentView(R.layout.activity_main);
+        initTextViews();
     }
 
     //region onClickEvents
@@ -56,32 +59,32 @@ public class MainActivity extends AppCompatActivity {
         //calculator.calculateSolution();
     }
 
-    public void onGunlistClick(View view){
+    public void onGunlistClick(View view) {
         startActivity(new Intent(this, GunlistActivity.class));
     }
 
-    public void onAClick(View view){
+    public void onAClick(View view) {
         colorProfileSwitch('a');
         fireProfileSwitch('a');
 
         System.out.println("a");
     }
 
-    public void onBClick(View view){
+    public void onBClick(View view) {
         colorProfileSwitch('b');
         fireProfileSwitch('b');
 
         System.out.println("b");
     }
 
-    public void onCClick(View view){
+    public void onCClick(View view) {
         colorProfileSwitch('c');
         colorProfileSwitch('c');
 
         System.out.println("c");
     }
 
-    public void onDClick(View view){
+    public void onDClick(View view) {
         colorProfileSwitch('d');
         colorProfileSwitch('d');
 
@@ -102,12 +105,12 @@ public class MainActivity extends AppCompatActivity {
     //endregion
 
     //region private methods
-    private void measurementColorSwitch(char profile){
+    private void measurementColorSwitch(char profile) {
         Button d = (Button) findViewById(R.id.Button_D);
         Button e = (Button) findViewById(R.id.Button_E);
         Button m = (Button) findViewById(R.id.Button_M);
 
-        switch (profile){
+        switch (profile) {
             case 'd':
                 d.setBackgroundColor(Color.BLACK);
                 d.setTextColor(Color.WHITE);
@@ -143,13 +146,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void colorProfileSwitch(char profile){
-        Button a = (Button) this.findViewById(R.id.Button_A);
-        Button b = (Button) this.findViewById(R.id.Button_B);
-        Button c = (Button) this.findViewById(R.id.Button_C);
+    private void colorProfileSwitch(char profile) {
+        Button a = (Button) this.findViewById(R.id.Button_A_Profile);
+        Button b = (Button) this.findViewById(R.id.Button_B_Profile);
+        Button c = (Button) this.findViewById(R.id.Button_C_Profile);
         Button d = (Button) this.findViewById(R.id.Button_D_Profile);
 
-        switch (profile){
+        switch (profile) {
             case 'a':
                 a.setBackgroundColor(Color.BLACK);
                 a.setTextColor(Color.WHITE);
@@ -208,8 +211,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void fireProfileSwitch(char profile){
-        switch (profile){
+    private void fireProfileSwitch(char profile) {
+        switch (profile) {
             case 'a':
                 FireProfiles.setSelectedProfileToA();
                 break;
@@ -228,6 +231,34 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void initTextViews() {
+        //Gun
+        setTextToTextView(R.id.Text_BHVal, String.valueOf(FireProfiles.getSelectedProfile().getBoreHeight()));
+        setTextToTextView(R.id.Text_BWVal, String.valueOf(FireProfiles.getSelectedProfile().getBulletWeight()));
+        //TODO whats about bulletDiameter?
+        setTextToTextView(R.id.Text_C1Val, String.valueOf(FireProfiles.getSelectedProfile().getC1Coefficient()));
+        //TODO whats about rifleTwist?
+        setTextToTextView(R.id.Text_MVVal, String.valueOf(FireProfiles.getSelectedProfile().getMuzzleVelocity()));
+        setTextToTextView(R.id.Text_ZRVal, String.valueOf(FireProfiles.getSelectedProfile().getZeroRange()));
+
+        //Atmosphere
+        setTextToTextView(R.id.Text_TmpVal, String.valueOf(FireProfiles.getSelectedProfile().getTemperature()));
+        setTextToTextView(R.id.Text_AltVal, String.valueOf(FireProfiles.getSelectedProfile().getAltitude()));
+        //TODO barPress,humidity
+
+        //Target
+        //TODO whats about unused target values?
+        setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed()));
+        setTextToTextView(R.id.Text_WDVal, String.valueOf(FireProfiles.getSelectedProfile().getWindDirection()));
+        setTextToTextView(R.id.Text_IAVal, String.valueOf(FireProfiles.getSelectedProfile().getInclinationAngleDegree()));
+        setTextToTextView(R.id.Text_TSVal, String.valueOf(FireProfiles.getSelectedProfile().getTargetSpeed()));
+        setTextToTextView(R.id.Text_TRVal, String.valueOf(FireProfiles.getSelectedProfile().getTargetRange()));
+    }
+
+    private void setTextToTextView(int id, String text) {
+        TextView textView = (TextView) this.findViewById(id);
+        textView.setText(text);
+    }
     //endregion
 
 }
