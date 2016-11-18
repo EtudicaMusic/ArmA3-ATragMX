@@ -18,7 +18,7 @@ public class AtmsphrActivity extends AppCompatActivity{
 
     //region OnClickEvents
     public void onDoneClick(View view){
-        //saveChangesToProfile();
+        saveChangesToProfile();
         finish();
     }
 

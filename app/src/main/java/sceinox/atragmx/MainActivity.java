@@ -18,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.savedInstanceState = savedInstanceState;
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         initTextViews();
     }
 
@@ -66,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     public void onAClick(View view) {
         colorProfileSwitch('a');
         fireProfileSwitch('a');
+        initTextViews();
 
         System.out.println("a");
     }
@@ -73,20 +79,23 @@ public class MainActivity extends AppCompatActivity {
     public void onBClick(View view) {
         colorProfileSwitch('b');
         fireProfileSwitch('b');
+        initTextViews();
 
         System.out.println("b");
     }
 
     public void onCClick(View view) {
         colorProfileSwitch('c');
-        colorProfileSwitch('c');
+        fireProfileSwitch('c');
+        initTextViews();
 
         System.out.println("c");
     }
 
     public void onDClick(View view) {
         colorProfileSwitch('d');
-        colorProfileSwitch('d');
+        fireProfileSwitch('d');
+        initTextViews();
 
         System.out.println("d");
     }

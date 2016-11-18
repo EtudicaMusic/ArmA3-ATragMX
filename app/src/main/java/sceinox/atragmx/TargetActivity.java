@@ -16,7 +16,7 @@ public class TargetActivity extends AppCompatActivity{
 
     //region OnClickEvents
     public void onDoneClick(View view){
-        //saveChangesToProfile();
+        saveChangesToProfile();
         finish();
     }
 
