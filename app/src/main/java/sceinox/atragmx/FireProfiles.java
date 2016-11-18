@@ -72,30 +72,30 @@ public class FireProfiles {
 
     static class Profile{
         //gun data
-        private double boreHeight;
-        private double bulletWeight;
-        private double bulletDiameter;
-        private double c1Coefficient;
-        private double rifleTwist;
-        private double muzzleVelocity;
-        private double zeroRange;
+        private double boreHeight = 3.81;
+        private double bulletWeight = 27;
+        private double bulletDiameter = 1.04;
+        private double c1Coefficient = 0.389;
+        private double rifleTwist = 33.02;
+        private double muzzleVelocity = 910;
+        private double zeroRange = 100;
 
         //atmosphere data
-        private double temperature;
-        private double altitude;
-        private double barometricPressure;
-        private double humidity;
+        private double temperature = 12;
+        private double altitude = 2664;
+        private double barometricPressure = 1028;
+        private double humidity = 78;
 
         //target data
-        private double latitude;
-        private double dirOfFire;
-        private double windSpeed;
-        private double windSpeed2;
-        private double windDirection;
-        private double inclinationAngleDegree;
-        private double inclinationAngleCosine;
-        private double targetSpeed;
-        private double targetRange;
+        private double latitude = 0;
+        private double dirOfFire = 134;
+        private double windSpeed = 4.4;
+        private double windSpeed2 = 0;
+        private double windDirection = 11;
+        private double inclinationAngleDegree = 0.98;
+        private double inclinationAngleCosine = -11;
+        private double targetSpeed = 0;
+        private double targetRange = 1600;
 
         //region c'tors
         public Profile() {
