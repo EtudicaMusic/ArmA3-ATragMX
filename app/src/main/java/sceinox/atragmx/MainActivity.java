@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     Bundle savedInstanceState;
 
+    //region activity states
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         fireProfileSwitch('a');
-
     }
 
     @Override
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         initTextViews();
     }
+    //endregion
 
     //region onClickEvents
     public void onGunClick(View view) {

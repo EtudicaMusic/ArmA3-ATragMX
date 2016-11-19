@@ -26,11 +26,13 @@ public class GunActivity extends AppCompatActivity{
     }
 
     public void onPrevClick(View view){
+        saveChangesToProfile();
         finish();
         startActivity(new Intent(this, TargetActivity.class));
     }
 
     public void onNextClick(View view){
+        saveChangesToProfile();
         finish();
         startActivity(new Intent(this, AtmsphrActivity.class));
     }

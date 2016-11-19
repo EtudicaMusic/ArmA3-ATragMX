@@ -27,11 +27,13 @@ public class AtmsphrActivity extends AppCompatActivity{
     }
 
     public void onPrevClick(View view){
+        saveChangesToProfile();
         finish();
         startActivity(new Intent(this, GunActivity.class));
     }
 
     public void onNextClick(View view){
+        saveChangesToProfile();
         finish();
         startActivity(new Intent(this, TargetActivity.class));
     }
@@ -49,8 +51,8 @@ public class AtmsphrActivity extends AppCompatActivity{
     private void saveChangesToProfile(){
         FireProfiles.Profile profile = FireProfiles.getSelectedProfile();
 
-        profile.setAltitude(R.id.Edit_Altitude);
-        profile.setTemperature(R.id.Edit_Temperature);
+        profile.setAltitude(getInputOfText(R.id.Edit_Altitude));
+        profile.setTemperature(getInputOfText(R.id.Edit_Temperature));
     }
 
     private double getInputOfText(int id){
