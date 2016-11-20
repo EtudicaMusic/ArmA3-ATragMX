@@ -181,7 +181,7 @@ class Calculator {
                 Math.sin(270 - targetWindDirection * 30) * targetWindStrength,
                 0
         };
-        double bc = calculateAthmosperhicCorrection(atmsphrTemperature, atmsphrBarometricPressure, atmsphrRelativeHumidity, athmospereModel);
+        double bc = calculateAthmosphericCorrection(atmsphrTemperature, atmsphrBarometricPressure, atmsphrRelativeHumidity, athmospereModel);
 
         // RangeCard helper
         double n = 0;
@@ -246,7 +246,7 @@ class Calculator {
     }
 
 
-    private double calculateAthmosperhicCorrection(double atmsphrTemperature, double atmsphrBarometricPressure, double atmsphrRelativeHumidity, double athmospereModel) {
+    private double calculateAthmosphericCorrection(double atmsphrTemperature, double atmsphrBarometricPressure, double atmsphrRelativeHumidity, double athmospereModel) {
         //ToDo: Implement
         throw new IllegalArgumentException();
     }
