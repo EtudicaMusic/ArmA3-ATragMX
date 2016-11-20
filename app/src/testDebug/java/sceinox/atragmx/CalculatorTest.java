@@ -60,8 +60,8 @@ public class CalculatorTest {
     @Test
     public void vectorMagnetude() throws Exception {
 
-        assertTrue(Math.sqrt(14) == calculator.vectorMagnetude(new double[]{1, 2, 3}));
-        assertTrue(3 == calculator.vectorMagnetude(new double[]{1,2,2}));
+        assertTrue(Math.sqrt(14) == calculator.vectorMagnitude(new double[]{1, 2, 3}));
+        assertTrue(3 == calculator.vectorMagnitude(new double[]{1,2,2}));
     }
 
     @Test

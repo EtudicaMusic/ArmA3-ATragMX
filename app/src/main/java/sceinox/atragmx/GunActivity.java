@@ -45,7 +45,7 @@ public class GunActivity extends AppCompatActivity{
         profile.setBoreHeight(getInputOfText(R.id.Edit_Bore));
         profile.setBulletWeight(getInputOfText(R.id.Edit_BulletWeight));
         profile.setBulletDiameter(getInputOfText(R.id.Edit_BulletDiam));
-        profile.setBulletDiameter(getInputOfText(R.id.Edit_C1Coefficient));
+        profile.setC1Coefficient(getInputOfText(R.id.Edit_C1Coefficient));
         profile.setRifleTwist(getInputOfText(R.id.Edit_RifleTwist));
         profile.setMuzzleVelocity(getInputOfText(R.id.Edit_MuzzleVelocity));
         profile.setZeroRange(getInputOfText(R.id.Edit_ZeroRange));

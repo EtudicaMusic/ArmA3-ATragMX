@@ -193,10 +193,10 @@ class Calculator {
 
 
         while (TOF < 15 && bulletPos[1] < targetTargetRange){
-            bulletSpeed = vectorMagnetude(bulletVelocity);
+            bulletSpeed = vectorMagnitude(bulletVelocity);
 
             trueVelocity = vectordiff(bulletVelocity, wind);
-            trueSpeed = vectorMagnetude(trueVelocity);
+            trueSpeed = vectorMagnitude(trueVelocity);
 
             double drag = -1 * calculateRetardation(dragModel, bc, trueSpeed);
             bulletAccel = vectorMultiply(vectorNormalized(trueVelocity), drag);
@@ -251,7 +251,7 @@ class Calculator {
         throw new IllegalArgumentException();
     }
 
-    public double vectorMagnetude(double[] vector){
+    public double vectorMagnitude(double[] vector){
         return Math.sqrt(Math.pow(vector[0],2) + Math.pow(vector[1], 2) + Math.pow(vector[2], 2));
     }
 

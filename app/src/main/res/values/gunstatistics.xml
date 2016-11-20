@@ -1,38 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="cal127x108">
-        <item>48</item>
-        <item>0.638</item>
-        <item>820</item>
-    </string-array>
-
-    <string-array name="cal127x99">
-        <item>42</item>
-        <item>0.575</item>
-        <item>900</item>
-    </string-array>
-
     <string-array name="cal408CheyTac">
-        <item>27</item>
-        <item>0.575</item>
-        <item>900</item>
-    </string-array>
-
-    <string-array name="cal762x51">
-        <item>8</item>
-        <item>1.071</item>
-        <item>930</item>
-    </string-array>
-
-    <string-array name="cal65x39">
-        <item>8</item>
-        <item>0.753</item>
-        <item>800</item>
-    </string-array>
-
-    <string-array name="cal556x45">
-        <item>4</item>
-        <item>1.265</item>
-        <item>870</item>
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">27</item>
+        <item name="Bullet Diameter">1.04</item>
+        <item name="C1 Coefficient">0.389</item>
+        <item name="Rifle Twist">33.02</item>
+        <item name="Muzzle Velocity">910</item>
+        <item name="Zero Range">100</item>
     </string-array>
 </resources>
