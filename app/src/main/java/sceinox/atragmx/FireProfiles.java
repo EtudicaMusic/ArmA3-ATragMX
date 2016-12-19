@@ -1,9 +1,6 @@
 package sceinox.atragmx;
 
-
 import android.content.Context;
-
-
 
 public class FireProfiles{
     //represents fireprofiles A,B,C,D from activity_Main
