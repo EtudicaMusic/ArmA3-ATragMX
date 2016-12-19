@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="cal408CheyTac">
+    <string-array name="cal_127x108mm">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">48</item>
+        <item name="Bullet Diameter">1.27</item>
+        <item name="C1 Coefficient">0.638</item>
+        <item name="Rifle Twist">38.1</item>
+        <item name="Muzzle Velocity">820</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">127x108mm</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_127x99mm">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">42</item>
+        <item name="Bullet Diameter">1.27</item>
+        <item name="C1 Coefficient">0.575</item>
+        <item name="Rifle Twist">38.1</item>
+        <item name="Muzzle Velocity">900</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">127x99mm</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_127x99mm_AMAX">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">49</item>
+        <item name="Bullet Diameter">1.27</item>
+        <item name="C1 Coefficient">0.366</item>
+        <item name="Rifle Twist">38.1</item>
+        <item name="Muzzle Velocity">860</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">127x99mm AMAX</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_127x99mm_API">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">42</item>
+        <item name="Bullet Diameter">1.29</item>
+        <item name="C1 Coefficient">0.575</item>
+        <item name="Rifle Twist">38.1</item>
+        <item name="Muzzle Velocity">900</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">127x99mm API</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_127x54mm">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">49</item>
+        <item name="Bullet Diameter">1.27</item>
+        <item name="C1 Coefficient">0.193</item>
+        <item name="Rifle Twist">24.13</item>
+        <item name="Muzzle Velocity">300</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">127x54mm</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_408_CheyTac">
         <item name="Bore Height">3.81</item>
         <item name="Bullet Weight">27</item>
         <item name="Bullet Diameter">1.04</item>
@@ -8,8 +68,94 @@
         <item name="Rifle Twist">33.02</item>
         <item name="Muzzle Velocity">910</item>
         <item name="Zero Range">100</item>
+        <item name="Name">.408 CheyTac</item>
+        <item name="Protected">true</item>
     </string-array>
 
+	<string-array name="cal_93x64mm">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">15</item>
+        <item name="Bullet Diameter">0.93</item>
+        <item name="C1 Coefficient">1.086</item>
+        <item name="Rifle Twist">35.56</item>
+        <item name="Muzzle Velocity">870</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">93x64mm</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_338LM_250gr">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">16</item>
+        <item name="Bullet Diameter">0.858</item>
+        <item name="C1 Coefficient">0.591</item>
+        <item name="Rifle Twist">25.4</item>
+        <item name="Muzzle Velocity">880</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">.338LM 250gr</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_338LM_300gr">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">19</item>
+        <item name="Bullet Diameter">0.858</item>
+        <item name="C1 Coefficient">0.522</item>
+        <item name="Rifle Twist">25.4</item>
+        <item name="Muzzle Velocity">800</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">.338LM 300gr</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_338LM_API526">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">16</item>
+        <item name="Bullet Diameter">0.858</item>
+        <item name="C1 Coefficient">0.696</item>
+        <item name="Rifle Twist">25.4</item>
+        <item name="Muzzle Velocity">895</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">.338LM API526</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_300WM_Mk248_Mod0">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">12</item>
+        <item name="Bullet Diameter">0.78</item>
+        <item name="C1 Coefficient">0.705</item>
+        <item name="Rifle Twist">25.4</item>
+        <item name="Muzzle Velocity">900</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">.300WM Mk248 Mod0</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_300WM_Mk248_Mod1">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">14</item>
+        <item name="Bullet Diameter">0.78</item>
+        <item name="C1 Coefficient">0.612</item>
+        <item name="Rifle Twist">25.4</item>
+        <item name="Muzzle Velocity">867</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">.300WM Mk248 Mod1</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
+	<string-array name="cal_300WM_Berger_OTM">
+        <item name="Bore Height">3.81</item>
+        <item name="Bullet Weight">12</item>
+        <item name="Bullet Diameter">0.78</item>
+        <item name="C1 Coefficient">0.705</item>
+        <item name="Rifle Twist">25.4</item>
+        <item name="Muzzle Velocity">900</item>
+        <item name="Zero Range">100</item>
+        <item name="Name">.300WM Berger OTM</item>
+        <item name="Protected">true</item>
+    </string-array>
+	
     <string-array name="Testing">
         <item name="Bore Height">-1</item>
         <item name="Bullet Weight">-1</item>
@@ -18,5 +164,7 @@
         <item name="Rifle Twist">-1</item>
         <item name="Muzzle Velocity">-1</item>
         <item name="Zero Range">-1</item>
+        <item name="Name">Test</item>
+        <item name="Protected">true</item>
     </string-array>
 </resources>

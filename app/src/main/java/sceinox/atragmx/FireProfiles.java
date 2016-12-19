@@ -80,10 +80,10 @@ public class FireProfiles{
     //endregion
 
     public static void setStartWeapon(){
-        FireProfiles.getA().setGun(R.array.cal408CheyTac);
-        FireProfiles.getB().setGun(R.array.cal408CheyTac);
-        FireProfiles.getC().setGun(R.array.cal408CheyTac);
-        FireProfiles.getD().setGun(R.array.cal408CheyTac);
+        FireProfiles.getA().setGun(R.array.cal_408_CheyTac);
+        FireProfiles.getB().setGun(R.array.cal_408_CheyTac);
+        FireProfiles.getC().setGun(R.array.cal_408_CheyTac);
+        FireProfiles.getD().setGun(R.array.cal_408_CheyTac);
     }
 
     static class Profile{
