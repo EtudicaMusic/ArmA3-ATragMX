@@ -88,13 +88,13 @@ public class FireProfiles{
 
     static class Profile{
         //gun data
-        private double boreHeight = -1;
-        private double bulletWeight = -1;
-        private double bulletDiameter = -1;
-        private double c1Coefficient = -1;
-        private double rifleTwist = -1;
-        private double muzzleVelocity = -1;
-        private double zeroRange = -1;
+        private double boreHeight;
+        private double bulletWeight;
+        private double bulletDiameter;
+        private double c1Coefficient;
+        private double rifleTwist;
+        private double muzzleVelocity;
+        private double zeroRange;
 
         //atmosphere data
         private double temperature;
