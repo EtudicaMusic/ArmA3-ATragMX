@@ -141,7 +141,7 @@ class Calculator {
     }
 
     //ToDo: Implement
-    public double calculateSolution(){
+    public CalculatorSolution calculateSolution(){
         double scopeBaseAngle = 0;
         double simStep = 0;
         double dragModel = 0;
@@ -237,7 +237,7 @@ class Calculator {
         kineticEnergy = 0.5 * (gunBulletWeight / 1000 * Math.pow(bulletSpeed, 2));
         kineticEnergy = kineticEnergy * 0.737562149;
 
-        return 0;
+        return null;
     }
 
     private double calculateRetardation(double dragModel, double bc, double trueSpeed) {
