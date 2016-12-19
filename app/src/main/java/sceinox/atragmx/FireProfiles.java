@@ -1,7 +1,11 @@
 package sceinox.atragmx;
 
 
-public class FireProfiles {
+import android.content.Context;
+
+
+
+public class FireProfiles{
     //represents fireprofiles A,B,C,D from activity_Main
     private static Profile a = new Profile();
     private static Profile b = new Profile();
@@ -9,6 +13,7 @@ public class FireProfiles {
     private static Profile d = new Profile();
 
     private static Profile selectedProfile = a;
+    private static Context context ;
 
     //region Getter's and Setter's
     public static Profile getA() {
@@ -68,40 +73,56 @@ public class FireProfiles {
     }
     //endregion
 
+    //region c'tors
+    public FireProfiles(Context context) {
+        this.context=context;
+    }
+    //endregion
 
+    public static void setStartWeapon(){
+        FireProfiles.getA().setGun(R.array.cal408CheyTac);
+        FireProfiles.getB().setGun(R.array.cal408CheyTac);
+        FireProfiles.getC().setGun(R.array.cal408CheyTac);
+        FireProfiles.getD().setGun(R.array.cal408CheyTac);
+    }
 
     static class Profile{
         //gun data
-        private double boreHeight = 3.81;
-        private double bulletWeight = 27;
-        private double bulletDiameter = 1.04;
-        private double c1Coefficient = 0.389;
-        private double rifleTwist = 33.02;
-        private double muzzleVelocity = 910;
-        private double zeroRange = 100;
+        private double boreHeight = -1;
+        private double bulletWeight = -1;
+        private double bulletDiameter = -1;
+        private double c1Coefficient = -1;
+        private double rifleTwist = -1;
+        private double muzzleVelocity = -1;
+        private double zeroRange = -1;
 
         //atmosphere data
-        private double temperature = 12;
-        private double altitude = 2664;
-        private double barometricPressure = 1028;
-        private double humidity = 78;
+        private double temperature;
+        private double altitude;
+        private double barometricPressure;
+        private double humidity;
 
         //target data
-        private double latitude = 0;
-        private double dirOfFire = 134;
-        private double windSpeed = 4.4;
-        private double windSpeed2 = 0;
-        private double windDirection = 11;
-        private double inclinationAngleDegree = 0.98;
-        private double inclinationAngleCosine = -11;
-        private double targetSpeed = 0;
-        private double targetRange = 1600;
+        private double latitude;
+        private double dirOfFire;
+        private double windSpeed;
+        private double windSpeed2;
+        private double windDirection;
+        private double inclinationAngleDegree;
+        private double inclinationAngleCosine;
+        private double targetSpeed;
+        private double targetRange;
 
         //region c'tors
         public Profile() {
             //sets standard values
-            // TODO: update gunStatistic.xml
-            //this.setGun(null);
+            this.boreHeight = -1;
+            this.bulletWeight = -1;
+            this.bulletDiameter = -1;
+            this.c1Coefficient = -1;
+            this.rifleTwist = -1;
+            this.muzzleVelocity = -1;
+            this.zeroRange = -1;
 
             this.temperature = 23;
             this.altitude = 1200;
@@ -293,7 +314,8 @@ public class FireProfiles {
         }
 
         //sets all gun related values to the from a String-Array, intended for gunstatistics.xml
-        public void setGun(String[] gun){
+        public void setGun(int id){
+            String[] gun= context.getResources().getStringArray(id);
             this.boreHeight=Double.parseDouble(gun[0]);
             this.bulletWeight=Double.parseDouble(gun[1]);
             this.bulletDiameter=Double.parseDouble(gun[2]);
@@ -304,9 +326,10 @@ public class FireProfiles {
         }
         //endregion
 
+
         public String toString(){
             String out;
-            out="boreHeight = "+boreHeight+"; bulletWeight = "+bulletWeight+"; bulletDiameter = "+bulletDiameter+"; c1Coefficient = "+c1Coefficient+
+            out="Profile:: boreHeight = "+boreHeight+"; bulletWeight = "+bulletWeight+"; bulletDiameter = "+bulletDiameter+"; c1Coefficient = "+c1Coefficient+
                     "; rifleTwist = "+rifleTwist+"; muzzleVelocity = "+muzzleVelocity+"; zeroRange = "+zeroRange+"; temperature = "+temperature+
                     "; altitude = "+altitude+"; barometricPressure = "+barometricPressure+"; humidity = "+humidity+"; latitude = "+latitude+
                     "; dirOfFire = "+dirOfFire+"; windSpeed = "+windSpeed+"; windSpeed2 = "+windSpeed2+"; windDirection = "+windDirection+"; inclinationAngleDegree = "+

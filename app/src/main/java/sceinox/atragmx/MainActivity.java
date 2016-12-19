@@ -19,8 +19,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.savedInstanceState = savedInstanceState;
         setContentView(R.layout.activity_main);
-
+        new FireProfiles(this);
+        FireProfiles.setStartWeapon();
         fireProfileSwitch('a');
+
     }
 
     @Override
@@ -290,6 +292,8 @@ public class MainActivity extends AppCompatActivity {
     private String getTextFromTextView(int id){
         return ((TextView) this.findViewById(id)).getText().toString();
     }
+
+
     //endregion
 
 }
