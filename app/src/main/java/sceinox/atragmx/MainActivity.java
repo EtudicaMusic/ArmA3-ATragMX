@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     Bundle savedInstanceState;
 
+    public FireProfiles fireProfiles = new FireProfiles(this);
+
     //region activity states
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         fireProfileSwitch('a');
+
+        AtmsphrActivity.fireProfiles = fireProfiles;
+        TargetActivity.fireProfiles = fireProfiles;
+        GunActivity.fireProfiles = fireProfiles;
     }
 
     @Override
@@ -119,12 +125,12 @@ public class MainActivity extends AppCompatActivity {
     public void onLeadClick(View view){
         if (getTextFromTextView(R.id.Text_WS).equals("WS")){
             setTextToTextView(R.id.Text_WS,"WS2");
-            setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed2()));
+            setTextToTextView(R.id.Text_WSVal, String.valueOf(fireProfiles.getSelectedProfile().getWindSpeed2()));
             setTextToTextView(R.id.Button_Lead, "Wind 2");
             //Todo what has to be showed in Text_Lead_AbsVal?
         }else {
             setTextToTextView(R.id.Text_WS,"WS");
-            setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed()));
+            setTextToTextView(R.id.Text_WSVal, String.valueOf(fireProfiles.getSelectedProfile().getWindSpeed()));
             setTextToTextView(R.id.Button_Lead, "Lead");
             //Todo what has to be showed in Text_Lead_AbsVal?
         }
@@ -241,45 +247,45 @@ public class MainActivity extends AppCompatActivity {
     private void fireProfileSwitch(char profile) {
         switch (profile) {
             case 'a':
-                FireProfiles.setSelectedProfileToA();
+                fireProfiles.setSelectedProfileToA();
                 break;
 
             case 'b':
-                FireProfiles.setSelectedProfileToB();
+                fireProfiles.setSelectedProfileToB();
                 break;
 
             case 'c':
-                FireProfiles.setSelectedProfileToC();
+                fireProfiles.setSelectedProfileToC();
                 break;
 
             case 'd':
-                FireProfiles.setSelectedProfileToD();
+                fireProfiles.setSelectedProfileToD();
                 break;
         }
     }
 
     private void initTextViews() {
         //Gun
-        setTextToTextView(R.id.Text_BHVal, String.valueOf(FireProfiles.getSelectedProfile().getBoreHeight()));
-        setTextToTextView(R.id.Text_BWVal, String.valueOf(FireProfiles.getSelectedProfile().getBulletWeight()));
+        setTextToTextView(R.id.Text_BHVal, String.valueOf(fireProfiles.getSelectedProfile().getBoreHeight()));
+        setTextToTextView(R.id.Text_BWVal, String.valueOf(fireProfiles.getSelectedProfile().getBulletWeight()));
         //TODO whats about bulletDiameter?
-        setTextToTextView(R.id.Text_C1Val, String.valueOf(FireProfiles.getSelectedProfile().getC1Coefficient()));
+        setTextToTextView(R.id.Text_C1Val, String.valueOf(fireProfiles.getSelectedProfile().getC1Coefficient()));
         //TODO whats about rifleTwist?
-        setTextToTextView(R.id.Text_MVVal, String.valueOf(FireProfiles.getSelectedProfile().getMuzzleVelocity()));
-        setTextToTextView(R.id.Text_ZRVal, String.valueOf(FireProfiles.getSelectedProfile().getZeroRange()));
+        setTextToTextView(R.id.Text_MVVal, String.valueOf(fireProfiles.getSelectedProfile().getMuzzleVelocity()));
+        setTextToTextView(R.id.Text_ZRVal, String.valueOf(fireProfiles.getSelectedProfile().getZeroRange()));
 
         //Atmosphere
-        setTextToTextView(R.id.Text_TmpVal, String.valueOf(FireProfiles.getSelectedProfile().getTemperature()));
-        setTextToTextView(R.id.Text_AltVal, String.valueOf(FireProfiles.getSelectedProfile().getAltitude()));
+        setTextToTextView(R.id.Text_TmpVal, String.valueOf(fireProfiles.getSelectedProfile().getTemperature()));
+        setTextToTextView(R.id.Text_AltVal, String.valueOf(fireProfiles.getSelectedProfile().getAltitude()));
         //TODO barPress,humidity
 
         //Target
         //TODO whats about unused target values?
-        setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed()));
-        setTextToTextView(R.id.Text_WDVal, String.valueOf(FireProfiles.getSelectedProfile().getWindDirection()));
-        setTextToTextView(R.id.Text_IAVal, String.valueOf(FireProfiles.getSelectedProfile().getInclinationAngleDegree()));
-        setTextToTextView(R.id.Text_TSVal, String.valueOf(FireProfiles.getSelectedProfile().getTargetSpeed()));
-        setTextToTextView(R.id.Text_TRVal, String.valueOf(FireProfiles.getSelectedProfile().getTargetRange()));
+        setTextToTextView(R.id.Text_WSVal, String.valueOf(fireProfiles.getSelectedProfile().getWindSpeed()));
+        setTextToTextView(R.id.Text_WDVal, String.valueOf(fireProfiles.getSelectedProfile().getWindDirection()));
+        setTextToTextView(R.id.Text_IAVal, String.valueOf(fireProfiles.getSelectedProfile().getInclinationAngleDegree()));
+        setTextToTextView(R.id.Text_TSVal, String.valueOf(fireProfiles.getSelectedProfile().getTargetSpeed()));
+        setTextToTextView(R.id.Text_TRVal, String.valueOf(fireProfiles.getSelectedProfile().getTargetRange()));
     }
 
     private void setTextToTextView(int id, String text) {

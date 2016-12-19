@@ -10,6 +10,12 @@ import android.widget.TextView;
 
 public class AtmsphrActivity extends AppCompatActivity{
 
+    static FireProfiles fireProfiles;
+
+    public void setFireProfiles(FireProfiles fireProfiles) {
+        this.fireProfiles = fireProfiles;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +55,7 @@ public class AtmsphrActivity extends AppCompatActivity{
 
     //region private methods
     private void saveChangesToProfile(){
-        FireProfiles.Profile profile = FireProfiles.getSelectedProfile();
+        FireProfiles.Profile profile = fireProfiles.getSelectedProfile();
 
         profile.setAltitude(getInputOfText(R.id.Edit_Altitude));
         profile.setTemperature(getInputOfText(R.id.Edit_Temperature));

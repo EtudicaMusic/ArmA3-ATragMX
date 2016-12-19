@@ -9,4 +9,14 @@
         <item name="Muzzle Velocity">910</item>
         <item name="Zero Range">100</item>
     </string-array>
+
+    <string-array name="Testing">
+        <item name="Bore Height">-1</item>
+        <item name="Bullet Weight">-1</item>
+        <item name="Bullet Diameter">-1</item>
+        <item name="C1 Coefficient">-1</item>
+        <item name="Rifle Twist">-1</item>
+        <item name="Muzzle Velocity">-1</item>
+        <item name="Zero Range">-1</item>
+    </string-array>
 </resources>

@@ -9,6 +9,12 @@ import android.widget.TextView;
 
 public class GunActivity extends AppCompatActivity{
 
+    static FireProfiles fireProfiles;
+
+    public void setFireProfiles(FireProfiles fireProfiles) {
+        this.fireProfiles = fireProfiles;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +46,7 @@ public class GunActivity extends AppCompatActivity{
 
     //region private methods
     private void saveChangesToProfile(){
-        FireProfiles.Profile profile = FireProfiles.getSelectedProfile();
+        FireProfiles.Profile profile = fireProfiles.getSelectedProfile();
 
         profile.setBoreHeight(getInputOfText(R.id.Edit_Bore));
         profile.setBulletWeight(getInputOfText(R.id.Edit_BulletWeight));

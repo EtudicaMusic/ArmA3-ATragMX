@@ -8,6 +8,12 @@ import android.widget.TextView;
 
 public class TargetActivity extends AppCompatActivity{
 
+    static FireProfiles fireProfiles;
+
+    public void setFireProfiles(FireProfiles fireProfiles) {
+        this.fireProfiles = fireProfiles;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +45,7 @@ public class TargetActivity extends AppCompatActivity{
 
     //region private methods
     private void saveChangesToProfile(){
-        FireProfiles.Profile profile = FireProfiles.getSelectedProfile();
+        FireProfiles.Profile profile = fireProfiles.getSelectedProfile();
 
         profile.setLatitude(getInputOfText(R.id.editText8));
         profile.setDirOfFire(getInputOfText(R.id.Edit_DirOfFire));

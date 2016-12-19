@@ -1,76 +1,83 @@
 package sceinox.atragmx;
 
+import android.content.Context;
 
 public class FireProfiles {
     //represents fireprofiles A,B,C,D from activity_Main
-    private static Profile a = new Profile();
-    private static Profile b = new Profile();
-    private static Profile c = new Profile();
-    private static Profile d = new Profile();
 
-    private static Profile selectedProfile = a;
+    private Context context;
+
+    FireProfiles(Context context) {
+        this.context = context;
+    }
+
+    private Profile a = new Profile();
+    private Profile b = new Profile();
+    private Profile c = new Profile();
+    private Profile d = new Profile();
+
+    private Profile selectedProfile = a;
 
     //region Getter's and Setter's
-    public static Profile getA() {
+    public Profile getA() {
         return a;
     }
 
-    public static void setA(Profile a) {
-        FireProfiles.a = a;
+    public void setA(Profile a) {
+        this.a = a;
     }
 
-    public static Profile getB() {
+    public Profile getB() {
         return b;
     }
 
-    public static void setB(Profile b) {
-        FireProfiles.b = b;
+    public void setB(Profile b) {
+        this.b = b;
     }
 
-    public static Profile getC() {
+    public Profile getC() {
         return c;
     }
 
-    public static void setC(Profile c) {
-        FireProfiles.c = c;
+    public void setC(Profile c) {
+        this.c = c;
     }
 
-    public static Profile getD() {
+    public Profile getD() {
         return d;
     }
 
-    public static void setD(Profile d) {
-        FireProfiles.d = d;
+    public void setD(Profile d) {
+        this.d = d;
     }
 
-    public static Profile getSelectedProfile() {
+    public Profile getSelectedProfile() {
         return selectedProfile;
     }
 
-    public static void setSelectedProfile(Profile selectedProfile) {
-        FireProfiles.selectedProfile = selectedProfile;
+    public void setSelectedProfile(Profile selectedProfile) {
+        this.selectedProfile = selectedProfile;
     }
 
-    public static void setSelectedProfileToA() {
-        FireProfiles.selectedProfile = FireProfiles.a;
+    public void setSelectedProfileToA() {
+        this.selectedProfile = this.a;
     }
 
-    public static void setSelectedProfileToB() {
-        FireProfiles.selectedProfile = FireProfiles.b;
+    public void setSelectedProfileToB() {
+        this.selectedProfile = this.b;
     }
 
-    public static void setSelectedProfileToC() {
-        FireProfiles.selectedProfile = FireProfiles.c;
+    public void setSelectedProfileToC() {
+        this.selectedProfile = this.c;
     }
 
-    public static void setSelectedProfileToD() {
-        FireProfiles.selectedProfile = FireProfiles.d;
+    public void setSelectedProfileToD() {
+        this.selectedProfile = this.d;
     }
     //endregion
 
 
-
-    static class Profile{
+    class Profile{
         //gun data
         private double boreHeight = 3.81;
         private double bulletWeight = 27;
@@ -293,7 +300,9 @@ public class FireProfiles {
         }
 
         //sets all gun related values to the from a String-Array, intended for gunstatistics.xml
-        public void setGun(String[] gun){
+        public void setGun(int id){
+            String[] gun = context.getResources().getStringArray(id);
+
             this.boreHeight=Double.parseDouble(gun[0]);
             this.bulletWeight=Double.parseDouble(gun[1]);
             this.bulletDiameter=Double.parseDouble(gun[2]);
