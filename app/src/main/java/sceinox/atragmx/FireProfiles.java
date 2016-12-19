@@ -77,6 +77,9 @@ public class FireProfiles{
     //endregion
 
     public static void setStartWeapon(){
+        GunlistParser parser=new GunlistParser(context);
+
+
         FireProfiles.getA().setGun(R.array.cal_408_CheyTac);
         FireProfiles.getB().setGun(R.array.cal_408_CheyTac);
         FireProfiles.getC().setGun(R.array.cal_408_CheyTac);

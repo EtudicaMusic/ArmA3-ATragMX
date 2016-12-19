@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 public class CalculatorTest {
     private Calculator calculator = new Calculator(0,0,0,0,0,0,0,0,0,0,0,0,0);
 
+    //// TODO: 20.12.2016 Wind2 
     @Test
     public void calculateSolution0() throws Exception {
         calculator = new Calculator(3.81, 48, 0.638, 820, 100, 43, 1350, 20, 10.8, 6, 20, 2, 800);

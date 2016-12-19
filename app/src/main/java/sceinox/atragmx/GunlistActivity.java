@@ -39,4 +39,7 @@ public class GunlistActivity extends AppCompatActivity{
     }
     //endregion
 
+    private void initListview(){
+
+    }
 }

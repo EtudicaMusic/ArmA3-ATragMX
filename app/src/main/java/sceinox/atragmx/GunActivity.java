@@ -61,4 +61,3 @@ public class GunActivity extends AppCompatActivity{
     }
     //endregion
 }
-//ToDo: Commas should be replaced with dots (text fields)
