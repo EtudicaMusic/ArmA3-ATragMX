@@ -8,12 +8,6 @@ import android.widget.TextView;
 
 public class TargetActivity extends AppCompatActivity{
 
-    static FireProfiles fireProfiles;
-
-    public void setFireProfiles(FireProfiles fireProfiles) {
-        this.fireProfiles = fireProfiles;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +39,12 @@ public class TargetActivity extends AppCompatActivity{
 
     //region private methods
     private void saveChangesToProfile(){
-        FireProfiles.Profile profile = fireProfiles.getSelectedProfile();
+        FireProfiles.Profile profile = FireProfiles.getSelectedProfile();
 
         profile.setLatitude(getInputOfText(R.id.editText8));
         profile.setDirOfFire(getInputOfText(R.id.Edit_DirOfFire));
-        // TODO: 16.11.16 Edit FireProfiles for 2 WindSpeeds
-        profile.setWindSpeed(getInputOfText(R.id.Edit_WindSpeed1) * getInputOfText(R.id.Edit_WindSpeed2));
+        profile.setWindSpeed(getInputOfText(R.id.Edit_WindSpeed1));
+        profile.setWindSpeed2(getInputOfText(R.id.Edit_WindSpeed2));
         profile.setWindDirection(getInputOfText(R.id.Edit_WindDirection));
         profile.setInclinationAngleFromCosine(getInputOfText(R.id.Edit_InclinationAnglec));
         profile.setInclinationAngleFromDegree(getInputOfText(R.id.Edit_InclinationAngled));
