@@ -261,12 +261,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initTextViews() {
+        //Header
+        setTextToTextView(R.id.Text_CaliberVal,FireProfiles.getSelectedProfile().getWeaponName());
+
         //Gun
         setTextToTextView(R.id.Text_BHVal, String.valueOf(FireProfiles.getSelectedProfile().getBoreHeight()));
         setTextToTextView(R.id.Text_BWVal, String.valueOf(FireProfiles.getSelectedProfile().getBulletWeight()));
-        //TODO whats about bulletDiameter?
         setTextToTextView(R.id.Text_C1Val, String.valueOf(FireProfiles.getSelectedProfile().getC1Coefficient()));
-        //TODO whats about rifleTwist?
         setTextToTextView(R.id.Text_MVVal, String.valueOf(FireProfiles.getSelectedProfile().getMuzzleVelocity()));
         setTextToTextView(R.id.Text_ZRVal, String.valueOf(FireProfiles.getSelectedProfile().getZeroRange()));
 
@@ -276,7 +277,6 @@ public class MainActivity extends AppCompatActivity {
         //TODO barPress,humidity
 
         //Target
-        //TODO whats about unused target values?
         setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed()));
         setTextToTextView(R.id.Text_WDVal, String.valueOf(FireProfiles.getSelectedProfile().getWindDirection()));
         setTextToTextView(R.id.Text_IAVal, String.valueOf(FireProfiles.getSelectedProfile().getInclinationAngleDegree()));

@@ -21,7 +21,9 @@
             android:id="@+id/List_Gunlist"
             android:layout_weight="5.15"
             android:scrollbarSize="20dp"
-            android:scrollbarStyle="insideInset" />
+            android:scrollbarStyle="insideInset"
+            android:choiceMode="singleChoice"
+            android:listSelector="#666666"/>
 
         <Space
             android:layout_width="match_parent"

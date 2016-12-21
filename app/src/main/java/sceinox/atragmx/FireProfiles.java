@@ -77,9 +77,6 @@ public class FireProfiles{
     //endregion
 
     public static void setStartWeapon(){
-        GunlistParser parser=new GunlistParser(context);
-
-
         FireProfiles.getA().setGun(R.array.cal_408_CheyTac);
         FireProfiles.getB().setGun(R.array.cal_408_CheyTac);
         FireProfiles.getC().setGun(R.array.cal_408_CheyTac);
@@ -88,6 +85,7 @@ public class FireProfiles{
 
     static class Profile{
         //gun data
+        private String weaponName;
         private double boreHeight;
         private double bulletWeight;
         private double bulletDiameter;
@@ -141,6 +139,10 @@ public class FireProfiles{
         //endregion
 
         //region Getter
+
+        public String getWeaponName() {
+            return weaponName;
+        }
 
         public double getBoreHeight() {
             return boreHeight;
@@ -225,6 +227,11 @@ public class FireProfiles{
         //endregion
 
         //region Setter
+
+        public void setWeaponName(String weaponName) {
+            this.weaponName = weaponName;
+        }
+
         public void setBoreHeight(double boreHeight) {
             this.boreHeight = boreHeight;
         }
@@ -316,6 +323,7 @@ public class FireProfiles{
         //sets all gun related values to the from a String-Array, intended for gunstatistics.xml
         public void setGun(int id){
             String[] gun= context.getResources().getStringArray(id);
+            this.weaponName=gun[7];
             this.boreHeight=Double.parseDouble(gun[0]);
             this.bulletWeight=Double.parseDouble(gun[1]);
             this.bulletDiameter=Double.parseDouble(gun[2]);
@@ -329,7 +337,7 @@ public class FireProfiles{
 
         public String toString(){
             String out;
-            out="Profile:: boreHeight = "+boreHeight+"; bulletWeight = "+bulletWeight+"; bulletDiameter = "+bulletDiameter+"; c1Coefficient = "+c1Coefficient+
+            out="Profile:: weaponName = "+weaponName+"; boreHeight = "+boreHeight+"; bulletWeight = "+bulletWeight+"; bulletDiameter = "+bulletDiameter+"; c1Coefficient = "+c1Coefficient+
                     "; rifleTwist = "+rifleTwist+"; muzzleVelocity = "+muzzleVelocity+"; zeroRange = "+zeroRange+"; temperature = "+temperature+
                     "; altitude = "+altitude+"; barometricPressure = "+barometricPressure+"; humidity = "+humidity+"; latitude = "+latitude+
                     "; dirOfFire = "+dirOfFire+"; windSpeed = "+windSpeed+"; windSpeed2 = "+windSpeed2+"; windDirection = "+windDirection+"; inclinationAngleDegree = "+
