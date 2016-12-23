@@ -19,11 +19,12 @@ class DatabaseHelper extends SQLiteOpenHelper {
     private static final String GUNS_COLUMN_MUZZLEVELOCITY = "MUZZLEVELOCITY";
     private static final String GUNS_COLUMN_ZERORANGE = "ZERORANGE";
 
+    // TODO: 23.12.16 remove static context because of memory leaks 
     private static Context context = null;
 
     DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        this.context = context;
+        DatabaseHelper.context = context;
     }
 
     @Override
@@ -59,17 +60,18 @@ class DatabaseHelper extends SQLiteOpenHelper {
         try {
             sqLiteDatabase.execSQL(query);
         } catch (Exception ex){
-            ExceptionHandler.handleDatabaseExceptionForAddingANewGun(ex, this.context);
+            ExceptionHandler.handleDatabaseExceptionForAddingANewGun(ex, context);
         }
     }
 
     private String getNewID(SQLiteDatabase sqLiteDatabase) {
         String query = "SELECT MAX(" + GUNS_COLUMN_ID + ") FROM " + GUNS_TABLE_GUN;
 
-        Cursor cursor = sqLiteDatabase.rawQuery(query, null);
-        cursor.moveToFirst();
+        try (Cursor cursor = sqLiteDatabase.rawQuery(query, null)) {
+            cursor.moveToFirst();
 
-        return String.valueOf(cursor.getInt(cursor.getColumnCount() - 1) + 1);
+            return String.valueOf(cursor.getInt(cursor.getColumnCount() - 1) + 1);
+        }
     }
 
     @Override
@@ -79,15 +81,16 @@ class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         String query = "SELECT * FROM " + GUNS_TABLE_GUN;
 
-        Cursor cursor = sqLiteDatabase.rawQuery(query, null);
-        cursor.moveToFirst();
+        try (Cursor cursor = sqLiteDatabase.rawQuery(query, null)) {
+            cursor.moveToFirst();
 
-        while (!cursor.isAfterLast()) {
-            for (int i = 0; i < cursor.getColumnCount(); i++) {
-                returnString.append(cursor.getColumnName(i) + ": \t" + cursor.getString(i) + " || ");
+            while (!cursor.isAfterLast()) {
+                for (int i = 0; i < cursor.getColumnCount(); i++) {
+                    returnString.append(cursor.getColumnName(i)).append(": \t").append(cursor.getString(i)).append(" || ");
+                }
+                returnString.append("\n \n");
+                cursor.moveToNext();
             }
-            returnString.append("\n \n");
-            cursor.moveToNext();
         }
 
         return returnString.toString();
