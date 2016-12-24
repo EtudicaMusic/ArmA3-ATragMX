@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "ATragMX.db";
@@ -19,7 +21,6 @@ class DatabaseHelper extends SQLiteOpenHelper {
     private static final String GUNS_COLUMN_MUZZLEVELOCITY = "MUZZLEVELOCITY";
     private static final String GUNS_COLUMN_ZERORANGE = "ZERORANGE";
 
-    // TODO: 23.12.16 remove static context because of memory leaks 
     private static Context context = null;
 
     DatabaseHelper(Context context) {
@@ -30,8 +31,8 @@ class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + GUNS_TABLE_GUN + "(" +
-                GUNS_COLUMN_ID + " INTEGER PRIMARY KEY, " +
-                GUNS_COLUMN_NAME + " TEXT UNIQUE NOT NULL, " +
+                GUNS_COLUMN_ID + " INTEGER UNIQUE NOT NULL, " +
+                GUNS_COLUMN_NAME + " TEXT PRIMARY KEY NOT NULL, " +
                 GUNS_COLUMN_BOREHEIGHT + " DOUBLE NOT NULL, " +
                 GUNS_COLUMN_BULLETWEIGHT + " DOUBLE NOT NULL, " +
                 GUNS_COLUMN_BULLETDIAMETER + " DOUBLE NOT NULL, " +
@@ -50,7 +51,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public void addNewGun(String name, double boreHeight, double bulletWeight, double bulletDiameter, double c1Coefficient, double rifleTwist, double muzzleVelocity, int zeroRange){
+    public void addNewGun(String name, double boreHeight, double bulletWeight, double bulletDiameter, double c1Coefficient, double rifleTwist, double muzzleVelocity, int zeroRange) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String query = "INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + " (" +
@@ -59,9 +60,41 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
         try {
             sqLiteDatabase.execSQL(query);
-        } catch (Exception ex){
+        } catch (Exception ex) {
             ExceptionHandler.handleDatabaseExceptionForAddingANewGun(ex, context);
         }
+    }
+
+    public void deleteGun(String name) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String query = "DELETE FROM " + GUNS_TABLE_GUN +
+                " WHERE " + GUNS_COLUMN_NAME + " = " + "\"" + name + "\"";
+
+        try {
+            sqLiteDatabase.execSQL(query);
+        } catch (Exception ex) {
+            ExceptionHandler.handleDatabaseExceptionForDeletingAGun(ex, context);
+        }
+    }
+
+    public String[] getNamesOfAllGuns() {
+        ArrayList<String> nameOfAllGuns = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+        String query = "SELECT " + GUNS_COLUMN_NAME + " FROM " + GUNS_TABLE_GUN;
+
+        try (Cursor cursor = sqLiteDatabase.rawQuery(query, null)) {
+            for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext())
+                nameOfAllGuns.add(cursor.getString(0));
+        }
+
+        String[] nameOfAllGunsAsString = new String[nameOfAllGuns.size()];
+
+        for (int i = 0; i < nameOfAllGuns.size(); i++)
+            nameOfAllGunsAsString[i] = nameOfAllGuns.get(i);
+
+        return nameOfAllGunsAsString;
     }
 
     private String getNewID(SQLiteDatabase sqLiteDatabase) {
@@ -82,14 +115,11 @@ class DatabaseHelper extends SQLiteOpenHelper {
         String query = "SELECT * FROM " + GUNS_TABLE_GUN;
 
         try (Cursor cursor = sqLiteDatabase.rawQuery(query, null)) {
-            cursor.moveToFirst();
-
-            while (!cursor.isAfterLast()) {
+            for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
                 for (int i = 0; i < cursor.getColumnCount(); i++) {
                     returnString.append(cursor.getColumnName(i)).append(": \t").append(cursor.getString(i)).append(" || ");
                 }
-                returnString.append("\n \n");
-                cursor.moveToNext();
+                returnString.append("\n\n");
             }
         }
 
