@@ -97,6 +97,22 @@ class DatabaseHelper extends SQLiteOpenHelper {
         return nameOfAllGunsAsString;
     }
 
+    public String[] getGunAsArrayByName(String name){
+        String[] returnGun=new String[9];
+
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        String query= "SELECT * FROM " + GUNS_TABLE_GUN + " WHERE " + GUNS_COLUMN_NAME + "=" + "\"" + name + "\"" + " ORDER BY " + GUNS_COLUMN_ID;
+
+        try (Cursor cursor = sqLiteDatabase.rawQuery(query, null)) {
+            for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+                for (int i = 0; i < cursor.getColumnCount(); i++) {
+                    returnGun[i] = cursor.getString(i);
+                }
+            }
+        }
+        return returnGun;
+    }
+
     private String getNewID(SQLiteDatabase sqLiteDatabase) {
         String query = "SELECT MAX(" + GUNS_COLUMN_ID + ") FROM " + GUNS_TABLE_GUN;
 
