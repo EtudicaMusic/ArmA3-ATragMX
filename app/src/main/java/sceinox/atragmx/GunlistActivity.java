@@ -1,5 +1,6 @@
 package sceinox.atragmx;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -35,7 +36,9 @@ public class GunlistActivity extends AppCompatActivity {
     }
 
     public void onAddClick(View view) {
-        System.out.println("test");
+        finish();
+        startActivity(new Intent(this, GunActivity.class));
+        GunActivity.addGunMode=true;
     }
 
     public void onDeleteClick(View view) {
