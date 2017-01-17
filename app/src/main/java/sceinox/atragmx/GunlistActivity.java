@@ -42,7 +42,8 @@ public class GunlistActivity extends AppCompatActivity {
     }
 
     public void onDeleteClick(View view) {
-        System.out.println("test");
+        dbHelp.deleteGun(selected);
+        initListview();
     }
 
     public void onNoteClick(View view) {
