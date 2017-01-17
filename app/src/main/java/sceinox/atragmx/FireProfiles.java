@@ -77,10 +77,10 @@ public class FireProfiles{
     //endregion
 
     public static void setStartWeapon(){
-        FireProfiles.getA().setGun(R.array.cal_408_CheyTac);
-        FireProfiles.getB().setGun(R.array.cal_408_CheyTac);
-        FireProfiles.getC().setGun(R.array.cal_408_CheyTac);
-        FireProfiles.getD().setGun(R.array.cal_408_CheyTac);
+        FireProfiles.getA().setGun("408 CheyTac");
+        FireProfiles.getB().setGun("408 CheyTac");
+        FireProfiles.getC().setGun("408 CheyTac");
+        FireProfiles.getD().setGun("408 CheyTac");
     }
 
     static class Profile{
@@ -320,17 +320,19 @@ public class FireProfiles{
             this.targetRange = targetRange;
         }
 
-        //sets all gun related values to the from a String-Array, intended for gunstatistics.xml
-        public void setGun(int id){
-            String[] gun= context.getResources().getStringArray(id);
-            this.weaponName=gun[7];
-            this.boreHeight=Double.parseDouble(gun[0]);
-            this.bulletWeight=Double.parseDouble(gun[1]);
-            this.bulletDiameter=Double.parseDouble(gun[2]);
-            this.c1Coefficient=Double.parseDouble(gun[3]);
-            this.rifleTwist=Double.parseDouble(gun[4]);
-            this.muzzleVelocity=Double.parseDouble(gun[5]);
-            this.zeroRange=Double.parseDouble(gun[6]);
+        //sets all gun related values from SQL DB by weaponName
+        public void setGun(String weaponName){
+            DatabaseHelper dbHelp=new DatabaseHelper(context);
+            String[] gun=dbHelp.getGunAsArrayByName(weaponName);
+
+            this.weaponName=gun[1];
+            this.boreHeight= Double.parseDouble(gun[2]);
+            this.bulletWeight= Double.parseDouble(gun[3]);
+            this.bulletDiameter= Double.parseDouble(gun[4]);
+            this.c1Coefficient= Double.parseDouble(gun[5]);
+            this.rifleTwist= Double.parseDouble(gun[6]);
+            this.muzzleVelocity= Double.parseDouble(gun[7]);
+            this.zeroRange= Double.parseDouble(gun[8]);
         }
         //endregion
 

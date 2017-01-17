@@ -7,12 +7,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.HashMap;
 
 public class GunlistActivity extends AppCompatActivity {
     private ArrayAdapter adapter;
     private ListView listView;
     private String selected;
+
+    private DatabaseHelper dbHelp=new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +25,8 @@ public class GunlistActivity extends AppCompatActivity {
     //region onClickEvents
     public void onOpenClick(View view) {
         listView.setSelection(4);
-        HashMap guns = getGunNames();
-        FireProfiles.getSelectedProfile().setGun((Integer) guns.get(selected));
+
+        FireProfiles.getSelectedProfile().setGun(selected);
         finish();
     }
 
@@ -52,7 +53,7 @@ public class GunlistActivity extends AppCompatActivity {
 
     //region private methods
     private void initListview() {
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getGunNamesArray());
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dbHelp.getNamesOfAllGuns());
         listView = (ListView) findViewById(R.id.List_Gunlist);
         listView.setAdapter(adapter);
 
@@ -63,27 +64,5 @@ public class GunlistActivity extends AppCompatActivity {
         });
     }
 
-    private HashMap<String, Integer> getGunNames() {
-        int[] ids = {R.array.cal_127x108mm, R.array.cal_127x99mm, R.array.cal_127x99mm_AMAX, R.array.cal_127x99mm_API, R.array.cal_127x54mm,
-                R.array.cal_408_CheyTac, R.array.cal_93x64mm, R.array.cal_338LM_250gr, R.array.cal_338LM_300gr, R.array.cal_338LM_API526,
-                R.array.cal_300WM_Mk248_Mod0, R.array.cal_300WM_Mk248_Mod1, R.array.cal_300WM_Berger_OTM};
-        HashMap<String, Integer> guns = new HashMap<>();
-        for (int id : ids) {
-            String[] gun = this.getResources().getStringArray(id);
-            guns.put(gun[7], id);
-        }
-        return guns;
-    }
-
-    private String[] getGunNamesArray() {
-        HashMap<String, Integer> guns = getGunNames();
-        String[] names = new String[guns.size()];
-        int itt = 0;
-        for (String name : guns.keySet()) {
-            names[itt] = name;
-            itt++;
-        }
-        return names;
-    }
     //endregion
 }
