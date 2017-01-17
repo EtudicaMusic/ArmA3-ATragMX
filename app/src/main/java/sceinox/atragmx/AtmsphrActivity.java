@@ -9,11 +9,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class AtmsphrActivity extends AppCompatActivity{
+    private Boolean MethodIsTBH=true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atmsphr0);
+        buttonColorSwitch("tbh");
+        updateCalcMethod();
     }
 
     //region OnClickEvents
@@ -39,10 +42,14 @@ public class AtmsphrActivity extends AppCompatActivity{
     }
 
     public void onATClick(View view) {
+        MethodIsTBH=false;
+        updateCalcMethod();
         buttonColorSwitch("at");
     }
 
     public void onTBHClick(View view) {
+        MethodIsTBH=true;
+        updateCalcMethod();
         buttonColorSwitch("tbh");
     }
     //endregion
@@ -50,9 +57,43 @@ public class AtmsphrActivity extends AppCompatActivity{
     //region private methods
     private void saveChangesToProfile(){
         FireProfiles.Profile profile = FireProfiles.getSelectedProfile();
+        if (MethodIsTBH){
+            profile.setTemperature(getInputOfText(R.id.Edit_Altitude_Temperature));
+            profile.setBarometricPressure(getInputOfText(R.id.Edit_Temperature_BarPress));
+            profile.setHumidity(getInputOfText(R.id.Edit_None_Humidity));
+        }else {
+            profile.setAltitude(getInputOfText(R.id.Edit_Altitude_Temperature));
+            profile.setTemperature(getInputOfText(R.id.Edit_Temperature_BarPress));
+        }
+    }
 
-        profile.setAltitude(getInputOfText(R.id.Edit_Altitude));
-        profile.setTemperature(getInputOfText(R.id.Edit_Temperature));
+    private void updateCalcMethod(){
+        TextView humidityText=(TextView) this.findViewById(R.id.Text_None_Humidity);
+        TextView humidityEdit=(TextView) this.findViewById(R.id.Edit_None_Humidity);
+        if (MethodIsTBH){
+            humidityText.setVisibility(View.VISIBLE);
+            humidityEdit.setVisibility(View.VISIBLE);
+
+            setTextToTextView(R.id.Text_Altitude_Temperature,"Temperature (°C)");
+            setTextToTextView(R.id.Edit_Altitude_Temperature, String.valueOf(FireProfiles.getSelectedProfile().getTemperature()));
+            setTextToTextView(R.id.Text_Temperature_BarPress,"Pressure (hPa)");
+            setTextToTextView(R.id.Edit_Temperature_BarPress, String.valueOf(FireProfiles.getSelectedProfile().getBarometricPressure()));
+            setTextToTextView(R.id.Edit_None_Humidity, "Humidity (%)");
+            setTextToTextView(R.id.Edit_None_Humidity, String.valueOf(FireProfiles.getSelectedProfile().getHumidity()));
+        }else {
+            humidityText.setVisibility(View.INVISIBLE);
+            humidityEdit.setVisibility(View.INVISIBLE);
+
+            setTextToTextView(R.id.Text_Altitude_Temperature,"Altitude (m)");
+            setTextToTextView(R.id.Edit_Altitude_Temperature, String.valueOf(FireProfiles.getSelectedProfile().getAltitude()));
+            setTextToTextView(R.id.Text_Temperature_BarPress,"Temperature (°C)");
+            setTextToTextView(R.id.Edit_Temperature_BarPress, String.valueOf(FireProfiles.getSelectedProfile().getTemperature()));
+        }
+    }
+
+    private void setTextToTextView(int id, String text) {
+        TextView textView = (TextView) this.findViewById(id);
+        textView.setText(text);
     }
 
     private double getInputOfText(int id){

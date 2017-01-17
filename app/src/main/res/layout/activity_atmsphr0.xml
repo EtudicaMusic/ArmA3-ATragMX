@@ -140,7 +140,7 @@
             android:layout_below="@+id/Button_Default"
             android:layout_alignStart="@+id/Button_Default"
             android:layout_marginTop="50dp"
-            android:id="@+id/Text_Altitude"
+            android:id="@+id/Text_Altitude_Temperature"
             android:textColor="#000000"
             android:textStyle="normal|bold"
             android:textSize="16sp"
@@ -150,9 +150,9 @@
 
         <TextView
             android:text="Temperature (°C)"
-            android:layout_below="@+id/Text_Altitude"
-            android:layout_alignStart="@+id/Text_Altitude"
-            android:id="@+id/Text_Temperature"
+            android:layout_below="@+id/Text_Altitude_Temperature"
+            android:layout_alignStart="@+id/Text_Altitude_Temperature"
+            android:id="@+id/Text_Temperature_BarPress"
             android:layout_marginTop="20dp"
             android:textColor="#000000"
             android:textStyle="normal|bold"
@@ -166,10 +166,10 @@
             android:inputType="textPersonName|numberDecimal"
             android:text="2664"
             android:ems="10"
-            android:layout_alignTop="@+id/Text_Altitude"
+            android:layout_alignTop="@+id/Text_Altitude_Temperature"
             android:layout_toEndOf="@+id/Button_Cancel"
-            android:id="@+id/Edit_Altitude"
-            android:layout_above="@+id/Text_Temperature"
+            android:id="@+id/Edit_Altitude_Temperature"
+            android:layout_above="@+id/Text_Temperature_BarPress"
             android:layout_height="30dp"
             android:layout_marginStart="5dp"
             android:paddingStart="10dp"
@@ -183,15 +183,46 @@
             android:inputType="numberSigned|numberDecimal"
             android:text="12"
             android:ems="10"
-            android:layout_alignTop="@+id/Text_Temperature"
-            android:layout_alignStart="@+id/Edit_Altitude"
-            android:id="@+id/Edit_Temperature"
-            android:layout_alignBottom="@+id/Text_Temperature"
+            android:layout_alignTop="@+id/Text_Temperature_BarPress"
+            android:layout_alignStart="@+id/Edit_Altitude_Temperature"
+            android:id="@+id/Edit_Temperature_BarPress"
+            android:layout_alignBottom="@+id/Text_Temperature_BarPress"
             android:layout_height="30dp"
             android:paddingStart="10dp"
             android:background="#dddddd"
             android:fontFamily="sans-serif"
             android:textColor="#000000"
             android:textSize="16sp" />
+
+        <TextView
+            android:text="Humidity"
+            android:layout_below="@+id/Text_Temperature_BarPress"
+            android:layout_alignStart="@+id/Text_Temperature_BarPress"
+            android:layout_marginTop="20dp"
+            android:id="@+id/Text_None_Humidity"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="130dp"
+            android:layout_height="30dp"
+            android:gravity="center_vertical" />
+
+        <EditText
+
+            android:layout_width="150dp"
+            android:inputType="numberSigned|numberDecimal"
+            android:text="20"
+            android:ems="10"
+            android:layout_alignTop="@+id/Text_None_Humidity"
+            android:layout_alignStart="@+id/Edit_Temperature_BarPress"
+            android:id="@+id/Edit_None_Humidity"
+            android:layout_alignBottom="@+id/Text_None_Humidity"
+            android:layout_height="30dp"
+            android:paddingStart="10dp"
+            android:background="#dddddd"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
     </RelativeLayout>
 </LinearLayout>
