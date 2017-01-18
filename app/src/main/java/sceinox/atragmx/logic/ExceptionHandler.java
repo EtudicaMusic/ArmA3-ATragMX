@@ -1,4 +1,4 @@
-package sceinox.atragmx;
+package sceinox.atragmx.logic;
 
 import android.content.Context;
 import android.widget.Toast;

@@ -2,6 +2,9 @@ package sceinox.atragmx;
 
 import org.junit.Test;
 
+import sceinox.atragmx.logic.Calculator;
+import sceinox.atragmx.logic.CalculatorSolution;
+
 import static org.junit.Assert.*;
 
 public class CalculatorTest {

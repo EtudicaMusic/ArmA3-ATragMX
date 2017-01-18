@@ -1,6 +1,6 @@
-package sceinox.atragmx;
+package sceinox.atragmx.logic;
 
-class CalculatorSolution {
+public class CalculatorSolution {
 
     private double elevation;
     private double wind;

@@ -1,4 +1,4 @@
-package sceinox.atragmx;
+package sceinox.atragmx.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import sceinox.atragmx.logic.FireProfiles;
+import sceinox.atragmx.R;
 
 public class AtmsphrActivity extends AppCompatActivity{
     private Boolean MethodIsTBH=true;

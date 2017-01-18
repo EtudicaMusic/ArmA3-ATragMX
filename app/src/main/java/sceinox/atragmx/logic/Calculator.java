@@ -1,4 +1,4 @@
-package sceinox.atragmx;
+package sceinox.atragmx.logic;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,7 +10,7 @@ import java.util.List;
 
 import static sceinox.atragmx.R.id.*;
 
-class Calculator {
+public class Calculator {
 
     //region private fields
     private Context context;
@@ -114,7 +114,7 @@ class Calculator {
         this.targetTargetRange = targetTargetRange;
     }
 
-    Calculator(Context context){
+    public Calculator(Context context){
         this.context = context;
 
         this.gunBoreHeight = getInputOfText(Text_BHVal);

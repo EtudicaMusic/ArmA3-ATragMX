@@ -1,4 +1,4 @@
-package sceinox.atragmx;
+package sceinox.atragmx.logic;
 
 import android.content.Context;
 
@@ -83,7 +83,7 @@ public class FireProfiles{
         FireProfiles.getD().setGun("408 CheyTac");
     }
 
-    static class Profile{
+    static public class Profile{
         //gun data
         private String weaponName;
         private double boreHeight;

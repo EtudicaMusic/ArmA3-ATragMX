@@ -1,10 +1,13 @@
-package sceinox.atragmx;
+package sceinox.atragmx.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import sceinox.atragmx.logic.FireProfiles;
+import sceinox.atragmx.R;
 
 public class TargetActivity extends AppCompatActivity{
 
