@@ -1,7 +1,9 @@
 package sceinox.atragmx;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -44,6 +46,21 @@ public class GunlistActivity extends AppCompatActivity {
     public void onDeleteClick(View view) {
         dbHelp.deleteGun(selected);
         initListview();
+    }
+
+    public void onResetTableClick(View view){
+        new AlertDialog.Builder(this)
+                .setTitle("Reset Table")
+                .setMessage("Do you really want to reset the guntable to its default values?")
+                .setIcon(android.R.drawable.ic_dialog_alert)
+
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dbHelp.resetDatabase();
+                        initListview();
+                    }})
+
+                .setNegativeButton(android.R.string.no, null).show();
     }
 
     public void onNoteClick(View view) {

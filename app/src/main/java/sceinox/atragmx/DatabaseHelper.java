@@ -101,7 +101,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
         String[] returnGun=new String[9];
 
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        String query= "SELECT * FROM " + GUNS_TABLE_GUN + " WHERE " + GUNS_COLUMN_NAME + "=" + "\"" + name + "\"" + " ORDER BY " + GUNS_COLUMN_ID;
+        String query = "SELECT * FROM " + GUNS_TABLE_GUN + " WHERE " + GUNS_COLUMN_NAME + "=" + "\"" + name + "\"" + " ORDER BY " + GUNS_COLUMN_ID;
 
         try (Cursor cursor = sqLiteDatabase.rawQuery(query, null)) {
             for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
@@ -111,6 +111,10 @@ class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return returnGun;
+    }
+
+    public void resetDatabase(){
+        onUpgrade(this.getWritableDatabase(),1,1);
     }
 
     private String getNewID(SQLiteDatabase sqLiteDatabase) {

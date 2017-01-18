@@ -64,16 +64,6 @@
             android:onClick="onDoneClick"/>
 
         <Button
-            android:text="Note"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/Button_Note"
-            android:layout_marginTop="24dp"
-            android:layout_below="@+id/Button_DeleteGun"
-            android:layout_alignParentStart="true"
-            android:onClick="onNoteClick"/>
-
-        <Button
             android:text="Delete Gun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,6 +82,25 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:onClick="onOpenClick"/>
+
+        <Button
+            android:text="Reset Table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Reset_Table"
+            android:onClick="onResetTableClick"
+            android:layout_below="@+id/Button_DeleteGun"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Note"
+            android:onClick="onNoteClick"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/Button_Reset_Table"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
 
 </LinearLayout>
