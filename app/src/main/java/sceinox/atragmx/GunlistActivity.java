@@ -52,7 +52,7 @@ public class GunlistActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Reset Table")
                 .setMessage("Do you really want to reset the guntable to its default values?")
-                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setIcon(android.R.drawable.ic_menu_delete)
 
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {

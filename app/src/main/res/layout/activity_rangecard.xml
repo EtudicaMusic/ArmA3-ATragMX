@@ -10,7 +10,7 @@
         android:layout_height="50dp">
 
         <Button
-            android:text="Done"
+            android:text="Cancel"
             android:id="@+id/Button_Done"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
