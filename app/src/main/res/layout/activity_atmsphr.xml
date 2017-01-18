@@ -195,7 +195,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:text="Humidity"
+            android:text="Humidity (%)"
             android:layout_below="@+id/Text_Temperature_BarPress"
             android:layout_alignStart="@+id/Text_Temperature_BarPress"
             android:layout_marginTop="20dp"

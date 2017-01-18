@@ -14,7 +14,7 @@ public class AtmsphrActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_atmsphr0);
+        setContentView(R.layout.activity_atmsphr);
         buttonColorSwitch("tbh");
         updateCalcMethod();
     }
@@ -78,7 +78,7 @@ public class AtmsphrActivity extends AppCompatActivity{
             setTextToTextView(R.id.Edit_Altitude_Temperature, String.valueOf(FireProfiles.getSelectedProfile().getTemperature()));
             setTextToTextView(R.id.Text_Temperature_BarPress,"Pressure (hPa)");
             setTextToTextView(R.id.Edit_Temperature_BarPress, String.valueOf(FireProfiles.getSelectedProfile().getBarometricPressure()));
-            setTextToTextView(R.id.Edit_None_Humidity, "Humidity (%)");
+            setTextToTextView(R.id.Text_None_Humidity, "Humidity (%)");
             setTextToTextView(R.id.Edit_None_Humidity, String.valueOf(FireProfiles.getSelectedProfile().getHumidity()));
         }else {
             humidityText.setVisibility(View.INVISIBLE);

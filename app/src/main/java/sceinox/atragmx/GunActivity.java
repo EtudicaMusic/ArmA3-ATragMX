@@ -13,7 +13,7 @@ public class GunActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gun0);
+        setContentView(R.layout.activity_gun);
         updateToOrFromAddGunMode();
     }
 
