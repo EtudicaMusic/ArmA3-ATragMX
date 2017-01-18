@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import sceinox.atragmx.logic.FireProfiles;
 import sceinox.atragmx.R;
+import sceinox.atragmx.logic.FireProfiles;
 
-public class AtmsphrActivity extends AppCompatActivity{
-    private Boolean MethodIsTBH=true;
+public class AtmsphrActivity extends AppCompatActivity {
+    private Boolean MethodIsTBH = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,73 +23,73 @@ public class AtmsphrActivity extends AppCompatActivity{
     }
 
     //region OnClickEvents
-    public void onDoneClick(View view){
+    public void onDoneClick(View view) {
         saveChangesToProfile();
         finish();
     }
 
-    public void onCancelClick(View view){
+    public void onCancelClick(View view) {
         finish();
     }
 
-    public void onPrevClick(View view){
+    public void onPrevClick(View view) {
         saveChangesToProfile();
         finish();
         startActivity(new Intent(this, GunActivity.class));
     }
 
-    public void onNextClick(View view){
+    public void onNextClick(View view) {
         saveChangesToProfile();
         finish();
         startActivity(new Intent(this, TargetActivity.class));
     }
 
     public void onATClick(View view) {
-        MethodIsTBH=false;
+        MethodIsTBH = false;
         updateCalcMethod();
         buttonColorSwitch("at");
     }
 
     public void onTBHClick(View view) {
-        MethodIsTBH=true;
+        MethodIsTBH = true;
         updateCalcMethod();
         buttonColorSwitch("tbh");
     }
     //endregion
 
     //region private methods
-    private void saveChangesToProfile(){
+    private void saveChangesToProfile() {
         FireProfiles.Profile profile = FireProfiles.getSelectedProfile();
-        if (MethodIsTBH){
+        if (MethodIsTBH) {
             profile.setTemperature(getInputOfText(R.id.Edit_Altitude_Temperature));
             profile.setBarometricPressure(getInputOfText(R.id.Edit_Temperature_BarPress));
             profile.setHumidity(getInputOfText(R.id.Edit_None_Humidity));
-        }else {
+        } else {
             profile.setAltitude(getInputOfText(R.id.Edit_Altitude_Temperature));
             profile.setTemperature(getInputOfText(R.id.Edit_Temperature_BarPress));
         }
     }
 
-    private void updateCalcMethod(){
-        TextView humidityText=(TextView) this.findViewById(R.id.Text_None_Humidity);
-        TextView humidityEdit=(TextView) this.findViewById(R.id.Edit_None_Humidity);
-        if (MethodIsTBH){
+    private void updateCalcMethod() {
+        TextView humidityText = (TextView) this.findViewById(R.id.Text_None_Humidity);
+        TextView humidityEdit = (TextView) this.findViewById(R.id.Edit_None_Humidity);
+        if (MethodIsTBH) {
             humidityText.setVisibility(View.VISIBLE);
             humidityEdit.setVisibility(View.VISIBLE);
 
-            setTextToTextView(R.id.Text_Altitude_Temperature,"Temperature (°C)");
+            setTextToTextView(R.id.Text_Altitude_Temperature, "Temperature (°C)");
             setTextToTextView(R.id.Edit_Altitude_Temperature, String.valueOf(FireProfiles.getSelectedProfile().getTemperature()));
-            setTextToTextView(R.id.Text_Temperature_BarPress,"Pressure (hPa)");
+            setTextToTextView(R.id.Text_Temperature_BarPress, "Pressure (hPa)");
             setTextToTextView(R.id.Edit_Temperature_BarPress, String.valueOf(FireProfiles.getSelectedProfile().getBarometricPressure()));
             setTextToTextView(R.id.Text_None_Humidity, "Humidity (%)");
             setTextToTextView(R.id.Edit_None_Humidity, String.valueOf(FireProfiles.getSelectedProfile().getHumidity()));
-        }else {
+        } else {
             humidityText.setVisibility(View.INVISIBLE);
             humidityEdit.setVisibility(View.INVISIBLE);
 
-            setTextToTextView(R.id.Text_Altitude_Temperature,"Altitude (m)");
+            setTextToTextView(R.id.Text_Altitude_Temperature, "Altitude (m)");
             setTextToTextView(R.id.Edit_Altitude_Temperature, String.valueOf(FireProfiles.getSelectedProfile().getAltitude()));
-            setTextToTextView(R.id.Text_Temperature_BarPress,"Temperature (°C)");
+            setTextToTextView(R.id.Text_Temperature_BarPress, "Temperature (°C)");
             setTextToTextView(R.id.Edit_Temperature_BarPress, String.valueOf(FireProfiles.getSelectedProfile().getTemperature()));
         }
     }
@@ -99,21 +99,21 @@ public class AtmsphrActivity extends AppCompatActivity{
         textView.setText(text);
     }
 
-    private double getInputOfText(int id){
+    private double getInputOfText(int id) {
         return Double.parseDouble(((TextView) this.findViewById(id)).getText().toString());
     }
 
-    private void buttonColorSwitch(String calcMethod){
+    private void buttonColorSwitch(String calcMethod) {
         Button at = (Button) findViewById(R.id.Button_AT);
         Button tbh = (Button) findViewById(R.id.Button_TBH);
 
-        if (calcMethod.equals("at")){
+        if (calcMethod.equals("at")) {
             at.setBackgroundColor(Color.BLACK);
             at.setTextColor(Color.WHITE);
 
             tbh.setBackgroundColor(Color.WHITE);
             tbh.setTextColor(Color.BLACK);
-        } else if (calcMethod.equals("tbh")){
+        } else if (calcMethod.equals("tbh")) {
             tbh.setBackgroundColor(Color.BLACK);
             tbh.setTextColor(Color.WHITE);
 

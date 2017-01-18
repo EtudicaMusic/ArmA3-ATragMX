@@ -6,7 +6,7 @@ import android.widget.Toast;
 class ExceptionHandler {
 
     static void handleDatabaseExceptionForAddingANewGun(Exception ex, Context context) {
-        Toast.makeText(context ,"Could not create new gun. Maybe you're trying to add a gun that's already existing.", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Could not create new gun. Maybe you're trying to add a gun that's already existing.", Toast.LENGTH_LONG).show();
     }
 
     static void handleDatabaseExceptionForDeletingAGun(Exception ex, Context context) {

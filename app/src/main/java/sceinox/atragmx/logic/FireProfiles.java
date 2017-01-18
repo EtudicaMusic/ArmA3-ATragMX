@@ -2,7 +2,7 @@ package sceinox.atragmx.logic;
 
 import android.content.Context;
 
-public class FireProfiles{
+public class FireProfiles {
     public static final int MEASUREMENT_SYSTEM_METER = 0;
     public static final int MEASUREMENT_SYSTEM_IMPERIAL = 1;
     public static final int MEASUREMENT_SYSTEM_DUAL = 2;
@@ -84,18 +84,18 @@ public class FireProfiles{
 
     //region c'tors
     public FireProfiles(Context context) {
-        this.context=context;
+        FireProfiles.context = context;
     }
     //endregion
 
-    public static void setStartWeapon(){
+    public static void setStartWeapon() {
         FireProfiles.getA().setGun("408 CheyTac");
         FireProfiles.getB().setGun("408 CheyTac");
         FireProfiles.getC().setGun("408 CheyTac");
         FireProfiles.getD().setGun("408 CheyTac");
     }
 
-    static public class Profile{
+    static public class Profile {
         //gun data
         private String weaponName;
         private double boreHeight;
@@ -124,7 +124,7 @@ public class FireProfiles{
         private double targetRange;
 
         //region c'tors
-        public Profile() {
+        Profile() {
             //sets standard values
             this.boreHeight = -1;
             this.bulletWeight = -1;
@@ -142,7 +142,7 @@ public class FireProfiles{
             this.latitude = 39;
             this.dirOfFire = 0;
             this.windSpeed = 0;
-            this.windSpeed2 =0;
+            this.windSpeed2 = 0;
             this.windDirection = 0;
             this.setInclinationAngleFromDegree(-10);
             this.targetSpeed = 0;
@@ -333,29 +333,29 @@ public class FireProfiles{
         }
 
         //sets all gun related values from SQL DB by weaponName
-        public void setGun(String weaponName){
-            DatabaseHelper dbHelp=new DatabaseHelper(context);
-            String[] gun=dbHelp.getGunAsArrayByName(weaponName);
+        public void setGun(String weaponName) {
+            DatabaseHelper dbHelp = new DatabaseHelper(context);
+            String[] gun = dbHelp.getGunAsArrayByName(weaponName);
 
-            this.weaponName=gun[1];
-            this.boreHeight= Double.parseDouble(gun[2]);
-            this.bulletWeight= Double.parseDouble(gun[3]);
-            this.bulletDiameter= Double.parseDouble(gun[4]);
-            this.c1Coefficient= Double.parseDouble(gun[5]);
-            this.rifleTwist= Double.parseDouble(gun[6]);
-            this.muzzleVelocity= Double.parseDouble(gun[7]);
-            this.zeroRange= Double.parseDouble(gun[8]);
+            this.weaponName = gun[1];
+            this.boreHeight = Double.parseDouble(gun[2]);
+            this.bulletWeight = Double.parseDouble(gun[3]);
+            this.bulletDiameter = Double.parseDouble(gun[4]);
+            this.c1Coefficient = Double.parseDouble(gun[5]);
+            this.rifleTwist = Double.parseDouble(gun[6]);
+            this.muzzleVelocity = Double.parseDouble(gun[7]);
+            this.zeroRange = Double.parseDouble(gun[8]);
         }
         //endregion
 
 
-        public String toString(){
+        public String toString() {
             String out;
-            out="Profile:: weaponName = "+weaponName+"; boreHeight = "+boreHeight+"; bulletWeight = "+bulletWeight+"; bulletDiameter = "+bulletDiameter+"; c1Coefficient = "+c1Coefficient+
-                    "; rifleTwist = "+rifleTwist+"; muzzleVelocity = "+muzzleVelocity+"; zeroRange = "+zeroRange+"; temperature = "+temperature+
-                    "; altitude = "+altitude+"; barometricPressure = "+barometricPressure+"; humidity = "+humidity+"; latitude = "+latitude+
-                    "; dirOfFire = "+dirOfFire+"; windSpeed = "+windSpeed+"; windSpeed2 = "+windSpeed2+"; windDirection = "+windDirection+"; inclinationAngleDegree = "+
-                    inclinationAngleDegree+"; inclinationAngleCosine = "+inclinationAngleCosine+"; targetSpeed = "+targetSpeed+"; targetRange = "+targetRange;
+            out = "Profile:: weaponName = " + weaponName + "; boreHeight = " + boreHeight + "; bulletWeight = " + bulletWeight + "; bulletDiameter = " + bulletDiameter + "; c1Coefficient = " + c1Coefficient +
+                    "; rifleTwist = " + rifleTwist + "; muzzleVelocity = " + muzzleVelocity + "; zeroRange = " + zeroRange + "; temperature = " + temperature +
+                    "; altitude = " + altitude + "; barometricPressure = " + barometricPressure + "; humidity = " + humidity + "; latitude = " + latitude +
+                    "; dirOfFire = " + dirOfFire + "; windSpeed = " + windSpeed + "; windSpeed2 = " + windSpeed2 + "; windDirection = " + windDirection + "; inclinationAngleDegree = " +
+                    inclinationAngleDegree + "; inclinationAngleCosine = " + inclinationAngleCosine + "; targetSpeed = " + targetSpeed + "; targetRange = " + targetRange;
             return out;
         }
 

@@ -2,15 +2,15 @@ package sceinox.atragmx.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import sceinox.atragmx.R;
 import sceinox.atragmx.logic.Calculator;
 import sceinox.atragmx.logic.FireProfiles;
-import sceinox.atragmx.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -121,14 +121,14 @@ public class MainActivity extends AppCompatActivity {
         measurementColorSwitch('d');
     }
 
-    public void onLeadClick(View view){
-        if (getTextFromTextView(R.id.Text_WS).equals("WS")){
-            setTextToTextView(R.id.Text_WS,"WS/WS2");
-            setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed())+"/"+
+    public void onLeadClick(View view) {
+        if (getTextFromTextView(R.id.Text_WS).equals("WS")) {
+            setTextToTextView(R.id.Text_WS, "WS/WS2");
+            setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed()) + "/" +
                     String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed2()));
             setTextToTextView(R.id.Button_Lead, "Wind 2");
-        }else {
-            setTextToTextView(R.id.Text_WS,"WS");
+        } else {
+            setTextToTextView(R.id.Text_WS, "WS");
             setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed()));
             setTextToTextView(R.id.Button_Lead, "Lead");
         }
@@ -264,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initTextViews() {
         //Header
-        setTextToTextView(R.id.Text_CaliberVal,FireProfiles.getSelectedProfile().getWeaponName());
+        setTextToTextView(R.id.Text_CaliberVal, FireProfiles.getSelectedProfile().getWeaponName());
 
         //Gun
         setTextToTextView(R.id.Text_BHVal, String.valueOf(FireProfiles.getSelectedProfile().getBoreHeight()));
@@ -291,7 +291,7 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(text);
     }
 
-    private String getTextFromTextView(int id){
+    private String getTextFromTextView(int id) {
         return ((TextView) this.findViewById(id)).getText().toString();
     }
 

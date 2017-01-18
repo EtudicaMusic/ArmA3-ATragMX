@@ -6,10 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import sceinox.atragmx.logic.FireProfiles;
 import sceinox.atragmx.R;
+import sceinox.atragmx.logic.FireProfiles;
 
-public class TargetActivity extends AppCompatActivity{
+public class TargetActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,22 +18,22 @@ public class TargetActivity extends AppCompatActivity{
     }
 
     //region OnClickEvents
-    public void onDoneClick(View view){
+    public void onDoneClick(View view) {
         saveChangesToProfile();
         finish();
     }
 
-    public void onCancelClick(View view){
+    public void onCancelClick(View view) {
         finish();
     }
 
-    public void onPrevClick(View view){
+    public void onPrevClick(View view) {
         saveChangesToProfile();
         finish();
         startActivity(new Intent(this, AtmsphrActivity.class));
     }
 
-    public void onNextClick(View view){
+    public void onNextClick(View view) {
         saveChangesToProfile();
         finish();
         startActivity(new Intent(this, GunActivity.class));
@@ -41,7 +41,7 @@ public class TargetActivity extends AppCompatActivity{
     //endregion
 
     //region private methods
-    private void saveChangesToProfile(){
+    private void saveChangesToProfile() {
         FireProfiles.Profile profile = FireProfiles.getSelectedProfile();
 
         profile.setLatitude(getInputOfText(R.id.editText8));
@@ -55,7 +55,7 @@ public class TargetActivity extends AppCompatActivity{
         profile.setTargetRange(getInputOfText(R.id.Edit_TargetRange));
     }
 
-    private double getInputOfText(int id){
+    private double getInputOfText(int id) {
         return Double.parseDouble(((TextView) this.findViewById(id)).getText().toString());
     }
     //endregion
