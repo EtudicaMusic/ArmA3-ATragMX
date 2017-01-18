@@ -9,7 +9,7 @@
 
         <EditText
             android:layout_width="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="text|textNoSuggestions|number|numberSigned|numberDecimal"
             android:text="Here you can write notes"
             android:ems="10"
             android:layout_alignParentTop="true"

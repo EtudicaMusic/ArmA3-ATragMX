@@ -9,35 +9,6 @@
         android:layout_weight="0.01"
         android:layout_height="50dp">
 
-        <Button
-            android:text="Cancel"
-            android:id="@+id/Button_Done"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:background="#aeb6b9"
-            android:layout_height="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:fontFamily="sans-serif"
-            android:textColor="#000000"
-            android:textStyle="normal|bold"
-            android:textSize="16sp"
-            android:layout_width="70dp" />
-
-        <Button
-            android:text="Setup"
-            android:layout_height="30dp"
-            android:id="@+id/Button_Setup"
-            android:background="#aeb6b9"
-            android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/Button_Done"
-            android:layout_marginTop="10dp"
-            android:fontFamily="sans-serif"
-            android:textSize="16sp"
-            android:textStyle="normal|bold"
-            android:layout_width="70dp"
-            android:layout_marginEnd="5dp" />
-
         <TextView
             android:text="MILs"
             android:layout_width="80dp"
@@ -52,6 +23,35 @@
             android:textSize="16sp"
             android:textStyle="normal|bold"
             android:gravity="center_vertical" />
+
+        <Button
+            android:text="Setup"
+            android:layout_height="30dp"
+            android:id="@+id/Button_Setup"
+            android:background="#aeb6b9"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:layout_width="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/Button_Done"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="15dp" />
+
+        <Button
+            android:text="Cancel"
+            android:id="@+id/Button_Done"
+            android:background="#aeb6b9"
+            android:layout_height="30dp"
+            android:layout_marginEnd="13dp"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:layout_width="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp" />
     </RelativeLayout>
 
     <RelativeLayout
