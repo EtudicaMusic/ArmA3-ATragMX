@@ -3,6 +3,10 @@ package sceinox.atragmx.logic;
 import android.content.Context;
 
 public class FireProfiles{
+    public static final int MEASUREMENT_SYSTEM_METER = 0;
+    public static final int MEASUREMENT_SYSTEM_IMPERIAL = 1;
+    public static final int MEASUREMENT_SYSTEM_DUAL = 2;
+
     //represents fireprofiles A,B,C,D from activity_Main
     private static Profile a = new Profile();
     private static Profile b = new Profile();
@@ -10,7 +14,10 @@ public class FireProfiles{
     private static Profile d = new Profile();
 
     private static Profile selectedProfile = a;
-    private static Context context ;
+    private static int MeasurementSystem = MEASUREMENT_SYSTEM_METER;
+
+    private static Context context;
+
 
     //region Getter's and Setter's
     public static Profile getA() {
@@ -49,10 +56,6 @@ public class FireProfiles{
         return selectedProfile;
     }
 
-    public static void setSelectedProfile(Profile selectedProfile) {
-        FireProfiles.selectedProfile = selectedProfile;
-    }
-
     public static void setSelectedProfileToA() {
         FireProfiles.selectedProfile = FireProfiles.a;
     }
@@ -68,6 +71,15 @@ public class FireProfiles{
     public static void setSelectedProfileToD() {
         FireProfiles.selectedProfile = FireProfiles.d;
     }
+
+    public static int getMeasurementSystem() {
+        return MeasurementSystem;
+    }
+
+    public static void setMeasurementSystem(int measurementSystem) {
+        MeasurementSystem = measurementSystem;
+    }
+
     //endregion
 
     //region c'tors
