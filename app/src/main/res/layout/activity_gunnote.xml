@@ -17,7 +17,7 @@
             android:id="@+id/Edit_NoteText"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="10dp"
             android:background="#e3e3e3"
             android:paddingTop="5dp"
@@ -25,7 +25,7 @@
             android:gravity="top|center_vertical"
             android:textSize="16sp"
             android:fontFamily="sans-serif"
-            android:layout_height="430dp" />
+            android:layout_height="400dp" />
 
         <Button
             android:text="Done"
@@ -66,5 +66,19 @@
             android:textSize="16sp"
             android:textStyle="normal|bold"
             android:fontFamily="sans-serif" />
+
+        <TextView
+            android:text=".338 LM 250gr"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/Edit_NoteText"
+            android:layout_marginTop="10dp"
+            android:id="@+id/Text_GunInfo"
+            android:layout_height="30dp"
+            android:layout_width="200dp"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:textStyle="normal|bold"
+            android:gravity="center_vertical" />
     </RelativeLayout>
 </LinearLayout>
