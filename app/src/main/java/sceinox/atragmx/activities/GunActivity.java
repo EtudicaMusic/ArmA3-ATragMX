@@ -88,7 +88,7 @@ public class GunActivity extends AppCompatActivity{
 
     private void updateToOrFromAddGunMode(){
         Button done = (Button) findViewById(R.id.Button_Done);
-        Button cancel = (Button) findViewById(R.id.Button_Cancel);
+        Button cancel = (Button) findViewById(R.id.Button_Edit);
         Button prev = (Button) findViewById(R.id.Button_Prev);
         Button next = (Button) findViewById(R.id.Button_Next);
         TextView nameText= (TextView) findViewById(R.id.Text_GunName);

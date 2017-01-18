@@ -9,7 +9,7 @@
 
         <Button
             android:text="Cancel"
-            android:id="@+id/Button_Cancel"
+            android:id="@+id/Button_Edit"
             android:layout_width="80dp"
             android:background="#313131"
             android:layout_height="30dp"
@@ -37,7 +37,7 @@
             android:fontFamily="sans-serif"
             android:layout_marginStart="8dp"
             android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/Button_Cancel"
+            android:layout_toEndOf="@+id/Button_Edit"
             android:layout_marginBottom="20dp"
             android:onClick="onPrevClick" />
 
@@ -167,7 +167,7 @@
             android:text="2664"
             android:ems="10"
             android:layout_alignTop="@+id/Text_Altitude_Temperature"
-            android:layout_toEndOf="@+id/Button_Cancel"
+            android:layout_toEndOf="@+id/Button_Edit"
             android:id="@+id/Edit_Altitude_Temperature"
             android:layout_above="@+id/Text_Temperature_BarPress"
             android:layout_height="30dp"

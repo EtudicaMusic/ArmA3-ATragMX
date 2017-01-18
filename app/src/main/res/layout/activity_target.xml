@@ -127,13 +127,13 @@
             android:fontFamily="sans-serif"
             android:onClick="onPrevClick"
             android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/Button_Cancel"
+            android:layout_toEndOf="@+id/Button_Edit"
             android:layout_marginStart="7dp"
             android:layout_marginBottom="25dp" />
 
         <Button
             android:text="Cancel"
-            android:id="@+id/Button_Cancel"
+            android:id="@+id/Button_Edit"
             android:layout_width="80dp"
             android:background="#313131"
             android:layout_height="30dp"

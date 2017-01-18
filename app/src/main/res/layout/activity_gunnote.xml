@@ -3,4 +3,68 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Here you can write notes"
+            android:ems="10"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/Edit_NoteText"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="#e3e3e3"
+            android:paddingTop="5dp"
+            android:paddingStart="5dp"
+            android:gravity="top|center_vertical"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:layout_height="430dp" />
+
+        <Button
+            android:text="Done"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/Edit_NoteText"
+            android:layout_alignParentStart="true"
+            android:id="@+id/Button_Done"
+            android:background="#aeb6b9"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:fontFamily="sans-serif" />
+
+        <Button
+            android:text="Edit"
+            android:layout_height="40dp"
+            android:id="@+id/Button_Edit"
+            android:layout_width="100dp"
+            android:background="#aeb6b9"
+            android:layout_below="@+id/Edit_NoteText"
+            android:layout_alignEnd="@+id/Edit_NoteText"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:fontFamily="sans-serif" />
+
+        <Button
+            android:text="Save"
+            android:layout_below="@+id/Edit_NoteText"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/Button_Save"
+            android:background="#aeb6b9"
+            android:layout_height="40dp"
+            android:layout_width="100dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:fontFamily="sans-serif" />
+    </RelativeLayout>
 </LinearLayout>
