@@ -56,8 +56,10 @@ public class GunActivity extends AppCompatActivity{
                     getInputOfText(R.id.Edit_C1Coefficient),
                     getInputOfText(R.id.Edit_RifleTwist),
                     getInputOfText(R.id.Edit_MuzzleVelocity),
-                    (int) getInputOfText(R.id.Edit_ZeroRange)
+                    (int) getInputOfText(R.id.Edit_ZeroRange),
+                    null
             );
+
             addGunMode=false;
             finish();
         }

@@ -5,12 +5,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.AnnotatedElement;
 import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "ATragMX.db";
     private static final String GUNS_TABLE_GUN = "GUNS";
+
     private static final String GUNS_COLUMN_ID = "ID";
     private static final String GUNS_COLUMN_NAME = "NAME";
     private static final String GUNS_COLUMN_BOREHEIGHT = "BOREHEIGHT";
@@ -20,6 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String GUNS_COLUMN_RIFLETWIST = "RIFLETWIST";
     private static final String GUNS_COLUMN_MUZZLEVELOCITY = "MUZZLEVELOCITY";
     private static final String GUNS_COLUMN_ZERORANGE = "ZERORANGE";
+    private static final String GUNS_COLUMN_NOTE = "NOTE";
 
     private static Context context = null;
 
@@ -39,7 +43,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 GUNS_COLUMN_C1COEFFICIENT + " DOUBLE NOT NULL, " +
                 GUNS_COLUMN_RIFLETWIST + " DOUBLE NOT NULL, " +
                 GUNS_COLUMN_MUZZLEVELOCITY + " DOUBLE NOT NULL, " +
-                GUNS_COLUMN_ZERORANGE + " INTEGER NOT NULL" +
+                GUNS_COLUMN_ZERORANGE + " INTEGER NOT NULL, " +
+                GUNS_COLUMN_NOTE + " TEXT" +
                 ")");
 
         addGunsForDatabaseCreation(sqLiteDatabase);
@@ -51,11 +56,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public void addNewGun(String name, double boreHeight, double bulletWeight, double bulletDiameter, double c1Coefficient, double rifleTwist, double muzzleVelocity, int zeroRange) {
+    public void addNewGun(String name, double boreHeight, double bulletWeight, double bulletDiameter, double c1Coefficient, double rifleTwist, double muzzleVelocity, int zeroRange, String note) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
         String query = "INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + " (" +
-                getNewID(sqLiteDatabase) + ", " + "\"" + name + "\"" + ", " + boreHeight + ", " + bulletWeight + ", " + bulletDiameter + ", " + c1Coefficient + ", " + rifleTwist + ", " + muzzleVelocity + ", " + zeroRange +
+                getNewID(sqLiteDatabase) + ", " + "\"" + name + "\"" + ", " + boreHeight + ", " + bulletWeight + ", " + bulletDiameter + ", " + c1Coefficient + ", " + rifleTwist + ", " + muzzleVelocity + ", " + zeroRange + ", " + note +
                 ")";
 
         try {
@@ -148,55 +153,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private void addGunsForDatabaseCreation(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "0, \"127x108mm\", 3.81, 48, 1.27, 0.638, 38.1, 820, 100" +
+                "0, \"127x108mm\", 3.81, 48, 1.27, 0.638, 38.1, 820, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "1, \"127x99mm\", 3.81, 42, 1.27, 0.575, 38.1, 900, 100" +
+                "1, \"127x99mm\", 3.81, 42, 1.27, 0.575, 38.1, 900, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "2, \"127x99mm AMAX\", 3.81, 49, 1.27, 0.366, 38.1, 860, 100" +
+                "2, \"127x99mm AMAX\", 3.81, 49, 1.27, 0.366, 38.1, 860, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "3, \"127x99mm API\", 3.81, 42, 1.29, 0.575, 38.1, 900, 100" +
+                "3, \"127x99mm API\", 3.81, 42, 1.29, 0.575, 38.1, 900, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "4, \"300WM Berger OTM\", 3.81, 12, 0.78, 0.705, 25.4, 900, 100" +
+                "4, \"300WM Berger OTM\", 3.81, 12, 0.78, 0.705, 25.4, 900, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "5, \"300WM Mk248 Mod0\", 3.81, 12, 0.78, 0.705, 25.4, 900, 100" +
+                "5, \"300WM Mk248 Mod0\", 3.81, 12, 0.78, 0.705, 25.4, 900, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "6, \"300WM Mk248 Mod1\", 3.81, 14, 0.78, 0.612, 25.4, 867, 100" +
+                "6, \"300WM Mk248 Mod1\", 3.81, 14, 0.78, 0.612, 25.4, 867, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "7, \"338LM 250gr\", 3.81, 16, 0.858, 0.591, 25.4, 880, 100" +
+                "7, \"338LM 250gr\", 3.81, 16, 0.858, 0.591, 25.4, 880, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "8, \"338LM 300gr\", 3.81, 19, 0.858, 0.522, 25.4, 800, 100" +
+                "8, \"338LM 300gr\", 3.81, 19, 0.858, 0.522, 25.4, 800, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "9, \"338LM API 526\", 3.81, 16, 0.858, 0.696, 25.4, 895, 100" +
+                "9, \"338LM API 526\", 3.81, 16, 0.858, 0.696, 25.4, 895, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "10, \"408 CheyTac\", 3.81, 27, 1.04, 0.389, 33.02, 910, 100" +
+                "10, \"408 CheyTac\", 3.81, 27, 1.04, 0.389, 33.02, 910, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "11, \"127x54mm\", 3.81, 49, 1.27, 0.193, 24.13, 300, 100" +
+                "11, \"127x54mm\", 3.81, 49, 1.27, 0.193, 24.13, 300, 100, null" +
                 ")");
 
         sqLiteDatabase.execSQL("INSERT INTO " + GUNS_TABLE_GUN + " VALUES " + "(" +
-                "12, \"93x64mm\", 3.81, 15, 0.93, 1.085, 35.56, 870, 100" +
+                "12, \"93x64mm\", 3.81, 15, 0.93, 1.085, 35.56, 870, 100, null" +
                 ")");
     }
 }
