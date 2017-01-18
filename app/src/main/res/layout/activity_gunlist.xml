@@ -16,14 +16,15 @@
             android:layout_height="25dp" />
 
         <ListView
-            android:layout_width="match_parent"
+            android:layout_width="180dp"
             android:layout_height="match_parent"
             android:id="@+id/List_Gunlist"
             android:layout_weight="5.15"
             android:scrollbarSize="20dp"
             android:scrollbarStyle="insideInset"
             android:choiceMode="singleChoice"
-            android:listSelector="#666666"/>
+            android:listSelector="#aeb6b9"
+            android:layout_marginStart="10dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -37,61 +38,99 @@
 
         <Button
             android:text="Cancel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
             android:id="@+id/Button_Done"
-            android:onClick="onDoneClick"/>
+            android:onClick="onDoneClick"
+            android:layout_marginStart="5dp"
+            android:background="#aeb6b9"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif" />
 
         <Button
             android:text="Delete Gun"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
             android:id="@+id/Button_DeleteGun"
             android:layout_below="@+id/Button_AddGun"
             android:layout_alignParentStart="true"
-            android:onClick="onDeleteClick"/>
+            android:onClick="onDeleteClick"
+            android:layout_marginStart="5dp"
+            android:background="#aeb6b9"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif" />
 
         <Button
             android:text="Open Gun"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
             android:id="@+id/Button_OpenGun"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="18dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:onClick="onOpenClick"/>
+            android:onClick="onOpenClick"
+            android:layout_marginStart="5dp"
+            android:background="#aeb6b9"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="normal|bold" />
 
         <Button
             android:text="Reset Table"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
             android:id="@+id/Button_Reset_Table"
             android:onClick="onResetTableClick"
             android:layout_below="@+id/Button_DeleteGun"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:background="#aeb6b9"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:layout_marginTop="10dp" />
 
         <Button
             android:text="Note"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
             android:id="@+id/Button_Note"
             android:onClick="onNoteClick"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="30dp"
             android:layout_below="@+id/Button_Reset_Table"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:background="#aeb6b9"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif" />
 
         <Button
             android:text="Add New Gun"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
             android:id="@+id/Button_AddGun"
             android:onClick="onAddClick"
             android:layout_below="@+id/Button_OpenGun"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:background="#aeb6b9"
+            android:textColor="#000000"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:layout_marginTop="10dp" />
     </RelativeLayout>
 
 </LinearLayout>
