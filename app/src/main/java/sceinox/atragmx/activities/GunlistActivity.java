@@ -10,17 +10,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import sceinox.atragmx.R;
 import sceinox.atragmx.logic.DatabaseHelper;
 import sceinox.atragmx.logic.FireProfiles;
-import sceinox.atragmx.R;
 
 
 public class GunlistActivity extends AppCompatActivity {
-    private ArrayAdapter adapter;
     private ListView listView;
     private String selected;
 
-    private DatabaseHelper dbHelp=new DatabaseHelper(this);
+    private DatabaseHelper dbHelp = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +36,11 @@ public class GunlistActivity extends AppCompatActivity {
         finish();
     }
 
-    public void onSaveClick(View view) {
-        System.out.println("test");
-    }
 
     public void onAddClick(View view) {
         finish();
         startActivity(new Intent(this, GunActivity.class));
-        GunActivity.addGunMode=true;
+        GunActivity.addGunMode = true;
     }
 
     public void onDeleteClick(View view) {
@@ -52,7 +48,7 @@ public class GunlistActivity extends AppCompatActivity {
         initListview();
     }
 
-    public void onResetTableClick(View view){
+    public void onResetTableClick(View view) {
         new AlertDialog.Builder(this)
                 .setTitle("Reset Table")
                 .setMessage("Do you really want to reset the guntable to its default values?")
@@ -62,7 +58,8 @@ public class GunlistActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         dbHelp.resetDatabase();
                         initListview();
-                    }})
+                    }
+                })
 
                 .setNegativeButton(android.R.string.no, null).show();
     }
@@ -78,7 +75,7 @@ public class GunlistActivity extends AppCompatActivity {
 
     //region private methods
     private void initListview() {
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dbHelp.getNamesOfAllGuns());
+        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dbHelp.getNamesOfAllGuns());
         listView = (ListView) findViewById(R.id.List_Gunlist);
         listView.setAdapter(adapter);
 

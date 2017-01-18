@@ -2,13 +2,22 @@ package sceinox.atragmx.logic;
 
 import android.app.Activity;
 import android.content.Context;
-
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static sceinox.atragmx.R.id.*;
+import static sceinox.atragmx.R.id.Text_BHVal;
+import static sceinox.atragmx.R.id.Text_BWVal;
+import static sceinox.atragmx.R.id.Text_C1Val;
+import static sceinox.atragmx.R.id.Text_IAVal;
+import static sceinox.atragmx.R.id.Text_MVVal;
+import static sceinox.atragmx.R.id.Text_TRVal;
+import static sceinox.atragmx.R.id.Text_TSVal;
+import static sceinox.atragmx.R.id.Text_TmpVal;
+import static sceinox.atragmx.R.id.Text_WDVal;
+import static sceinox.atragmx.R.id.Text_WSVal;
+import static sceinox.atragmx.R.id.Text_ZRVal;
 
 public class Calculator {
 
@@ -114,7 +123,7 @@ public class Calculator {
         this.targetTargetRange = targetTargetRange;
     }
 
-    public Calculator(Context context){
+    public Calculator(Context context) {
         this.context = context;
 
         this.gunBoreHeight = getInputOfText(Text_BHVal);
@@ -136,12 +145,12 @@ public class Calculator {
     //endregion
 
     //region private methods
-    private double getInputOfText(int id){
+    private double getInputOfText(int id) {
         return Double.parseDouble(((TextView) ((Activity) context).findViewById(id)).getText().toString());
     }
 
     //ToDo: Implement
-    public CalculatorSolution calculateSolution(){
+    public CalculatorSolution calculateSolution() {
         double scopeBaseAngle = 0;
         double simStep = 0;
         double dragModel = 0;
@@ -161,7 +170,7 @@ public class Calculator {
         double[] bulletPos = new double[]{
                 0,
                 0,
-                - (gunBoreHeight / 100)
+                -(gunBoreHeight / 100)
         };
         double[] bulletVelocity = new double[]{
                 0,
@@ -192,7 +201,7 @@ public class Calculator {
         List<Double> rangeCardData = new ArrayList<>();
 
 
-        while (TOF < 15 && bulletPos[1] < targetTargetRange){
+        while (TOF < 15 && bulletPos[1] < targetTargetRange) {
             bulletSpeed = vectorMagnitude(bulletVelocity);
 
             trueVelocity = vectordiff(bulletVelocity, wind);
@@ -211,11 +220,11 @@ public class Calculator {
             /* RangeCardData */
             //ToDo: save results to RangeCard
             range = targetTargetRange + n * rangeIncrement;
-            if (bulletPos[1] * rangeFactor >= range && range < endRange){
+            if (bulletPos[1] * rangeFactor >= range && range < endRange) {
                 elevation = Math.atan(bulletPos[2] / bulletPos[1]);
                 windage = Math.atan(bulletPos[0] / bulletPos[1]);
             }
-            if (range != 0){
+            if (range != 0) {
                 lead = (targetTargetSpeed * TOF) / (Math.tan(3.38 / 60) * range);
             }
             kineticEnergy = 0.5 * (gunBulletWeight / 1000 * Math.pow(bulletSpeed, 2));
@@ -225,12 +234,12 @@ public class Calculator {
             /* RangeCardData end */
         }
 
-        if (bulletPos[1] > 0){
-            elevation = - Math.atan(bulletPos[2] / bulletPos[1]);
-            windage = - Math.atan(bulletPos[0] / bulletPos[1]);
+        if (bulletPos[1] > 0) {
+            elevation = -Math.atan(bulletPos[2] / bulletPos[1]);
+            windage = -Math.atan(bulletPos[0] / bulletPos[1]);
         }
 
-        if (targetTargetSpeed != 0){
+        if (targetTargetSpeed != 0) {
             lead = (targetTargetSpeed * TOF) / (Math.tan(3.38 / 60) * targetTargetRange);
         }
 
@@ -251,11 +260,11 @@ public class Calculator {
         throw new IllegalArgumentException();
     }
 
-    public double vectorMagnitude(double[] vector){
-        return Math.sqrt(Math.pow(vector[0],2) + Math.pow(vector[1], 2) + Math.pow(vector[2], 2));
+    public double vectorMagnitude(double[] vector) {
+        return Math.sqrt(Math.pow(vector[0], 2) + Math.pow(vector[1], 2) + Math.pow(vector[2], 2));
     }
 
-    public double[] vectordiff(double[] x, double[] y){
+    public double[] vectordiff(double[] x, double[] y) {
         if (x.length != y.length) throw new ArithmeticException();
 
         double[] res = new double[x.length];
@@ -266,7 +275,7 @@ public class Calculator {
         return res;
     }
 
-    public double[] vectorNormalized(double[] x){
+    public double[] vectorNormalized(double[] x) {
         double[] res = new double[x.length];
 
         for (int i = 0; i < res.length; i++) {
@@ -276,7 +285,7 @@ public class Calculator {
         return res;
     }
 
-    public double[] vectorMultiply(double[] x, double a){
+    public double[] vectorMultiply(double[] x, double a) {
         double[] res = new double[x.length];
 
         for (int i = 0; i < res.length; i++) {
@@ -286,7 +295,7 @@ public class Calculator {
         return res;
     }
 
-    public double[] vectorAdd(double[] x, double[] y){
+    public double[] vectorAdd(double[] x, double[] y) {
         if (x.length != y.length) throw new ArithmeticException();
 
         double[] res = new double[x.length];
