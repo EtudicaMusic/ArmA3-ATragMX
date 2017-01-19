@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onGunlistClick(View view) {
-        startActivity(new Intent(this, GunlistActivity.class));
+        startActivity(new Intent(this, GunListActivity.class));
     }
 
     public void onAClick(View view) {
