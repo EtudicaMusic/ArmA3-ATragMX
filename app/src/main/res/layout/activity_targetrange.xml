@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_weight="0.69">
+
+        <TextView
+            android:text="MILs in Scope"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="100dp"
+            android:id="@+id/Text_Mils"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_width="120dp" />
+
+        <EditText
+            android:layout_width="100dp"
+            android:inputType="number|numberDecimal"
+            android:ems="10"
+            android:id="@+id/Edit_mils"
+            android:background="#e3e3e3"
+            android:paddingStart="5dp"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/Text_Mils"
+            android:layout_marginTop="95dp"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:text="Target Height"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Edit_mils"
+            android:layout_alignStart="@+id/Text_Mils"
+            android:id="@+id/Text_TargetHeight"
+            android:layout_width="120dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <EditText
+            android:layout_height="30dp"
+            android:inputType="number|numberDecimal"
+            android:ems="10"
+            android:id="@+id/Edit_TargetHeight"
+            android:layout_width="100dp"
+            android:background="#e3e3e3"
+            android:layout_below="@+id/Edit_mils"
+            android:layout_alignStart="@+id/Edit_mils"
+            android:layout_marginTop="15dp"
+            android:paddingStart="5dp" />
+
+        <TextView
+            android:text="Distance (m)"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Edit_TargetHeight"
+            android:layout_alignStart="@+id/Text_TargetHeight"
+            android:id="@+id/Text_Distance"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:text="1226"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/Text_Distance"
+            android:layout_alignStart="@+id/Edit_TargetHeight"
+            android:id="@+id/textView6"
+            android:background="#e3e3e3"
+            android:gravity="center_vertical"
+            android:paddingStart="5dp"
+            android:fontFamily="sans-serif"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_weight="0.15">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:layout_weight="0.18">
+
+        <Button
+            android:text="Back"
+            android:layout_height="40dp"
+            android:id="@+id/Button_Back"
+            android:background="#aeb6b9"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="80dp" />
+
+        <Button
+            android:text="Apply Value"
+            android:layout_height="40dp"
+            android:id="@+id/Button_Apply"
+            android:layout_width="120dp"
+            android:background="#aeb6b9"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp"
+            android:textStyle="normal|bold"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:text="Calc"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/Button_Calc"
+            android:background="#aeb6b9"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp"
+            android:textStyle="normal|bold" />
+    </RelativeLayout>
+</LinearLayout>
