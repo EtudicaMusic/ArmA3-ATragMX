@@ -15,7 +15,7 @@ import sceinox.atragmx.logic.DatabaseHelper;
 import sceinox.atragmx.logic.FireProfiles;
 
 
-public class GunlistActivity extends AppCompatActivity {
+public class GunListActivity extends AppCompatActivity {
     private ListView listView;
     private String selected;
 
@@ -35,7 +35,6 @@ public class GunlistActivity extends AppCompatActivity {
         FireProfiles.getSelectedProfile().setGun(selected);
         finish();
     }
-
 
     public void onAddClick(View view) {
         finish();
@@ -65,7 +64,9 @@ public class GunlistActivity extends AppCompatActivity {
     }
 
     public void onNoteClick(View view) {
-        System.out.println("test");
+        finish();
+        startActivity(new Intent(this, GunNoteActivity.class));
+        GunNoteActivity.selectedGunName = selected;
     }
 
     public void onDoneClick(View view) {
@@ -75,7 +76,8 @@ public class GunlistActivity extends AppCompatActivity {
 
     //region private methods
     private void initListview() {
-        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, dbHelp.getNamesOfAllGuns());
+        String[] gunNames = dbHelp.getNamesOfAllGuns();
+        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, gunNames);
         listView = (ListView) findViewById(R.id.List_Gunlist);
         listView.setAdapter(adapter);
 
@@ -85,6 +87,5 @@ public class GunlistActivity extends AppCompatActivity {
             }
         });
     }
-
     //endregion
 }
