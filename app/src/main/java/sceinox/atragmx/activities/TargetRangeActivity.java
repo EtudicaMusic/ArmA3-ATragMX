@@ -49,6 +49,7 @@ public class TargetRangeActivity extends AppCompatActivity {
 
     //endregion
 
+    //region private methods
     private double distanceEstimation(double targetSize, double mills) {
         lastEstimation = (targetSize * 1000) / mills;
         return lastEstimation;
@@ -66,4 +67,5 @@ public class TargetRangeActivity extends AppCompatActivity {
     private void saveDistance() {
         FireProfiles.getSelectedProfile().setTargetRange(lastEstimation);
     }
+    //endregion
 }

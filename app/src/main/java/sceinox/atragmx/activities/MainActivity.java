@@ -14,10 +14,8 @@ import sceinox.atragmx.logic.FireProfiles;
 
 
 public class MainActivity extends AppCompatActivity {
-
     Bundle savedInstanceState;
 
-    //region activity states
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         initTextViews();
     }
-    //endregion
 
     //region onClickEvents
     public void onGunClick(View view) {
@@ -49,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onRCClick(View view) {
-        setContentView(R.layout.activity_rangecard);
+        startActivity(new Intent(this, RangeCardActivity.class));
     }
 
     public void onResetClick(View view) {
@@ -294,8 +291,5 @@ public class MainActivity extends AppCompatActivity {
     private String getTextFromTextView(int id) {
         return ((TextView) this.findViewById(id)).getText().toString();
     }
-
-
     //endregion
-
 }
