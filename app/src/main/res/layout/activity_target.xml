@@ -169,7 +169,7 @@
             android:layout_height="20dp"
             android:text="0"
             android:ems="10"
-            android:id="@+id/editText8"
+            android:id="@+id/Edit_Latitude"
             android:textColor="#000000"
             android:textSize="15sp"
             android:layout_above="@+id/Text_DirOfFire"
@@ -193,7 +193,7 @@
             android:layout_width="100dp"
             android:layout_alignBaseline="@+id/Text_DirOfFire"
             android:layout_alignBottom="@+id/Text_DirOfFire"
-            android:layout_alignStart="@+id/editText8"
+            android:layout_alignStart="@+id/Edit_Latitude"
             android:inputType="numberDecimal"
             android:layout_alignEnd="@+id/Edit_WindSpeed2"
             android:gravity="left|center_vertical" />

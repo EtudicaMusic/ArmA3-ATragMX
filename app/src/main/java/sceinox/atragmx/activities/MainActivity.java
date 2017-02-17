@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onTRClick(View view) {
-
+        startActivity(new Intent(this, TargetRangeActivity.class));
     }
 
     public void onCalcClick(View view) {
