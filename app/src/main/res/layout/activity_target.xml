@@ -73,7 +73,7 @@
             android:layout_width="180dp" />
 
         <TextView
-            android:text="Target Range (meters)"
+            android:text="Target Range (m)"
             android:layout_height="20dp"
             android:layout_below="@+id/Text_TargetSpeed"
             android:layout_alignEnd="@+id/Text_TargetSpeed"

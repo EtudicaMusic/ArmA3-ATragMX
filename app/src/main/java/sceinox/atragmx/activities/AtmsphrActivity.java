@@ -22,6 +22,12 @@ public class AtmsphrActivity extends AppCompatActivity {
         updateCalcMethod();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        updateCalcMethod();
+    }
+
     //region OnClickEvents
     public void onDoneClick(View view) {
         saveChangesToProfile();

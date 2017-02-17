@@ -32,6 +32,12 @@ public class GunNoteActivity extends AppCompatActivity {
         setupParent(findViewById(R.id.Layout_Linear_Note));
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        initGUI();
+    }
+
     //region onClickEvents
     public void onCancelClick(View view){
         finish();

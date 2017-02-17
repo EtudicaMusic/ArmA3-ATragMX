@@ -19,6 +19,14 @@ public class GunActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gun);
         updateToOrFromAddGunMode();
+        updateTextViewsFormFireProfile();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        updateToOrFromAddGunMode();
+        updateTextViewsFormFireProfile();
     }
 
     //region onClickEvents
@@ -110,6 +118,21 @@ public class GunActivity extends AppCompatActivity {
             prev.setVisibility(View.VISIBLE);
             next.setText("Next");
         }
+    }
+
+    private void updateTextViewsFormFireProfile() {
+        setTextToTextView(R.id.Edit_Bore, String.valueOf(FireProfiles.getSelectedProfile().getBoreHeight()));
+        setTextToTextView(R.id.Edit_BulletWeight, String.valueOf(FireProfiles.getSelectedProfile().getBulletWeight()));
+        setTextToTextView(R.id.Edit_BulletDiam, String.valueOf(FireProfiles.getSelectedProfile().getBulletDiameter()));
+        setTextToTextView(R.id.Edit_C1Coefficient, String.valueOf(FireProfiles.getSelectedProfile().getC1Coefficient()));
+        setTextToTextView(R.id.Edit_RifleTwist, String.valueOf(FireProfiles.getSelectedProfile().getRifleTwist()));
+        setTextToTextView(R.id.Edit_MuzzleVelocity, String.valueOf(FireProfiles.getSelectedProfile().getMuzzleVelocity()));
+        setTextToTextView(R.id.Edit_ZeroRange, String.valueOf(FireProfiles.getSelectedProfile().getZeroRange()));
+    }
+
+    private void setTextToTextView(int id, String text) {
+        TextView textView = (TextView) this.findViewById(id);
+        textView.setText(text);
     }
     //endregion
 }

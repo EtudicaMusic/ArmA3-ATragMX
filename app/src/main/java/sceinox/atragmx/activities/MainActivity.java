@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         new FireProfiles(this);
         FireProfiles.setStartWeapon();
         fireProfileSwitch('a');
+        initTextViews();
     }
 
     @Override
