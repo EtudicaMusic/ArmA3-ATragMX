@@ -586,6 +586,35 @@
             android:layout_marginStart="15dp"
             android:layout_height="3dp" />
 
+        <TextView
+            android:text="RH"
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/Text_Tmp"
+            android:layout_alignStart="@+id/Text_Tmp"
+            android:id="@+id/Text_RH"
+            android:layout_marginTop="10dp"
+            android:paddingStart="5dp"
+            android:textSize="14sp"
+            android:textStyle="normal|bold"
+            android:textColor="#000000"
+            android:gravity="fill_vertical"
+            android:background="#dddddd" />
+
+        <TextView
+            android:text="45"
+            android:layout_width="wrap_content"
+            android:layout_alignTop="@+id/Text_RH"
+            android:layout_alignEnd="@+id/Text_TmpVal"
+            android:id="@+id/Text_RHVal"
+            android:layout_toEndOf="@+id/Text_RH"
+            android:gravity="right|center_vertical"
+            android:paddingEnd="5dp"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:background="#dddddd"
+            android:layout_height="25dp" />
+
     </RelativeLayout>
 
     <RelativeLayout
