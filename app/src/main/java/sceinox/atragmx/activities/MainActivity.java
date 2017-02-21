@@ -272,9 +272,31 @@ public class MainActivity extends AppCompatActivity {
         setTextToTextView(R.id.Text_ZRVal, String.valueOf(FireProfiles.getSelectedProfile().getZeroRange()));
 
         //Atmosphere
-        setTextToTextView(R.id.Text_TmpVal, String.valueOf(FireProfiles.getSelectedProfile().getTemperature()));
-        setTextToTextView(R.id.Text_AltVal, String.valueOf(FireProfiles.getSelectedProfile().getAltitude()));
-        //TODO barPress,humidity
+        TextView rh = (TextView) this.findViewById(R.id.Text_RH);
+        TextView rhVal = (TextView) this.findViewById(R.id.Text_RHVal);
+
+        if (AtmsphrActivity.methodIsTBH) {
+            rh.setVisibility(View.VISIBLE);
+            rhVal.setVisibility(View.VISIBLE);
+
+            setTextToTextView(R.id.Text_Alt, "Tmp");
+            setTextToTextView(R.id.Text_AltVal, String.valueOf(FireProfiles.getSelectedProfile().getTemperature()));
+            setTextToTextView(R.id.Text_Tmp, "BP");
+            setTextToTextView(R.id.Text_TmpVal, String.valueOf(FireProfiles.getSelectedProfile().getBarometricPressure()));
+            setTextToTextView(R.id.Text_RH, "RH");
+            setTextToTextView(R.id.Text_RHVal, String.valueOf(FireProfiles.getSelectedProfile().getHumidity()));
+        } else {
+            rh.setVisibility(View.INVISIBLE);
+            rhVal.setVisibility(View.INVISIBLE);
+
+            setTextToTextView(R.id.Text_Alt, "Alt");
+            setTextToTextView(R.id.Text_AltVal, String.valueOf(FireProfiles.getSelectedProfile().getAltitude()));
+            setTextToTextView(R.id.Text_Tmp, "Tmp");
+            setTextToTextView(R.id.Text_TmpVal, String.valueOf(FireProfiles.getSelectedProfile().getTemperature()));
+
+
+        }
+
 
         //Target
         setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed()));

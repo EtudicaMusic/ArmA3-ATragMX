@@ -12,13 +12,18 @@ import sceinox.atragmx.R;
 import sceinox.atragmx.logic.FireProfiles;
 
 public class AtmsphrActivity extends AppCompatActivity {
-    private Boolean MethodIsTBH = true;
+    public static Boolean methodIsTBH = true;
+    private Boolean tempMethodIsTBH = methodIsTBH;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atmsphr);
-        buttonColorSwitch("tbh");
+        if (methodIsTBH) {
+            buttonColorSwitch("tbh");
+        } else {
+            buttonColorSwitch("at");
+        }
         updateCalcMethod();
     }
 
@@ -30,6 +35,7 @@ public class AtmsphrActivity extends AppCompatActivity {
 
     //region OnClickEvents
     public void onDoneClick(View view) {
+        methodIsTBH = tempMethodIsTBH;
         saveChangesToProfile();
         finish();
     }
@@ -51,13 +57,13 @@ public class AtmsphrActivity extends AppCompatActivity {
     }
 
     public void onATClick(View view) {
-        MethodIsTBH = false;
+        tempMethodIsTBH = false;
         updateCalcMethod();
         buttonColorSwitch("at");
     }
 
     public void onTBHClick(View view) {
-        MethodIsTBH = true;
+        tempMethodIsTBH = true;
         updateCalcMethod();
         buttonColorSwitch("tbh");
     }
@@ -66,7 +72,7 @@ public class AtmsphrActivity extends AppCompatActivity {
     //region private methods
     private void saveChangesToProfile() {
         FireProfiles.Profile profile = FireProfiles.getSelectedProfile();
-        if (MethodIsTBH) {
+        if (methodIsTBH) {
             profile.setTemperature(getInputOfText(R.id.Edit_Altitude_Temperature));
             profile.setBarometricPressure(getInputOfText(R.id.Edit_Temperature_BarPress));
             profile.setHumidity(getInputOfText(R.id.Edit_None_Humidity));
@@ -79,7 +85,7 @@ public class AtmsphrActivity extends AppCompatActivity {
     private void updateCalcMethod() {
         TextView humidityText = (TextView) this.findViewById(R.id.Text_None_Humidity);
         TextView humidityEdit = (TextView) this.findViewById(R.id.Edit_None_Humidity);
-        if (MethodIsTBH) {
+        if (tempMethodIsTBH) {
             humidityText.setVisibility(View.VISIBLE);
             humidityEdit.setVisibility(View.VISIBLE);
 
