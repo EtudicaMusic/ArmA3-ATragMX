@@ -125,8 +125,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL(
                 "UPDATE " + GUNS_TABLE_GUN +
-                " SET " + GUNS_COLUMN_NOTE + "=" + "\"" + newNote + "\"" +
-                " WHERE " + GUNS_COLUMN_NAME + "=" + "\"" + name + "\""
+                        " SET " + GUNS_COLUMN_NOTE + "=" + "\"" + newNote + "\"" +
+                        " WHERE " + GUNS_COLUMN_NAME + "=" + "\"" + name + "\""
         );
 
     }
