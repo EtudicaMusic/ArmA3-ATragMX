@@ -59,11 +59,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onTSClick(View view) {
-
+        TargetRangeSpeedActivity.targetRangeMode = false;
+        startActivity(new Intent(this, TargetRangeSpeedActivity.class));
     }
 
     public void onTRClick(View view) {
-        startActivity(new Intent(this, TargetRangeActivity.class));
+        TargetRangeSpeedActivity.targetRangeMode = true;
+        startActivity(new Intent(this, TargetRangeSpeedActivity.class));
     }
 
     public void onCalcClick(View view) {

@@ -39,7 +39,7 @@
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>
         </activity>
-        <activity android:name="sceinox.atragmx.activities.TargetRangeActivity">
+        <activity android:name="sceinox.atragmx.activities.TargetRangeSpeedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
