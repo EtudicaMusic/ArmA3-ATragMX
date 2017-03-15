@@ -9,6 +9,7 @@ import android.widget.TextView;
 import sceinox.atragmx.R;
 import sceinox.atragmx.logic.FireProfiles;
 
+
 public class TargetActivity extends AppCompatActivity {
 
     @Override
@@ -25,13 +26,28 @@ public class TargetActivity extends AppCompatActivity {
     }
 
     //region OnClickEvents
+    public void onTargetSpeedClick(View view) {
+        TargetRangeSpeedActivity.targetRangeMode = false;
+        TargetRangeSpeedActivity.finishToTargetActivity = true;
+        startActivity(new Intent(this, TargetRangeSpeedActivity.class));
+    }
+
+    public void onTargetRangeClick(View view) {
+        TargetRangeSpeedActivity.targetRangeMode = true;
+        TargetRangeSpeedActivity.finishToTargetActivity = true;
+        startActivity(new Intent(this, TargetRangeSpeedActivity.class));
+    }
+
     public void onDoneClick(View view) {
         saveChangesToProfile();
         finish();
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     public void onCancelClick(View view) {
         finish();
+        startActivity(new Intent(this, MainActivity.class));
+
     }
 
     public void onPrevClick(View view) {

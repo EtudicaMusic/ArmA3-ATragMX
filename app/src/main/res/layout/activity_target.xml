@@ -325,19 +325,6 @@
             android:layout_alignTop="@+id/Edit_InclinationAnglec"
             android:textAppearance="@style/TextAppearance.AppCompat" />
 
-        <Button
-            android:text=">"
-            android:layout_height="wrap_content"
-            android:id="@+id/Button_TargetSpeed"
-            android:background="#aeb6b9"
-            android:layout_above="@+id/Text_TargetRange"
-            android:layout_toEndOf="@+id/Text_TargetSpeed"
-            android:layout_width="20dp"
-            android:layout_alignTop="@+id/Text_TargetSpeed"
-            android:fontFamily="sans-serif"
-            android:textStyle="normal|bold"
-            android:textSize="16sp"
-            android:textAllCaps="false" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -370,6 +357,37 @@
             android:inputType="number|numberDecimal"
             android:background="#dddddd"
             android:textAppearance="@style/TextAppearance.AppCompat" />
+
+        <Button
+            android:text=">"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_TargetSpeed"
+            android:background="#aeb6b9"
+            android:layout_above="@+id/Text_TargetRange"
+            android:layout_toEndOf="@+id/Text_TargetSpeed"
+            android:layout_width="20dp"
+            android:layout_alignTop="@+id/Text_TargetSpeed"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:onClick="onTargetSpeedClick" />
+
+        <Button
+            android:text=">"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_TargetRange"
+            android:background="#aeb6b9"
+            android:layout_below="@+id/Text_TargetRange"
+            android:layout_toEndOf="@+id/Text_TargetRange"
+            android:layout_width="20dp"
+            android:layout_alignTop="@+id/Text_TargetRange"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal|bold"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:layout_alignBottom="@+id/Edit_TargetRange"
+            android:onClick="onTargetRangeClick" />
 
     </RelativeLayout>
 </LinearLayout>

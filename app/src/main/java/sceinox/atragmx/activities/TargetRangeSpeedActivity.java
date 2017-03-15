@@ -15,7 +15,7 @@ import sceinox.atragmx.logic.FireProfiles;
 
 public class TargetRangeSpeedActivity extends AppCompatActivity {
     public static boolean targetRangeMode = true;
-    public boolean finishToTargetActivity = false;
+    public static boolean finishToTargetActivity = false;
     private double lastRangeEstimation;
     private double lastSpeedEstimation;
 
@@ -30,6 +30,7 @@ public class TargetRangeSpeedActivity extends AppCompatActivity {
     public void onBackClick(View view) {
         finish();
         if (finishToTargetActivity) {
+            finishToTargetActivity = false;
             startActivity(new Intent(this, TargetActivity.class));
         }
     }
@@ -38,6 +39,7 @@ public class TargetRangeSpeedActivity extends AppCompatActivity {
         saveDistanceOrSpeed();
         finish();
         if (finishToTargetActivity) {
+            finishToTargetActivity = false;
             startActivity(new Intent(this, TargetActivity.class));
         }
     }
