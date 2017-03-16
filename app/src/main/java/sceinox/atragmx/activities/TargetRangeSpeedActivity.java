@@ -87,8 +87,7 @@ public class TargetRangeSpeedActivity extends AppCompatActivity {
     private Thread countSecondsUp(double systemTimeBeforeCall, Handler handlerForUI) {
         return new Thread(() -> {
             while (true) {
-                lastSpeedEstimation = (System.currentTimeMillis() - systemTimeBeforeCall) / 1000;
-                handlerForUI.post(() -> ((EditText) findViewById(R.id.Edit_Time)).setText(String.valueOf(lastSpeedEstimation)));
+                handlerForUI.post(() -> ((EditText) findViewById(R.id.Edit_Time)).setText(String.valueOf((System.currentTimeMillis() - systemTimeBeforeCall) / 1000)));
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
@@ -103,10 +102,11 @@ public class TargetRangeSpeedActivity extends AppCompatActivity {
         return lastRangeEstimation;
     }
 
-    private double speedEstimation(double targetRange, double mills, double secs) {
-        // TODO: 14.03.2017  do calculating
-        //lastSpeedEstimation = ###add formula here###
-        return lastSpeedEstimation;
+    private double speedEstimation(double targetRange, double mills, double time) {
+        double angleInDegree = mills * 0.05625;
+        double distanceRun = targetRange * Math.tan(angleInDegree);
+        lastSpeedEstimation = distanceRun/time;
+        return Math.floor(lastSpeedEstimation * 100) / 100;
     }
 
     private double getInputOfText(int id) {
@@ -147,7 +147,7 @@ public class TargetRangeSpeedActivity extends AppCompatActivity {
             setTextToTextView(R.id.Text_Mils, "MIL in Scope");
             setTextToTextView(R.id.Edit_Mills, "2");
             setTextToTextView(R.id.Text_Time, "Time (secs)");
-            setTextToTextView(R.id.Edit_Time, "");
+            setTextToTextView(R.id.Edit_Time, "0");
             setTextToTextView(R.id.Text_Distance_Speed, "Speed");
             setTextToTextView(R.id.Solution_Distance_Speed, "");
 

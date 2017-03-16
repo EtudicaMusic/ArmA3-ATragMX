@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1">
@@ -67,10 +68,11 @@
             android:layout_width="100dp"
             android:background="#e3e3e3"
             android:paddingStart="5dp"
-            android:text="5"
+            android:text="0"
             android:layout_marginTop="18dp"
             android:layout_below="@+id/Edit_Mills"
-            android:layout_alignStart="@+id/Edit_Mills" />
+            android:layout_alignStart="@+id/Edit_Mills"
+            tools:text="0" />
 
         <TextView
             android:text="Time (secs)"
