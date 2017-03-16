@@ -246,18 +246,18 @@ public class Calculator {
         kineticEnergy = 0.5 * (gunBulletWeight / 1000 * Math.pow(bulletSpeed, 2));
         kineticEnergy = kineticEnergy * 0.737562149;
 
-        return null;
+        return new CalculatorSolution(elevation, windage, 0, lead);
     }
 
     private double calculateRetardation(double dragModel, double bc, double trueSpeed) {
         //ToDo: Implement
-        throw new IllegalArgumentException();
+        return 0d;
     }
 
 
     private double calculateAthmosphericCorrection(double atmsphrTemperature, double atmsphrBarometricPressure, double atmsphrRelativeHumidity, double athmospereModel) {
         //ToDo: Implement
-        throw new IllegalArgumentException();
+        return 0d;
     }
 
     public double vectorMagnitude(double[] vector) {
