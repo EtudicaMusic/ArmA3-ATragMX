@@ -3,10 +3,12 @@ package sceinox.atragmx.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import sceinox.atragmx.R;
@@ -18,6 +20,7 @@ public class TargetRangeSpeedActivity extends AppCompatActivity {
     public static boolean finishToTargetActivity = false;
     private double lastRangeEstimation;
     private double lastSpeedEstimation;
+    private Thread countSecondsUpThread;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,13 +68,36 @@ public class TargetRangeSpeedActivity extends AppCompatActivity {
     }
 
     public void onStartClick(View view) {
-        //TODO count seconds until pressed again
-    }
 
+        if (((TextView) this.findViewById(R.id.Button_Time_Start)).getText().equals("Start")) {
+            countSecondsUpThread = new Thread(countSecondsUp(System.currentTimeMillis(), new Handler()));
+            countSecondsUpThread.start();
+
+            setTextToTextView(R.id.Button_Time_Start, "Stop");
+        } else if (((TextView) this.findViewById(R.id.Button_Time_Start)).getText().equals("Stop")) {
+            countSecondsUpThread.interrupt();
+
+            setTextToTextView(R.id.Button_Time_Start, "Start");
+        }
+    }
 
     //endregion
 
     //region private methods
+    private Thread countSecondsUp(double systemTimeBeforeCall, Handler handlerForUI) {
+        return new Thread(() -> {
+            while (true) {
+                lastSpeedEstimation = (System.currentTimeMillis() - systemTimeBeforeCall) / 1000;
+                handlerForUI.post(() -> ((EditText) findViewById(R.id.Edit_Time)).setText(String.valueOf(lastSpeedEstimation)));
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    break;
+                }
+            }
+        });
+    }
+
     private double distanceEstimation(double targetSize, double mills) {
         lastRangeEstimation = (targetSize * 1000) / mills;
         return lastRangeEstimation;
