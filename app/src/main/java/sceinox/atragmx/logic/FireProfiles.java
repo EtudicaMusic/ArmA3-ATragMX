@@ -348,7 +348,6 @@ public class FireProfiles {
         }
         //endregion
 
-
         public String toString() {
             String out;
             out = "Profile:: weaponName = " + weaponName + "; boreHeight = " + boreHeight + "; bulletWeight = " + bulletWeight + "; bulletDiameter = " + bulletDiameter + "; c1Coefficient = " + c1Coefficient +

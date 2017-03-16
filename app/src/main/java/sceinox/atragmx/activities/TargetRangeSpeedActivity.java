@@ -68,7 +68,6 @@ public class TargetRangeSpeedActivity extends AppCompatActivity {
     }
 
     public void onStartClick(View view) {
-
         if (((TextView) this.findViewById(R.id.Button_Time_Start)).getText().equals("Start")) {
             countSecondsUpThread = new Thread(countSecondsUp(System.currentTimeMillis(), new Handler()));
             countSecondsUpThread.start();
@@ -105,8 +104,9 @@ public class TargetRangeSpeedActivity extends AppCompatActivity {
     private double speedEstimation(double targetRange, double mills, double time) {
         double angleInDegree = mills * 0.05625;
         double distanceRun = targetRange * Math.tan(angleInDegree);
-        lastSpeedEstimation = distanceRun/time;
-        return Math.floor(lastSpeedEstimation * 100) / 100;
+        lastSpeedEstimation = distanceRun / time;
+        lastSpeedEstimation = Math.floor(lastSpeedEstimation * 100) / 100;
+        return lastSpeedEstimation;
     }
 
     private double getInputOfText(int id) {
