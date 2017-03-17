@@ -7,6 +7,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.atan;
+import static java.lang.Math.cos;
+import static java.lang.Math.pow;
+import static java.lang.Math.sin;
+import static java.lang.Math.tan;
 import static sceinox.atragmx.R.id.Text_BHVal;
 import static sceinox.atragmx.R.id.Text_BWVal;
 import static sceinox.atragmx.R.id.Text_C1Val;
@@ -151,117 +156,142 @@ public class Calculator {
 
     //ToDo: Implement
     public CalculatorSolution calculateSolution() {
-        double scopeBaseAngle = 0;
-        double simStep = 0;
-        double dragModel = 0;
-        double athmospereModel = 0;
+//        /* variables from already exisiting data */
+//        double scopeBaseAngle;
+//        double bulletMass;
+//        double boreHeight;
+//        double airFriction;
+//        double muzzleVelocity;
+//        double temperature;
+//        double barometricPressure;
+//        double relativeHumidity;
+//        double simSteps;
+//
+//        double windDirection;
+//        double inclinationAngle;
+//        double targetSpeed;
+//        double targetRange;
+//        double bc;
+//        double dragModel;
+//        double atmosphericModel;
+//        double stabilityFactor;
+//        double twistDirection;
+//        double latitude;
+//        double directionOfFire;
+//
+//        double[] windSpeed = new double[2];
+//
+//        /* helper variables block 1*/
+//        double tx = 0;
+//        double tz = 0;
+//        double[] lastBulletPos = {0,0,0};
+//        double[] bulletPos = {0,0,0};
+//        double[] bulletVelocity = {0,0,0};
+//        double[] bulletAccel = {0,0,0};
+//        double bulletSpeed = 0;
+//        double[] gravity = {0, sin(scopeBaseAngle + inclinationAngle) * -9.80665, cos(scopeBaseAngle + inclinationAngle) * -9.80665};
+//        double deltaT = 1/simSteps;
+//
+//        /* helper variables block 2 */
+//        double elevation = 0;
+//        double windage1 = 0;
+//        double windage2 = 0;
+//        double lead = 0;
+//        double TOF = 0;
+//        double[] trueVelocity = {0,0,0};
+//        double trueSpeed = 0;
+//        double verticalCoriolis = 0;
+//        double verticalDeflection = 0;
+//        double horizontalCoriolis = 0;
+//        double horizontalDeflection = 0;
+//        double spinDrift = 0;
+//        double spinDeflection = 0;
+//
+//        /* helper variables block 3 */
+//        double n = 0;
+//        double range = 0;
+//        double trueRange = 0;
+//        double rangeFactor = 1.0936133;
+//
+//        /* helper variables block 4 */
+//        double[] wind1 = {cos(270 - windDirection * 30) * windSpeed[0], sin(270 - windDirection * 30) * windSpeed[0], 0};
+//        double[] wind2 = {cos(270 - windDirection * 30) * windSpeed[1], sin(270 - windDirection * 30) * windSpeed[1], 0};
+//        double windDrift = 0;
+//        bc = calculateAthmosphericCorrection(bc, temperature, barometricPressure, relativeHumidity, atmosphericModel);
+//
+//        /* helper variables block 5 */
+//        double eoetvoesMultiplier = 2 * (0.0000729 * muzzleVelocity / -9.80665) * cos(latitude) * sin(directionOfFire);
+//
+//        /* helper variables block 6 */
+//        double rangeCardStartRange = 100;
+//        double rangeCardIncrement = 50;
+//        double rangeCardEndRange = 2000;
+//
+//        while (TOF < 15 && bulletPos[1] < targetRange) {
+//            bulletSpeed = vectorMagnitude(bulletVelocity);
+//
+//            trueVelocity = vectordiff(bulletVelocity, wind1);
+//            trueSpeed = vectorMagnitude(trueVelocity);
+//
+//            double drag = calculateDrag(dragModel, bc, trueSpeed);
+//            bulletAccel = vectorMultiply(vectorNormalized(trueVelocity), -1 * drag);
+//
+//            bulletAccel = vectorAdd(bulletAccel, gravity);
+//
+//            lastBulletPos = bulletPos;
+//            bulletPos = vectorAdd(bulletPos, vectorMultiply(bulletVelocity, deltaT * 0.5));
+//            bulletVelocity = vectorAdd(bulletVelocity, vectorMultiply(bulletAccel, deltaT));
+//            bulletPos = vectorAdd(bulletPos, vectorMultiply(bulletVelocity, deltaT * 0.5));
+//
+//            TOF += deltaT;
+//        }
+//
+//        if (targetRange != 0) {
+//            tx = lastBulletPos[0] + (targetRange - lastBulletPos[1]) * (bulletPos[0] - lastBulletPos[0]) / (bulletPos[1] - lastBulletPos[1]);
+//            tz = lastBulletPos[2] + (targetRange - lastBulletPos[1]) * (bulletPos[2] - lastBulletPos[2]) / (bulletPos[1] - lastBulletPos[1]);
+//            elevation = - atan(tz / targetRange);
+//            windage1 = - atan(tx / targetRange);
+//            windDrift = wind2[0] * (TOF - targetRange / muzzleVelocity);
+//            windage2 = - atan(windDrift / targetRange);
+//            lead = (targetSpeed * TOF) / (tan(3.38 / 60) * targetRange);
+//        }
+//
+//        double kineticEnergy = 0.5 * (bulletMass / 1000 * Math.pow(bulletSpeed,2));
+//        kineticEnergy *= 0.737562149;
+//
+//        if (bulletPos[1] > 0) {
+//            horizontalDeflection = 0.0000729 * bulletPos[1] * TOF * sin(latitude);
+//            horizontalCoriolis = - atan(horizontalDeflection / bulletPos[1]);
+//            windage1 = windage1 + horizontalCoriolis;
+//            windage2 = windage2 + horizontalCoriolis;
+//
+//            verticalDeflection = bulletPos[2] * eoetvoesMultiplier;
+//            verticalCoriolis = - atan(verticalDeflection / bulletPos[1]);
+//            elevation += verticalCoriolis;
+//
+//            spinDeflection = twistDirection * 0.0254 * 1.25 * (stabilityFactor + 1.2) * TOF ^ 1.83;
+//            spinDrift = - atan(spinDeflection / bulletPos[1]);
+//            windage1 = windage1 + spinDrift;
+//            windage2 = windage2 + spinDrift;
+//        }
 
-        // res variables
-        double elevation = 0;
-        double windage = 0;
-        double lead = 0;
-        double TOF = 0;
-        double[] trueVelocity = new double[2];
-        double trueSpeed = 0;
-        double kineticEnergy;
-
-
-        // math. helper variables
-        double[] bulletPos = new double[]{
-                0,
-                0,
-                -(gunBoreHeight / 100)
-        };
-        double[] bulletVelocity = new double[]{
-                0,
-                Math.cos(scopeBaseAngle) * gunMuzzleVelocity,
-                Math.sin(scopeBaseAngle) * gunMuzzleVelocity
-        };
-        double[] bulletAccel;
-        double bulletSpeed = 0;
-        double[] gravity = new double[]{
-                0,
-                Math.sin(scopeBaseAngle + targetInclinationAngle) * -9.80665,
-                Math.cos(scopeBaseAngle + targetInclinationAngle) * -9.80665d
-        };
-        double deltaT = 1 / simStep;
-        double[] wind = new double[]{
-                Math.cos(270 - targetWindDirection * 30) * targetWindStrength,
-                Math.sin(270 - targetWindDirection * 30) * targetWindStrength,
-                0
-        };
-        double bc = calculateAthmosphericCorrection(atmsphrTemperature, atmsphrBarometricPressure, atmsphrRelativeHumidity, athmospereModel);
-
-        // RangeCard helper
-        double n = 0;
-        double range = 0;
-        double rangeFactor = 1.0936133;
-        double rangeIncrement = 0;
-        double endRange = 0;
-        List<Double> rangeCardData = new ArrayList<>();
-
-
-        while (TOF < 15 && bulletPos[1] < targetTargetRange) {
-            bulletSpeed = vectorMagnitude(bulletVelocity);
-
-            trueVelocity = vectordiff(bulletVelocity, wind);
-            trueSpeed = vectorMagnitude(trueVelocity);
-
-            double drag = -1 * calculateRetardation(dragModel, bc, trueSpeed);
-            bulletAccel = vectorMultiply(vectorNormalized(trueVelocity), drag);
-
-            bulletAccel = vectorAdd(bulletAccel, gravity);
-
-            bulletVelocity = vectorAdd(bulletVelocity, vectorMultiply(bulletAccel, deltaT));
-            bulletPos = vectorAdd(bulletPos, vectorMultiply(bulletVelocity, deltaT));
-
-            TOF = TOF + deltaT;
-
-            /* RangeCardData */
-            //ToDo: save results to RangeCard
-            range = targetTargetRange + n * rangeIncrement;
-            if (bulletPos[1] * rangeFactor >= range && range < endRange) {
-                elevation = Math.atan(bulletPos[2] / bulletPos[1]);
-                windage = Math.atan(bulletPos[0] / bulletPos[1]);
-            }
-            if (range != 0) {
-                lead = (targetTargetSpeed * TOF) / (Math.tan(3.38 / 60) * range);
-            }
-            kineticEnergy = 0.5 * (gunBulletWeight / 1000 * Math.pow(bulletSpeed, 2));
-            kineticEnergy = kineticEnergy * 0.737562149;
-            // Ragecard[n] = range, elevation * 60, windage * 60, lead, TOF, bulletSpeed, kineticEnergy
-            // n++;
-            /* RangeCardData end */
-        }
-
-        if (bulletPos[1] > 0) {
-            elevation = -Math.atan(bulletPos[2] / bulletPos[1]);
-            windage = -Math.atan(bulletPos[0] / bulletPos[1]);
-        }
-
-        if (targetTargetSpeed != 0) {
-            lead = (targetTargetSpeed * TOF) / (Math.tan(3.38 / 60) * targetTargetRange);
-        }
-
-        kineticEnergy = 0.5 * (gunBulletWeight / 1000 * Math.pow(bulletSpeed, 2));
-        kineticEnergy = kineticEnergy * 0.737562149;
-
-        return new CalculatorSolution(elevation, windage, 0, lead);
+        return new CalculatorSolution(0,0,0,0);
     }
 
-    private double calculateRetardation(double dragModel, double bc, double trueSpeed) {
-        //ToDo: Implement
+    double calculateAthmosphericCorrection(double bc, double temperature, double barometricPressure, double relativeHumidity, double atmosphericModel) {
+        //ToDo: Fill in formula
+
         return 0d;
     }
 
+    double calculateDrag(double dragModel, double bc, double trueSpeed) {
+        //ToDo: Fill in formula
 
-    private double calculateAthmosphericCorrection(double atmsphrTemperature, double atmsphrBarometricPressure, double atmsphrRelativeHumidity, double athmospereModel) {
-        //ToDo: Implement
         return 0d;
     }
 
     public double vectorMagnitude(double[] vector) {
-        return Math.sqrt(Math.pow(vector[0], 2) + Math.pow(vector[1], 2) + Math.pow(vector[2], 2));
+        return Math.sqrt(pow(vector[0], 2) + pow(vector[1], 2) + pow(vector[2], 2));
     }
 
     public double[] vectordiff(double[] x, double[] y) {
@@ -279,7 +309,7 @@ public class Calculator {
         double[] res = new double[x.length];
 
         for (int i = 0; i < res.length; i++) {
-            res[i] = x[i] / (Math.sqrt(Math.pow(x[0], 2) + Math.pow(x[1], 2) + Math.pow(x[2], 2)));
+            res[i] = x[i] / (Math.sqrt(pow(x[0], 2) + pow(x[1], 2) + pow(x[2], 2)));
         }
 
         return res;
