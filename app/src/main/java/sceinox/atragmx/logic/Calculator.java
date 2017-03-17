@@ -46,64 +46,6 @@ public class Calculator {
     private double targetTargetRange;
     //endregion
 
-    //region public getters
-    public void setContext(Context context) {
-        this.context = context;
-    }
-
-    public void setGunBoreHeight(double gunBoreHeight) {
-        this.gunBoreHeight = gunBoreHeight;
-    }
-
-    public void setGunBulletWeight(double gunBulletWeight) {
-        this.gunBulletWeight = gunBulletWeight;
-    }
-
-    public void setGunBallisticCoefficient(double gunBallisticCoefficient) {
-        this.gunBallisticCoefficient = gunBallisticCoefficient;
-    }
-
-    public void setGunMuzzleVelocity(double gunMuzzleVelocity) {
-        this.gunMuzzleVelocity = gunMuzzleVelocity;
-    }
-
-    public void setGunZeroRange(double gunZeroRange) {
-        this.gunZeroRange = gunZeroRange;
-    }
-
-    public void setAtmsphrTemperature(double atmsphrTemperature) {
-        this.atmsphrTemperature = atmsphrTemperature;
-    }
-
-    public void setAtmsphrBarometricPressure(double atmsphrBarometricPressure) {
-        this.atmsphrBarometricPressure = atmsphrBarometricPressure;
-    }
-
-    public void setAtmsphrRelativeHumidity(double atmsphrRelativeHumidity) {
-        this.atmsphrRelativeHumidity = atmsphrRelativeHumidity;
-    }
-
-    public void setTargetWindStrength(double targetWindStrength) {
-        this.targetWindStrength = targetWindStrength;
-    }
-
-    public void setTargetWindDirection(double targetWindDirection) {
-        this.targetWindDirection = targetWindDirection;
-    }
-
-    public void setTargetInclinationAngle(double targetInclinationAngle) {
-        this.targetInclinationAngle = targetInclinationAngle;
-    }
-
-    public void setTargetTargetSpeed(double targetTargetSpeed) {
-        this.targetTargetSpeed = targetTargetSpeed;
-    }
-
-    public void setTargetTargetRange(double targetTargetRange) {
-        this.targetTargetRange = targetTargetRange;
-    }
-    //endregion
-
     //region c'tors
     /*
     this c'tor is only used for unit tests.
@@ -130,22 +72,6 @@ public class Calculator {
 
     public Calculator(Context context) {
         this.context = context;
-
-        this.gunBoreHeight = getInputOfText(Text_BHVal);
-        this.gunBulletWeight = getInputOfText(Text_BWVal);
-        this.gunBallisticCoefficient = getInputOfText(Text_C1Val);
-        this.gunZeroRange = getInputOfText(Text_ZRVal);
-        this.gunMuzzleVelocity = getInputOfText(Text_MVVal);
-
-        this.atmsphrTemperature = getInputOfText(Text_TmpVal);
-        //this.atmsphrBarometricPressure = getInputOfText(Text_B);
-        //this.atmsphrRelativeHumidity = getInputOfText(Text_RHVal);
-
-        this.targetWindStrength = getInputOfText(Text_WSVal);
-        this.targetWindDirection = getInputOfText(Text_WDVal);
-        this.targetInclinationAngle = getInputOfText(Text_IAVal);
-        this.targetTargetSpeed = getInputOfText(Text_TSVal);
-        this.targetTargetRange = getInputOfText(Text_TRVal);
     }
     //endregion
 
