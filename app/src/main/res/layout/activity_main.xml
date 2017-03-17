@@ -688,7 +688,7 @@
             android:fontFamily="sans-serif" />
 
         <TextView
-            android:text="0.96L"
+            android:text="0.96"
             android:layout_width="70dp"
             android:layout_height="20dp"
             android:id="@+id/Text_Wind_RelVal"
@@ -823,7 +823,7 @@
             android:layout_marginTop="5dp" />
 
         <TextView
-            android:text="0.96L"
+            android:text="0.96"
             android:layout_width="70dp"
             android:layout_height="20dp"
             android:id="@+id/Text_Wind_AbsVal"

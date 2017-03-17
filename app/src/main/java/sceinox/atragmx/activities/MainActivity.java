@@ -83,8 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onCalcClick(View view) {
-        Calculator calculator = new Calculator(this);
-        //calculator.calculateSolution();
+        displaySolution(new Calculator(this).calculateSolution());
     }
 
     public void onGunlistClick(View view) {
@@ -137,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onLeadClick(View view) {
         if (getTextFromTextView(R.id.Text_WS).equals("WS")) {
-            setTextToTextView(R.id.Text_WS, "WS/WS2");
+            setTextToTextView(R.id.Text_WS, "2WS");
             setTextToTextView(R.id.Text_WSVal, String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed()) + "/" +
                     String.valueOf(FireProfiles.getSelectedProfile().getWindSpeed2()));
             setTextToTextView(R.id.Button_Lead, "Wind 2");
