@@ -7,7 +7,7 @@ public class CalculatorSolution {
     private double wind2;
     private double lead;
 
-    CalculatorSolution(double elevation, double wind, double wind2, double lead) {
+    public CalculatorSolution(double elevation, double wind, double wind2, double lead) {
         this.elevation = elevation;
         this.wind = wind;
         this.wind2 = wind2;

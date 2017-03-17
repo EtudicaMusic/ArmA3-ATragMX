@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import sceinox.atragmx.R;
 import sceinox.atragmx.logic.Calculator;
+import sceinox.atragmx.logic.CalculatorSolution;
 import sceinox.atragmx.logic.FireProfiles;
 
 
@@ -51,11 +52,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onResetClick(View view) {
+        setTextToTextView(R.id.Text_Elev_AbsVal, "0.0");
+        setTextToTextView(R.id.Text_Wind_AbsVal, "0.0");
+        setTextToTextView(R.id.Text_Lead_AbsVal, "0.0");
+
+        setTextToTextView(R.id.Text_Elev_RelVal, "0.0");
+        setTextToTextView(R.id.Text_Wind_RelVal, "0.0");
+
+        setTextToTextView(R.id.Text_Elev_CurVal, "0.0");
+        setTextToTextView(R.id.Text_Wind_CurVal, "0.0");
 
     }
 
     public void onUpdateClick(View view) {
+        setTextToTextView(R.id.Text_Elev_CurVal, getTextFromTextView(R.id.Text_Elev_AbsVal));
+        setTextToTextView(R.id.Text_Wind_CurVal, getTextFromTextView(R.id.Text_Wind_AbsVal));
 
+        setTextToTextView(R.id.Text_Elev_RelVal, "0.0");
+        setTextToTextView(R.id.Text_Wind_RelVal, "0.0");
     }
 
     public void onTSClick(View view) {
@@ -306,6 +320,20 @@ public class MainActivity extends AppCompatActivity {
         setTextToTextView(R.id.Text_IAVal, String.valueOf(FireProfiles.getSelectedProfile().getInclinationAngleDegree()));
         setTextToTextView(R.id.Text_TSVal, String.valueOf(FireProfiles.getSelectedProfile().getTargetSpeed()));
         setTextToTextView(R.id.Text_TRVal, String.valueOf(FireProfiles.getSelectedProfile().getTargetRange()));
+    }
+
+    private void displaySolution(CalculatorSolution cSol) {
+        setTextToTextView(R.id.Text_Elev_AbsVal, String.valueOf(cSol.getElevation()));
+        setTextToTextView(R.id.Text_Wind_AbsVal, String.valueOf(cSol.getWind()));
+
+        if (getTextFromTextView(R.id.Button_Lead).equals("Lead")) {
+            setTextToTextView(R.id.Text_Lead_AbsVal, String.valueOf(cSol.getLead()));
+        } else {
+            setTextToTextView(R.id.Text_Lead_AbsVal, String.valueOf(cSol.getWind2()));
+        }
+
+        setTextToTextView(R.id.Text_Elev_RelVal, String.valueOf(cSol.getElevation() - Double.parseDouble(getTextFromTextView(R.id.Text_Elev_CurVal))));
+        setTextToTextView(R.id.Text_Wind_RelVal, String.valueOf(cSol.getWind() - Double.parseDouble(getTextFromTextView(R.id.Text_Wind_CurVal))));
     }
 
     private void setTextToTextView(int id, String text) {
