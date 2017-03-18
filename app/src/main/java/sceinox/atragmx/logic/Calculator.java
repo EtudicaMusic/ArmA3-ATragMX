@@ -23,6 +23,7 @@ import static sceinox.atragmx.R.id.Text_TmpVal;
 import static sceinox.atragmx.R.id.Text_WDVal;
 import static sceinox.atragmx.R.id.Text_WSVal;
 import static sceinox.atragmx.R.id.Text_ZRVal;
+import static sceinox.atragmx.logic.FireProfiles.getSelectedProfile;
 
 public class Calculator {
 
@@ -84,25 +85,25 @@ public class Calculator {
     public CalculatorSolution calculateSolution() {
 //        /* variables from already exisiting data */
 //        double scopeBaseAngle;
-//        double bulletMass;
-//        double boreHeight;
+//        double bulletMass = getSelectedProfile().getBulletWeight();
+//        double boreHeight = getSelectedProfile().getBoreHeight();
 //        double airFriction;
-//        double muzzleVelocity;
-//        double temperature;
-//        double barometricPressure;
-//        double relativeHumidity;
+//        double muzzleVelocity = getSelectedProfile().getMuzzleVelocity();
+//        double temperature = getSelectedProfile().getTemperature();
+//        double barometricPressure = getSelectedProfile().getBarometricPressure();
+//        double relativeHumidity = getSelectedProfile().getHumidity();
 //        double simSteps;
 //
-//        double windDirection;
-//        double inclinationAngle;
-//        double targetSpeed;
-//        double targetRange;
-//        double bc;
+//        double windDirection = getSelectedProfile().getWindDirection();
+//        double inclinationAngle = getSelectedProfile().getInclinationAngleDegree();
+//        double targetSpeed = getSelectedProfile().getTargetSpeed();
+//        double targetRange = getSelectedProfile().getZeroRange();
+//        double bc = getSelectedProfile().getC1Coefficient();
 //        double dragModel;
 //        double atmosphericModel;
 //        double stabilityFactor;
-//        double twistDirection;
-//        double latitude;
+//        double twistDirection = getSelectedProfile().getRifleTwist();
+//        double latitude = getSelectedProfile().getLatitude();
 //        double directionOfFire;
 //
 //        double[] windSpeed = new double[2];
