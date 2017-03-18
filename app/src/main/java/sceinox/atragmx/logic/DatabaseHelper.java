@@ -23,11 +23,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String GUNS_COLUMN_ZERORANGE = "ZERORANGE";
     private static final String GUNS_COLUMN_NOTE = "NOTE";
 
-    private static Context context = null;
+    private Context context = null;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        DatabaseHelper.context = context;
+        this.context = context;
     }
 
     @Override
