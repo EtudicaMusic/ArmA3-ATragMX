@@ -202,7 +202,7 @@ public class Calculator {
 //            windage2 = windage2 + spinDrift;
 //        }
 
-        return new CalculatorSolution(0,0,0,0);
+        return new CalculatorSolution(0,new double[]{0,0},0,0,0,0,0,0,0);
     }
 
     double calculateAthmosphericCorrection(double bc, double temperature, double barometricPressure, double relativeHumidity, double atmosphericModel) {
