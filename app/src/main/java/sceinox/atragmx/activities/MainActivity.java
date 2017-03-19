@@ -323,16 +323,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void displaySolution(CalculatorSolution cSol) {
         setTextToTextView(R.id.Text_Elev_AbsVal, String.valueOf(cSol.getElevation()));
-        setTextToTextView(R.id.Text_Wind_AbsVal, String.valueOf(cSol.getWind()));
+        setTextToTextView(R.id.Text_Wind_AbsVal, String.valueOf(cSol.getWind()[0]));
 
         if (getTextFromTextView(R.id.Button_Lead).equals("Lead")) {
             setTextToTextView(R.id.Text_Lead_AbsVal, String.valueOf(cSol.getLead()));
         } else {
-            setTextToTextView(R.id.Text_Lead_AbsVal, String.valueOf(cSol.getWind2()));
+            setTextToTextView(R.id.Text_Lead_AbsVal, String.valueOf(cSol.getWind()[1]));
         }
 
         setTextToTextView(R.id.Text_Elev_RelVal, String.valueOf(cSol.getElevation() - Double.parseDouble(getTextFromTextView(R.id.Text_Elev_CurVal))));
-        setTextToTextView(R.id.Text_Wind_RelVal, String.valueOf(cSol.getWind() - Double.parseDouble(getTextFromTextView(R.id.Text_Wind_CurVal))));
+        setTextToTextView(R.id.Text_Wind_RelVal, String.valueOf(cSol.getWind()[0] - Double.parseDouble(getTextFromTextView(R.id.Text_Wind_CurVal))));
     }
 
     private void setTextToTextView(int id, String text) {
