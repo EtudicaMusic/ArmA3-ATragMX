@@ -7,6 +7,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import sceinox.atragmx.logic.interfaces.IAtmosphere;
+import sceinox.atragmx.logic.interfaces.IGun;
+import sceinox.atragmx.logic.interfaces.ITarget;
+
 import static java.lang.Math.atan;
 import static java.lang.Math.cos;
 import static java.lang.Math.pow;
@@ -28,6 +32,9 @@ import static sceinox.atragmx.logic.FireProfiles.getSelectedProfile;
 public class Calculator {
 
     //region private fields
+    private IGun gun;
+    private IAtmosphere atmosphere;
+    private ITarget target;
     private Context context;
 
     private double gunBoreHeight;
@@ -47,6 +54,26 @@ public class Calculator {
     private double targetTargetRange;
     //endregion
 
+    public Calculator(IGun gun, ITarget target, IAtmosphere atmosphere) throws NullPointerException{
+        if(gun==null){
+            throw new NullPointerException("Calculator requires a valid IGun.");
+        }
+        if(target==null){
+            throw new NullPointerException("Calculator requires a valid ITarget.");
+        }
+        if(atmosphere==null){
+            throw new NullPointerException("Calculator requires a valid IAtmosphere.");
+        }
+
+        this.gun=gun;
+        this.target=target;
+        this.atmosphere=atmosphere;
+
+
+    }
+
+
+    //unit testing should not require changing the class under test.
     //region c'tors
     /*
     this c'tor is only used for unit tests.
@@ -54,21 +81,24 @@ public class Calculator {
     public Calculator(double gunBoreHeight, double gunBulletWeight, double gunBallisticCoefficient, double gunMuzzleVelocity, double gunZeroRange,
                       double atmsphrTemperature, double atmsphrBarometricPressure, double atmsphrRelativeHumidity,
                       double targetWindStrength, double targetWindDirection, double targetInclinationAngle, double targetTargetSpeed, double targetTargetRange) {
-        this.gunBoreHeight = gunBoreHeight;
-        this.gunBulletWeight = gunBulletWeight;
-        this.gunBallisticCoefficient = gunBallisticCoefficient;
-        this.gunMuzzleVelocity = gunMuzzleVelocity;
-        this.gunZeroRange = gunZeroRange;
 
-        this.atmsphrTemperature = atmsphrTemperature;
-        this.atmsphrBarometricPressure = atmsphrBarometricPressure;
-        this.atmsphrRelativeHumidity = atmsphrRelativeHumidity;
+        this(new Gun(),new Target(), new Atmosphere());
 
-        this.targetWindStrength = targetWindStrength;
-        this.targetWindDirection = targetWindDirection;
-        this.targetInclinationAngle = targetInclinationAngle;
-        this.targetTargetSpeed = targetTargetSpeed;
-        this.targetTargetRange = targetTargetRange;
+        this.gun.setBoreHeight(gunBoreHeight);
+        this.gun.setBulletWeight(gunBulletWeight);
+        this.gun.setBallisticCoefficient(gunBallisticCoefficient);
+        this.gun.setMuzzleVelocity(gunMuzzleVelocity);
+        this.gun.setZeroRange(gunZeroRange);
+
+        this.atmosphere.setTemperature(atmsphrTemperature);
+        this.atmosphere.setBarometricPressure(atmsphrBarometricPressure);
+        this.atmosphere.setRelativeHumidity(atmsphrRelativeHumidity);
+
+        this.target.setWindStrength(targetWindStrength);
+        this.target.setWindDirection(targetWindDirection);
+        this.target.setInclinationAngle(targetInclinationAngle);
+        this.target.setSpeed(targetTargetSpeed);
+        this.target.setRange(targetTargetRange);
     }
 
     public Calculator(Context context) {
