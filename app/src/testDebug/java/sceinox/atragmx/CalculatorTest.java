@@ -3,6 +3,7 @@ package sceinox.atragmx;
 import android.nfc.Tag;
 
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
 
@@ -20,9 +21,45 @@ import static org.junit.Assert.assertTrue;
 public class CalculatorTest {
 
 
+    @Test(expected=NullPointerException.class)
+    public void nullGun()
+    {
+        Gun gun=null;
+        Atmosphere atmosphere=new Atmosphere();
+        Target target=new Target();
+
+        Calculator calculator=new Calculator(gun, target, atmosphere);
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void nullAtmosphere()
+    {
+        Gun gun=new Gun();
+        Atmosphere atmosphere=null;
+        Target target=new Target();
+
+        Calculator calculator=new Calculator(gun, target, atmosphere);
+    }
+
+    @Test(expected=NullPointerException.class)
+    public void nullTarget()
+    {
+        Gun gun=new Gun();
+        Atmosphere atmosphere=new Atmosphere();
+        Target target=null;
+
+        Calculator calculator=new Calculator(gun, target, atmosphere);
+    }
+
+
+
     @Test
     public void calculateSolution0() throws Exception {
-        Calculator calculator = new Calculator(3.81, 48, 0.638, 820, 100, 43, 1350, 20, 10.8, 6, 20, 2, 800);
+        Gun gun = new Gun(3.81d, 48d,0.638d,820d, 100d);
+        Atmosphere atmosphere=new Atmosphere(43d, 1350d, 20d);
+        Target target=new Target(10.8d, 6d, 20d,2d,800d);
+
+        Calculator calculator = new Calculator(gun,target,atmosphere);
         CalculatorSolution solution = calculator.calculateSolution();
 
         System.out.println("Elevation should be: " + 6.9 + " and calculated value is:" + solution.getElevation());
@@ -42,7 +79,11 @@ public class CalculatorTest {
 
     @Test
     public void calculateSolution1() throws Exception {
-        Calculator calculator = new Calculator(3.81, 48, 0.638, 820, 100, 37, 900, 78, 8.6, 4, -15, 6, 1800);
+        Gun gun = new Gun(3.81d, 48d,0.638d,820d, 100d);
+        Atmosphere atmosphere=new Atmosphere(37d, 900d, 78d);
+        Target target=new Target(8.6d, 4d, -15d,6d,1800d);
+
+        Calculator calculator = new Calculator(gun,target,atmosphere);
         CalculatorSolution solution = calculator.calculateSolution();
 
         System.out.println("Elevation should be: " + 30.11 + " and calculated value is:" + solution.getElevation());
@@ -62,7 +103,11 @@ public class CalculatorTest {
 
     @Test
     public void calculateSolution2() throws Exception {
-        Calculator calculator = new Calculator(3.81, 48, 0.638, 820, 100, 23, 769, 68, 3.9, 9, -30, 7, 1300);
+        Gun gun = new Gun(3.81d, 48d,0.638d,820d, 100d);
+        Atmosphere atmosphere=new Atmosphere(23d, 769d, 68d);
+        Target target=new Target(3.9d, 9d, -30d,7d,1300d);
+
+        Calculator calculator = new Calculator(gun,target,atmosphere);
         CalculatorSolution solution = calculator.calculateSolution();
 
         System.out.println("Elevation should be: " + 14.33 + " and calculated value is:" + solution.getElevation());
@@ -82,7 +127,11 @@ public class CalculatorTest {
 
     @Test
     public void calculateSolution3() throws Exception {
-        Calculator calculator = new Calculator(3.81, 48, 0.638, 820, 100, 36, 969, 48, 6.5, 4, -13, 12, 1398);
+        Gun gun = new Gun(3.81d, 48d,0.638d,820d, 100d);
+        Atmosphere atmosphere=new Atmosphere(36d, 969d, 48d);
+        Target target=new Target(6.5d, 4d, -13d,12d,1398d);
+
+        Calculator calculator = new Calculator(gun,target,atmosphere);
         CalculatorSolution solution = calculator.calculateSolution();
 
         System.out.println("Elevation should be: " + 18.61 + " and calculated value is:" + solution.getElevation());
@@ -102,7 +151,11 @@ public class CalculatorTest {
 
     @Test
     public void calculateSolution4() throws Exception {
-        Calculator calculator = new Calculator(3.81, 48, 0.638, 820, 100, 42, 1309, 35, 5.5, 8, -37, 8, 1948);
+        Gun gun = new Gun(3.81d, 48d,0.638d,820d, 100d);
+        Atmosphere atmosphere=new Atmosphere(42d, 1309d, 35d);
+        Target target=new Target(5.5d, 8d, -37d,8d,1948d);
+
+        Calculator calculator = new Calculator(gun,target,atmosphere);
         CalculatorSolution solution = calculator.calculateSolution();
 
         System.out.println("Elevation should be: " + 28.53 + " and calculated value is:" + solution.getElevation());

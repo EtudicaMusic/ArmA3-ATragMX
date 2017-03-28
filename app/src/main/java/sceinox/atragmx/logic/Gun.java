@@ -13,6 +13,19 @@ public class Gun implements IGun {
     private double muzzleVelocity;
     private double zeroRange;
 
+    public Gun(double boreHeight, double bulletWeight, double ballisticCoefficient, double muzzleVelocity, double zeroRange){
+        this.setBoreHeight(boreHeight);
+        this.setBulletWeight(bulletWeight);
+        this.setBallisticCoefficient(ballisticCoefficient);
+        this.setMuzzleVelocity(muzzleVelocity);
+        this.setZeroRange(zeroRange);
+    }
+    public Gun(){
+        this(0d,0d,0d,0d,0d);
+    }
+
+
+
     @Override
     public double getBoreHeight() {
         return boreHeight;

@@ -9,6 +9,17 @@ public class Atmosphere implements sceinox.atragmx.logic.interfaces.IAtmosphere 
     private double barometricPressure;
     private double relativeHumidity;
 
+    public Atmosphere(double temperature, double barometricPressure, double relativeHumidity){
+        this.setTemperature(temperature);
+        this.setBarometricPressure(barometricPressure);
+        this.setRelativeHumidity(relativeHumidity);
+    }
+
+    public Atmosphere()
+    {
+        this(0d,0d,0d);
+    }
+
     @Override
     public double getTemperature() {
         return temperature;

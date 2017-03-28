@@ -11,6 +11,19 @@ public class Target implements sceinox.atragmx.logic.interfaces.ITarget {
     private double speed;
     private double range;
 
+    public Target(double windStrength, double windDirection, double inclinationAngle, double speed, double range){
+        this.setWindStrength(windStrength);
+        this.setWindDirection(windDirection);
+        this.setInclinationAngle(inclinationAngle);
+        this.setSpeed(speed);
+        this.setRange(range);
+    }
+
+    public Target()
+    {
+        this(0d,0d,0d,0d,0d);
+    }
+
     @Override
     public double getWindStrength() {
         return windStrength;
