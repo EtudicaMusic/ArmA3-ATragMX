@@ -1,11 +1,13 @@
 package sceinox.atragmx;
 
 import android.nfc.Tag;
+import android.support.v4.content.res.TypedArrayUtils;
 
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.util.Arrays;
+import java.util.Vector;
 
 import sceinox.atragmx.logic.Atmosphere;
 import sceinox.atragmx.logic.Calculator;
@@ -73,7 +75,7 @@ public class CalculatorTest {
         //assertTrue(solution.getLead() == 3.22);
         //but document the current behavior
         assertTrue(solution.getElevation() == 0.00);
-        assertTrue(Arrays.equals(solution.getWind(),new double[]{0.0, 0.0}));
+        assertTrue("Arrays were not equal", Arrays.equals(solution.getWind(),new double[]{-0.0, -0.0}));//TODO: why negative 0?
         assertTrue(solution.getLead() == 0.00);
     }
 
@@ -97,7 +99,7 @@ public class CalculatorTest {
         //assertTrue(solution.getLead() == 13.67);
         //but document the current behavior
         assertTrue(solution.getElevation() == 0);
-        assertTrue(Arrays.equals(solution.getWind(),new double[]{0,0.00}));
+        assertTrue("Arrays were not equal", Arrays.equals(solution.getWind(),new double[]{-0.0,-0.0}));
         assertTrue(solution.getLead() == 0);
     }
 
@@ -121,7 +123,7 @@ public class CalculatorTest {
         //assertTrue(solution.getLead() == 13.4);
         //but document the current behavior
         assertTrue(solution.getElevation() == 0);
-        assertTrue(Arrays.equals(solution.getWind(), new double[]{0,0.00}));
+        assertTrue("Arrays were not equal", Arrays.equals(solution.getWind(), new double[]{-0.0,-0.0}));
         assertTrue(solution.getLead() == 0);
     }
 
@@ -145,7 +147,7 @@ public class CalculatorTest {
         //assertTrue(solution.getLead() == 23.78);
         //but document the current behavior
         assertTrue(solution.getElevation() == 0);
-        assertTrue(Arrays.equals(solution.getWind(), new double[]{0, 0.00}));
+        assertTrue("Arrays were not equal", Arrays.equals(solution.getWind(), new double[]{-0.0, -0.0}));
         assertTrue(solution.getLead() == 0);
     }
 
@@ -169,7 +171,7 @@ public class CalculatorTest {
         //assertTrue(solution.getLead() == 18.98);
         //but document the current behavior
         assertTrue(solution.getElevation() == 0);
-        assertTrue(Arrays.equals(solution.getWind(), new double[]{0, 0.00}));
+        assertTrue("Arrays were not equal", Arrays.equals(solution.getWind(), new double[]{-0.0, -0.0}));
         assertTrue(solution.getLead() == 0);
     }
 
@@ -221,12 +223,16 @@ public class CalculatorTest {
         ITarget target=new Target();
         Calculator calculator=new Calculator(gun, target, atmosphere);
 
-        double[] res = new double[]{12, -3, 15};
-        double[] mult = calculator.vectorMultiply(new double[]{4,-1,5}, 3);
+        double[] expected = new double[]{12, -3, 15};
+        Vector<Double> vec=calculator.vectorMultiply(new double[]{4,-1,5}, 3);
 
-        for (int i = 0; i < res.length; i++) {
-            assertTrue(res[i] == mult[i]);
+        //TODO: better way to do this?
+        double[] actual=new double[vec.size()];
+        for(int i=0; i<vec.size(); i++)
+        {
+            actual[i]=vec.get(i);
         }
+        assertTrue("The arrays did not match",Arrays.equals(actual, expected));
     }
 
     @Test
